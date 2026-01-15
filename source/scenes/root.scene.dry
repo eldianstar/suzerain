@@ -229,100 +229,91 @@ Q.parties_graph = ['lwusp', 'cps', 'wpb', 'pfjp', 'cwusp', 'rwusp', 'nfp'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_lwusp = 55;
-Q.workers_kpd = 22;
-Q.workers_z = 5;
-Q.workers_ddp = 2;
-Q.workers_dvp = 0;
-Q.workers_dnvp = 6;
-Q.workers_nsdap = 0;
+Q.workers_lwusp = 15;
+Q.workers_cps = 20;
+Q.workers_wpb = 0;
+Q.workers_pfjp = 30;
+Q.workers_cwusp = 30;
+Q.workers_rwusp = 5;
+Q.workers_nfp = 5;
 
-Q.new_middle_lwusp = 8;
-Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp = 23;
-Q.new_middle_dvp = 22;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 4;
+Q.new_middle_lwusp = 30;
+Q.new_middle_cps = 1;
+Q.new_middle_wpb = 0;
+Q.new_middle_pfjp = 60;
+Q.new_middle_cwusp = 20;
+Q.new_middle_rwusp = 5;
+Q.new_middle_nfp = 5;
 
-Q.old_middle_lwusp = 4;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 6;
-Q.old_middle_ddp = 10;
-Q.old_middle_dvp = 27;
-Q.old_middle_dnvp = 24;
-Q.old_middle_nsdap = 9;
+Q.old_middle_lwusp = 25;
+Q.old_middle_cps = 0;
+Q.old_middle_wpb = 0;
+Q.old_middle_pfjp = 40;
+Q.old_middle_cwusp = 20;
+Q.old_middle_rwusp = 15;
+Q.old_middle_nfp = 10;
 
 
-Q.rural_spd = 9;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
-Q.rural_ddp = 4;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 46;
-Q.rural_nsdap = 3;
+Q.rural_lwusp = 5;
+Q.rural_cps = 0;
+Q.rural_wpb = 0;
+Q.rural_pfjp = 5;
+Q.rural_cwusp = 25;
+Q.rural_rwusp = 50;
+Q.rural_nfp = 35;
 
-Q.unemployed_spd = 21;
-Q.unemployed_kpd = 50;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 4;
-Q.unemployed_nsdap = 13;
+Q.unemployed_lwusp = 21;
+Q.unemployed_cps = 50;
+Q.unemployed_wpb = 1;
+Q.unemployed_pfjp = 0;
+Q.unemployed_cwusp = 0;
+Q.unemployed_rwusp = 4;
+Q.unemployed_nfp = 13;
 
-Q.bluds_spd = 21;
-Q.bluds_kpd = 2;
-Q.bluds_z = 49;
-Q.bluds_ddp = 0;
-Q.bluds_dvp = 5;
-Q.bluds_dnvp = 5;
-Q.bluds_nsdap = 0;
+Q.bluds_lwusp = 1;
+Q.bluds_cps = 1;
+Q.bluds_wpb = 90;
+Q.bluds_pfjp = 5;
+Q.bluds_cwusp = 0;
+Q.bluds_rwusp = 0;
+Q.bluds_nfp = 0;
 
-Q.workers_spd_old = 60;
-Q.new_middle_spd_old = 8;
-Q.old_middle_spd_old = 4;
-Q.rural_spd_old = 8;
-Q.unemployed_spd_old = 25;
-Q.bluds_spd_old = 20;
+Q.workers_lwusp_old = 25;
+Q.new_middle_lwusp_old = 40;
+Q.old_middle_lwusp_old = 40;
+Q.rural_lwusp_old = 5;
+Q.unemployed_lwusp_old = 10;
+Q.bluds_lwusp_old = 1;
 
 // Current Reichstag composition
 
-Q.spd_r = 26.5;
-Q.kpd_r = 9.1;
-Q.z_r = 17.8;
-Q.ddp_r = 6.5;
-Q.dvp_r = 10.3;
-Q.dnvp_r = 20.9;
-Q.nsdap_r = 3;
-Q.other_r = 5.9;
-Q.bvp_r = 3.9;
-Q.wp_r = 2.4;
-Q.cnblp_r = 1.7;
-Q.true_other_r = 1.8;
-Q.reichstag_size = 4.93;
-Q.landtag_size = 4.5;
+Q.lwusp_gna = 24;
+Q.cps_gna = 0;
+Q.wpb_gna = 0;
+Q.pfjp_gna = 44;
+Q.cwusp_gna = 9;
+Q.rwusp_gna = 23;
+Q.nfp_gna = 0;
+Q.reichstag_size = 2.50;
+
 
 // diff from prev
-Q.old_spd_r = 26.5;
-Q.old_kpd_r = 9.1;
-Q.old_z_r = 13.9;
-Q.old_ddp_r = 6.5;
-Q.old_dvp_r = 10.3;
-Q.old_dnvp_r = 20.9;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 5.9;
-Q.old_bvp_r = 3.9;
+Q.old_lwusp_gna = 24;
+Q.old_cps_gna = 0;
+Q.old_wpb_gna = 0;
+Q.old_pfjp_gna = 44;
+Q.old_cwusp_gna = 9;
+Q.old_rwusp_gna = 23;
+Q.old_nfp_gna = 0;
 
 // old election votes
-Q.previous_spd_last_election_votes = 26;
-Q.previous_kpd_last_election_votes = 9;
-Q.previous_z_last_election_votes = 17.3;
-Q.previous_ddp_last_election_votes = 6.3;
-Q.previous_dvp_last_election_votes = 10.1;
-Q.previous_dnvp_last_election_votes = 20.5;
-Q.previous_nsdap_last_election_votes = 3;
-Q.previous_other_last_election_votes = 7.8;
-Q.previous_bvp_last_election_votes = 3.7;
+Q.previous_lwusp_last_election_votes = 19.3;
+Q.previous_cps_last_election_votes = 5.6;
+Q.previous_wpb_last_election_votes = 7.8;
+Q.previous_pfjp_last_election_votes = 35.5;
+Q.previous_cwusp_last_election_votes = 7.3;
+Q.previous_rwusp_last_election_votes = 18.6;
+Q.previous_nfp_last_election_votes = 5.6;
 
 Q.old_dsu_r = 0;
 Q.old_nsdap_hitler_r = 0;
@@ -452,23 +443,21 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
-Q.president_ideology = "Hindenburg";
-// starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
-Q.chancellor_party = 'Z';
-Q.spd_in_government = 0;
-Q.spd_in_government_time = 0;
-Q.spd_in_government_total_time = 0;
-Q.spd_in_foreign_time = 0;
-Q.z_in_government = 1;
-Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
-Q.kpd_in_government = 0;
-Q.nsdap_in_government = 0;
-
-Q.spd_prussia_time = 0;
+Q.president = "Alphonso";
+Q.president_ideology = "Liberalism";
+// starting chief of staff
+Q.chancellor = "Koronti";
+Q.chancellor_party = 'LWUSP';
+Q.lwusp_in_government = 1;
+Q.lwusp_in_government_time = 0;
+Q.lwusp_in_government_total_time = 0;
+Q.lwusp_in_foreign_time = 0;
+Q.cps_in_government = 0;
+Q.wpb_in_government = 0;
+Q.pfjp_in_government = 0;
+Q.cwusp_in_government = 1;
+Q.rwusp_in_government = 1;
+Q.nfp_in_government = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
@@ -491,19 +480,7 @@ Q.in_center_right_coalition = 0;
 Q.in_social_catholic_coalition = 0;
 Q.in_social_liberal_coalition = 0;
 
-Q.in_right_coalition_prussia = 0;
-Q.in_weimar_coalition_prussia = 1;
-Q.in_grand_coalition_prussia = 0;
-Q.in_popular_front_prussia = 0;
-Q.in_left_front_prussia = 0;
-Q.in_spd_majority_prussia = 0;
-Q.in_center_right_coalition_prussia = 0;
-Q.in_minority_weimar_coalition_prussia = 0;
-Q.in_minority_grand_coalition_prussia = 0;
-Q.dvp_prussia_asked = 0;
-Q.in_far_right_coalition_prussia = 0;
-Q.ddp_in_popular_front_prussia = 0;
-Q.kpd_goals_seen_prussia = 0;
+
 Q.reichsexekution = 0;
 Q.bruning_coalition_loss = 0;
 
@@ -522,15 +499,15 @@ Q.reichswehr_goal_spd = 0;
 Q.goal_spd_cancel = 0;
 Q.goal_spd_total = 0;
 
-Q.economy_goal_spd_peoples = 0;
-Q.finance_goal_spd_peoples = 0;
-Q.tariff_goal_spd_peoples = 0;
-Q.education_goal_spd_peoples = 0;
-Q.labor_goal_spd_peoples = 0;
-Q.agriculture_goal_spd_peoples = 0;
-Q.foreign_goal_spd_peoples = 0;
-Q.goal_spd_cancel_peoples = 0;
-Q.goal_spd_total_peoples = 0;
+Q.economy_goal_lwusp_peoples = 0;
+Q.finance_goal_lwusp_peoples = 0;
+Q.tariff_goal_lwusp_peoples = 0;
+Q.education_lwusp_spd_peoples = 0;
+Q.labor_goal_lwusp_peoples = 0;
+Q.agriculture_lwusp_spd_peoples = 0;
+Q.foreign_goal_lwusp_peoples = 0;
+Q.goal_lwusp_cancel_peoples = 0;
+Q.goal_lwusp_total_peoples = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
@@ -545,24 +522,23 @@ Q.spd_toleration_right = 0;
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
-// starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Stresemann';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
-Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.foreign_minister = 'alphonsoone';
+Q.foreign_minister_party = 'LWUSP';
+Q.interior_minister = 'alphonsotwo';
+Q.interior_minister_party = 'LWUSP';
+Q.justice_minister = 'alphonsothree';
+Q.justice_minister_party = 'LWUSP';
+Q.labor_minister = 'alphonsofour';
+Q.labor_minister_party = 'LWUSP';
+Q.reichswehr_minister = 'alphonsofive';
+Q.reichswehr_minister_party = 'LWUSP';
+Q.economic_minister = 'alphonsosix';
+Q.economic_minister_party = 'LWUSP';
+Q.finance_minister = 'alphonsoseven';
+Q.finance_minister_party = 'LWUSP';
+Q.agriculture_minister = 'alphonsoeight';
+Q.agriculture_minister_party = 'LWUSP';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
@@ -618,7 +594,7 @@ Q.lower_tax_rates = 0;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
-Q.electoral_threshold = 0;
+Q.electoral_threshold = 10;
 
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the SPD vote against the previous government in a vote of no confidence?
@@ -713,13 +689,9 @@ Q.elections_1932 = 0;
 Q.prussian_reichsexekution_timer = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.in_election_prussia = 1;
-Q.next_election_time_prussia = 5;
-Q.next_election_year_prussia = 1928;
-Q.next_election_month_prussia = 5;
-Q.next_election_year = 1928;
-Q.next_election_month = 12;
-Q.next_election_time = 12;
+Q.next_election_year = 1953;
+Q.next_election_month = 11;
+Q.next_election_time = 9;
 // government affairs timers
 Q.campaigning_timer = 0;
 Q.spd_government_burden_timer = 0;
@@ -926,15 +898,12 @@ Q.schleicher_goal = "Control Papen from the sidelines";
 Q.meissner_goal = "Become acquainted with the new chancellor";
 Q.oskar_goal = "Support the new chancellor";
 
-Q.industrial_z_backing = 0;
-Q.industrial_ddp_backing = 1;
-Q.industrial_dvp_backing = 3;
-Q.industrial_lvp_backing = 4;
-Q.industrial_dnvp_backing = 3;
-Q.industrial_kvp_backing = 3;
-Q.industrial_dnf_backing = 0;
-Q.industrial_dnef_backing = 0;
-Q.industrial_nsdap_backing = 0;
+Q.industrial_pfjp_backing = 5;
+Q.industrial_lwusp_backing = 3;
+Q.industrial_cwusp_backing = 2;
+Q.industrial_rwusp_backing = 1;
+Q.industrial_nfp_backing = 1;
+
 
 // flavour text stuff
 for (let i = 0; i <= 100; i++) {
@@ -943,47 +912,23 @@ for (let i = 0; i <= 100; i++) {
 }
 
 // all the initial advisors are centrists.
-Q.wels_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
-Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
-Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.clavin_advisor = 1;
+Q.morgna_advisor = 1; 
+Q.manger_advisor = 1; 
 
 // left advisors
-Q.sender_advisor = 0; // Toni Sender
-Q.levi_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
-Q.seydewitz_advisor = 0; // Max Seydewitz
+Q.wisci.advisor = 0;
+Q.beniwoll.advisor = 0;
+Q.walda_advisor = 0;
 
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
+// moderate advisors
+Q.agnoc_advisor = 0;
 
-// Reformist advisors
-Q.severing_advisor = 0; // Carl Severing
-Q.braun_advisor = 0; // Otto Braun
-Q.juchacz_advisor = 0; // Marie Juchacz
-Q.baade_advisor = 0; // Fritz Baade
+// liberal advisors
+Q.holl_advisor = 0;
 
-// Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
 
-// Revisionist advisors
-Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
 
-Q.leber_advisor = 0; // Julius Leber (post-1930)
-Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
-Q.wirth_advisor = 0; // troll
-
-// Nonfactional advisors
-Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
-Q.radbruch_advisor = 0; // Gustav Radbruch
-Q.stampfer_advisor = 0; // Friedrich Stampfer
 
 if (Q.achievement_holy_moly) {
     const content = document.getElementById('content');
