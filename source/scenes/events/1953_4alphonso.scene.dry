@@ -19,3 +19,4 @@ unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span>
 
 @new_election
 choose_if: pro_republic <= 100
+on-arrival: 
