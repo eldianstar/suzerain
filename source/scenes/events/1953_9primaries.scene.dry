@@ -609,7 +609,7 @@ if (Q.bruning_time) {
         Q.z_support_spd = 0;
     }
 }
-!}
+}
 go-to: z_failed if z_support_spd = 0 or (z_support_spd == 2 and historical_mode); z_success if z_support_spd = 1; z_partial if z_support_spd = 2 and not historical_mode
 max-visits: 1
 
@@ -714,7 +714,7 @@ choose-if: spd_votes >= z_votes
 unavailable-subtitle: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate.
 on-arrival: {!
 Q.z_support_spd = 0;
-!}
+}
 max-visits: 1
 go-to: endorsements_rosenfeld
 
@@ -782,7 +782,7 @@ if (Q.z_relation >= 45 || (Q.z_relation > 35 && Q.z_ideology == "Left")) {
     Q.z_support_spd = 0;
 }
 if (Q.z_relation >= 65) Q.bvp_support_spd = 1;
-!}
+}
 go-to: z_failed_eckener if z_support_spd = 0; z_success_eckener if z_support_spd = 1; z_partial_eckener if z_support_spd = 2
 max-visits: 1
 
