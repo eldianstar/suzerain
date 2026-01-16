@@ -67,15 +67,6 @@ go-to: hitler if ((nsdap_votes >= 15 and hindenburg_run) or (nsdap_votes >= 10 a
 
 
 
-- @communist: We await the decision the <span style="color: #700000;">Communists</span>.
-
-@frick
-on-arrival: {!
-Q.nsdap_candidate_1932 = "Frick";
-Q.nsdap_candidate_1932_disp = "Wilhelm Frick";
-!}
-view-if: not harzburg_unity
-face-image: img/portraits/frick.jpg
 
 
 - @communist: We await the decision the <span style="color: #700000;">Communists</span>.
