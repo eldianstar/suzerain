@@ -13,11 +13,11 @@ Following the government's inability to combat the ongoing recession, the <span 
 
 @new_govt
 title: We will form a new <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mist**</span> government. 
-choose-if: Q.pro_republic >= 90
+choose-if: pro_republic >= 90
 unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span> hate us.
 
 - @new_election
 
 @new_election
 title:  New elections will take place.
-choose_if: Q.pro_republic <= 100
+choose_if: pro_republic <= 100
