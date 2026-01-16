@@ -5,7 +5,7 @@ tags: event
 view-if: year == 1953 and month == 9
 
 on-arrival:
-if (nationalism <= 58) {
+if (nationalism <= 58 or pro_republic >=65) {
     Q.rwusp_candidate_1953 = "Tory";
     Q.rwusp_candidate_1953_disp = "Gloria Tory";
 } else {
@@ -45,10 +45,13 @@ Q.conservative_votes = (Q.rwusp_votes/4*3)+(Q.cwusp_votes/10);
 } else {!
 Q.conservative_votes = { Q.rwusp_votes }
 
-- @tory: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Gloria Tory as their candidate
-- @graf: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Lileas Graf as their candidate
+- @tory: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Gloria Tory as their candidate.
+- @graf: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
-@
+@tory
+view-if: rwusp_candidate_1953 = "Tory"
+
+The <span style="color: #6c1d85;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
 
 
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
