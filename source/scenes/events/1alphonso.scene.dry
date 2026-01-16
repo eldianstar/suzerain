@@ -1,0 +1,21 @@
+title: President Alphonso resigns
+new-page: true
+subtitle: The <span style="color: #03c2fc;">**liberal**</span> <span style="color: #472d4d;">**USP**</span> government has fallen.
+tags: event
+view-if: year == 1953 and month == 4
+max-visits: 1
+
+= President Alphonso resigns
+
+Following the government's inability to combat the ongoing recession, the <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mist**</span> cabinet has resigned. After significant pressure from the <span style="color: #472d4d;">**Sollist**</span>-dominated <span style="color: #472d4d;">**USP**</span>, President Alphonso has been forced to resign. Now, after decades of <span style="color: #472d4d;">**USP**</span> government, the party is more fractured than ever. Will our faction manage to unite it under the common banner of <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mism**</span>? 
+- @new_government: We will form a new <span style="color: #2b2673;">**reformist**</span> government.
+- @new_elections: New elections will find place.
+
+@new_government
+choose-if: no
+unavailable-subtitle: The <span style="color: #25003;">**Conservatives**</span> hate us.
+
+@new_elections
+
+
+
