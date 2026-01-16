@@ -20,4 +20,4 @@ unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span>
 
 @new_election
 title:  New elections will take place.
-choose_if: pro_republic > 100
+choose_if: Q.pro_republic > 100
