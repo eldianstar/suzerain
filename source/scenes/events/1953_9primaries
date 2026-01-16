@@ -6,8 +6,8 @@ if (nationalism <= 58) {
     Q.rwusp_candidate_1953 = "Tory";
     Q.rwusp_candidate_1953_disp = "Gloria Tory";
 } else {
-    Q.rwusp_candidate_1932 = "Graf";
-    Q.rwusp_candidate_1932_disp = "Lileas Graf";
+    Q.rwusp_candidate_1953 = "Graf";
+    Q.rwusp_candidate_1953_disp = "Lileas Graf";
 }
 
 tags: event
@@ -24,9 +24,6 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
-priority: 1
-max-visits: 1
-go-to: candidate_selection
 
 
 = <span style="color: #6e377a;">**USP**</span> Presidential Primaries
@@ -49,201 +46,17 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 @view_candidates_1
 
 
-- @reactionary: Who will be the successor to Hindenburg?
-- @hindenburg: Hindenburg is, of course, running once more.
+- @rwusp: Who will the <span style="color: #6c1d85;">**Conservatives**</span> run?
 
-@reactionary
-on-arrival: {!
-Q.bourgeois_votes = Q.ddp_votes + Q.dvp_votes + Q.lvp_votes + Q.other_votes + Q.kvp_votes + Q.dnvp_votes + Q.z_votes;
-
-if ((Q.lvp_ideology == "Right" && Q.lvp_leader == "Dingeldey" && Q.lvp_formed || Q.dvp_votes >= 6 && Q.bourgeois_parliament && Q.bourgeois_votes >= 40 && !Q.lvp_formed) && Q.liberal_vote >= 8) Q.jarres_unlock_pres = 1;
-if ((Q.dvp_leader == "Luther" || Q.lvp_leader == "Luther") && Q.pro_republic >= 50 && Q.liberal_vote >= 8 && Q.bourgeois_votes >= 35) Q.luther_unlock_pres = 1;
-if (((Q.dstp_formed || Q.ddp_relation < 40 || Q.pro_republic < 40) && Q.ddp_ideology != "Left" && !Q.lvp_formed || Q.lvp_formed && Q.lvp_ideology != "Left" && Q.pro_republic < 50) && Q.liberal_vote >= 8 && Q.bourgeois_votes >= 35) Q.gessler_unlock_pres = 1;
-if (Q.stegerwald_path) Q.adenauer_unlock_pres = 1;
-if (!Q.stegerwald_path && Q.z_relation >= 30 && Q.chancellor != "Brüning" && Q.bourgeois_votes >= 40) Q.bruning_unlock_pres = 1;
-if (!Q.stegerwald_path && !Q.bruning_unlock_pres && !Q.adenauer_unlock_pres) Q.stegerwald_unlock_pres = 1;
-if (Q.dnvp_ideology == "Moderate" && Q.bourgeois_votes < 35 || Q.kvp_formed && Q.bourgeois_votes < 35 || Q.cvp_formed && Q.cvp_ideology == "Right") Q.vorbeck_unlock_pres = 1;
-if (Q.dnvp_ideology == "Moderate" && Q.bourgeois_votes >= 35) Q.westarp_unlock_pres = 1;
-
-if (!Q.jarres_unlock_pres && !Q.gessler_unlock_pres && !Q.adenauer_unlock_pres && !Q.bruning_unlock_pres && !Q.stegerwald_unlock_pres && !Q.vorbeck_unlock_pres && !Q.westarp_unlock_pres) {
-    Q.vorbeck_unlock_pres = 1;
-    Q.vorbeck_fallback = 1;
-}
-
-if (Q.westarp_unlock_pres && Q.vorbeck_unlock_pres) {
-    Q.westarp_unlock_pres = 0;
-}
-
-if (Q.vorbeck_unlock_pres && Q.cvp_formed) {
-    Q.westarp_unlock_pres = 0;
-    Q.jarres_unlock_pres = 0;
-    Q.adenauer_unlock_pres = 0;
-    Q.bruning_unlock_pres = 0;
-    Q.stegerwald_unlock_pres = 0;
-}
-
-let count = 0;
-if (Q.jarres_unlock_pres) count++;
-if (Q.luther_unlock_pres) count++;
-if (Q.gessler_unlock_pres) count++;
-
-if (count >= 2 && Q.jarres_unlock_pres) {
-    Q.jarres_unlock_pres = 0;
-    count--;
-}
-if (count >= 2 && !Q.jarres_unlock_pres) {
-    Q.luther_unlock_pres = 0;
-    count--
-}
+@rwusp
+on-arrival: 
+if rwusp_candidate_1953 = "Tory" {!
+Q.conservative_votes = (Q.rwusp_votes/4*3)+(Q.cwusp_votes/10);
+} else {!
+Q.conservative_votes = { Q.rwusp_votes }
 
 
-let count2 = 0;
-if (Q.jarres_unlock_pres) count2++;
-if (Q.luther_unlock_pres) count2++;
-if (Q.gessler_unlock_pres) count2++;
-if (Q.adenauer_unlock_pres) count2++;
-if (Q.bruning_unlock_pres) count2++;
-if (Q.stegerwald_unlock_pres) count2++;
-if (Q.vorbeck_unlock_pres) count2++;
-if (Q.westarp_unlock_pres) count2++;
 
-Q.reactionary_candidate_1932_count = count2;
-
-Q.reactionary_candidate_1932_ideology = 0;
-Q.secondary_reactionary_candidate_1932_ideology = 0;
-
-if (Q.reactionary_candidate_1932_count > 0) {
-    if (Q.jarres_unlock_pres) {
-        Q.jarres_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Jarres";
-            Q.secondary_reactionary_candidate_1932_disp = "Karl Jarres";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Jarres";
-            Q.reactionary_candidate_1932_disp = "Karl Jarres";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.luther_unlock_pres) {
-        Q.luther_run = 1;
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Luther";
-            Q.secondary_reactionary_candidate_1932_disp = "Hans Luther";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Luther";
-            Q.reactionary_candidate_1932_disp = "Hans Luther";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.gessler_unlock_pres) {
-        Q.gessler_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Gessler";
-            Q.secondary_reactionary_candidate_1932_disp = "Otto Gessler";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Gessler";
-            Q.reactionary_candidate_1932_disp = "Otto Gessler";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.adenauer_unlock_pres) {
-        Q.adenauer_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Adenauer";
-            Q.secondary_reactionary_candidate_1932_disp = "Konrad Adenauer";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Adenauer";
-            Q.reactionary_candidate_1932_disp = "Konrad Adenauer";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.bruning_unlock_pres) {
-        Q.bruning_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Brüning";
-            Q.secondary_reactionary_candidate_1932_disp = "Heinrich Brüning";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Brüning";
-            Q.reactionary_candidate_1932_disp = "Heinrich Brüning";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.stegerwald_unlock_pres) {
-        Q.stegerwald_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Stegerwald";
-            Q.secondary_reactionary_candidate_1932_disp = "Adam Stegerwald";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Stegerwald";
-            Q.reactionary_candidate_1932_disp = "Adam Stegerwald";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.vorbeck_unlock_pres) {
-        Q.vorbeck_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Lettow-Vorbeck";
-            Q.secondary_reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Lettow-Vorbeck";
-            Q.reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-
-    if (Q.westarp_unlock_pres) {
-        Q.westarp_run = 1; 
-        if (Q.reactionary_candidate_1932) {
-            Q.secondary_reactionary_candidate_1932 = "Westarp";
-            Q.secondary_reactionary_candidate_1932_disp = "Kuno von Westarp";
-        }
-        if (!Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1932 = "Westarp";
-            Q.reactionary_candidate_1932_disp = "Kuno von Westarp";
-        }
-        Q.reactionary_candidate_1932_count -= 1;
-    }
-    
-    if (Q.reactionary_candidate_1932 == "Luther" || Q.reactionary_candidate_1932 == "Gessler" || Q.reactionary_candidate_1932 == "Jarres") {
-        Q.liberal_reactionary_candidate_1932 = 1;
-        Q.liberal_reactionary_candidate_1932_name = Q.reactionary_candidate_1932;
-    }
-    if (Q.reactionary_candidate_1932 == "Adenauer" || Q.reactionary_candidate_1932 == "Brüning" || Q.reactionary_candidate_1932 == "Stegerwald") {
-        Q.center_reactionary_candidate_1932 = 1;
-        Q.center_reactionary_candidate_1932_name = Q.reactionary_candidate_1932;
-    }
-
-    if (Q.secondary_reactionary_candidate_1932 == "Luther" || Q.secondary_reactionary_candidate_1932 == "Gessler" || Q.secondary_reactionary_candidate_1932 == "Jarres") {
-        Q.liberal_reactionary_candidate_1932 = 1;
-        Q.liberal_reactionary_candidate_1932_name = Q.secondary_reactionary_candidate_1932;
-    }
-    if (Q.secondary_reactionary_candidate_1932 == "Adenauer" || Q.secondary_reactionary_candidate_1932 == "Brüning" || Q.secondary_reactionary_candidate_1932 == "Stegerwald") {
-        Q.center_reactionary_candidate_1932 = 1;
-        Q.center_reactionary_candidate_1932_name = Q.secondary_reactionary_candidate_1932;
-    }
-
-}
-
-Q.z_choice = Q.reactionary_candidate_1932;
-Q.ddp_choice = Q.reactionary_candidate_1932;
-Q.dvp_choice = Q.reactionary_candidate_1932;
-Q.lvp_choice = Q.reactionary_candidate_1932;
-Q.other_choice = Q.reactionary_candidate_1932;
-Q.kvp_choice = Q.reactionary_candidate_1932;
-Q.dnvp_choice = Q.reactionary_candidate_1932;
 
 if (Q.secondary_reactionary_candidate_1932) {
     if (Q.secondary_reactionary_candidate_1932 == "Westarp") {
