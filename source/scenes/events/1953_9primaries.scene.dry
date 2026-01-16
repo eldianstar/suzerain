@@ -83,10 +83,10 @@ Albin Clavin would be the most natural choice to lead the <span style="color: #2
 
 So, what's our choice?
 
-- @run_clavin: Run Otto Braun of the <span style="color: #c00000;">**SPD**</span>.
-- @run_wisci: Run Deivid Wisci
-- @support_rayne: Support <span style="color: #808080;">Hindenburg</span>.
-- @abstain: Abstain from endorsing any candidate.
+- @run_clavin: Run Albin Clavin of the <span style="color: #03c2fc;">**Liberals**</span>.
+- @run_wisci: Run Deivid Wisci of the <span style="color: #E3000F;">**Social Democratic**</span>. This choice is likely to be unpopular among moderates and liberals.
+- @support_rayne: Support Anton Rayne of the <span style="color: #6e377a;">**USP**</span>'s <span style="color: #6e377a;">**Moderates**</span>.
+- @abstain: Abstain from endorsing any candidate. This choice is extremely unpopular within our faction.
 
 @view_candidates
 go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_campaign; endorsements_rosenfeld if rosenfeld_campaign
