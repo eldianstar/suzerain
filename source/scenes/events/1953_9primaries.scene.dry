@@ -45,6 +45,7 @@ if rwusp_candidate_1953 = "Tory" {!
 Q.conservative_votes = (Q.rwusp_votes/4*3)+(Q.cwusp_votes/10);
 } else {!
 Q.conservative_votes = { Q.rwusp_votes }
+}
 
 - @tory: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Gloria Tory as their candidate.
 - @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
