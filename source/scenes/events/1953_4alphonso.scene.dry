@@ -2,7 +2,7 @@ title: President Alphonso resigns
 new-page: true
 subtitle: The <span style="color: #03c2fc;">**liberal**</span> <span style="color: #6e377a;">**USP**</span> government has fallen.
 tags: event
-view-if: year == 1953 and month == 4
+view-if: year == 1953 and month == 6
 max-visits: 1
 
 = President Alphonso resigns
