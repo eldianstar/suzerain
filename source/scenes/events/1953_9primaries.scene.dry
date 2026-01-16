@@ -63,11 +63,8 @@ The <span style="color: #7e0b80;">**Sollist wing**</span> will, as expected, run
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
 @cwusp
-go-to: hitler if ((nsdap_votes >= 15 and hindenburg_run) or (nsdap_votes >= 10 and not hindenburg_run)) and hitler_citizen; goring if not hitler_citizen; frick if ((nsdap_votes < 15 and hindenburg_run) or (nsdap_votes < 10 and not hindenburg_run)) and hitler_citizen
 
-
-
-
+The <span style="color: #6e377a;">**Moderates**</span> have chosen Anton Rayne as their candidate. A relatively unknown MP that rose to fame after his criticism of President Alphonso, Rayne's charisma will be of great help to the <span style="color: #6e377a;">**Moderates**</span> as well as whoever choses to side with them.
 
 - @communist: We await the decision the <span style="color: #700000;">Communists</span>.
 
