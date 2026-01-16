@@ -77,19 +77,6 @@ Q.nsdap_candidate_1932_disp = "Wilhelm Frick";
 view-if: not harzburg_unity
 face-image: img/portraits/frick.jpg
 
-The <span style="color: #7A3C00;">**NSDAP**</span> has nominated Wilhelm Frick, who is expected to receive backing only from his own party. [? if hindenburg_run: The decision to run Frick instead of the more charismatic and popular Hitler stems from Hitler’s deep reluctance to challenge the universally respected and personally popular President Hindenburg—believing such a move would tarnish his image. Gregor Strasser’s argument ultimately prevailed over Goebbels’, and Hitler has chosen to sit this one out. ?][? if not hindenburg_run: The decision to run Frick instead of the more charismatic and popular Hitler stems from Hitler’s reluctance to enter an unwinnable race, fearing it would damage his image. By putting forward the more pragmatic Frick, he hopes to attract some conservative support ahead of the local elections.?] Should Frick win, he would serve as little more than a proxy for the <span style="color: #7A3C00;">Nazi</span> leader. 
-
-- @communist: We await the decision the <span style="color: #700000;">Communists</span>.
-
-@goring
-on-arrival: {!
-Q.nsdap_candidate_1932 = "Göring";
-Q.nsdap_candidate_1932_disp = "Hermann Göring";
-!}
-view-if: not harzburg_unity
-face-image: img/portraits/goring.jpg
-
-The <span style="color: #7A3C00;">**NSDAP**</span> has nominated Hermann Göring, who is expected to receive support solely from his own party. Normally, Hitler would have been their candidate, but for one reason or another, he is disqualified from the race. With his reputation as a decorated fighter ace from the Great War and his strong ties to the conservative establishment and industrial elites, Göring will win over some <span style="color: #3E88B3;">nationalists</span> who might have otherwise been wary of Hitler. Still, Göring is widely expected to act as little more than a proxy, taking direction from the <span style="color: #7A3C00;">Nazi</span> leader operating behind the scenes.
 
 - @communist: We await the decision the <span style="color: #700000;">Communists</span>.
 
