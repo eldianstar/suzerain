@@ -32,13 +32,15 @@ go-to: candidate_selection
 
 = <span style="color: #6e377a;">**USP**</span> Presidential Primaries
 
-With the 1953 Sordish election coming up next month, the <span style="color: #6e377a;">**USP**</span> needs to decide what candidate to run. Many from our faction are calling for us to run a candidate of our own,
+With the 1953 Sordish election coming up next month, the <span style="color: #6e377a;">**USP**</span> needs to decide what candidate to run. 
 
-With the 1932 German Presidential election coming up next month, we need to decide whether to run a candidate of our own or support one from another party. [? if hindenburg_run: Many are calling for us to support the incumbent Hindenburg, despite his <span style="color: #808080;">reactionary</span> tendencies. Contrary to fears, he hasn’t used his office to destroy the republic yet, so supporting him would hopefully prevent the <span style="color: #7A3C00;">Nazis</span>, who actually support destroying the republic, from winning. ?][? if not hindenburg_run: With Hindenburg's withdrawal, the German Right is in disarray, struggling to find a candidate who can attract support from the moderate right and middle, while also embodying the unifying character of Hindenburg. It’s likely that the candidate they put forward will have a military or industrial background and will be distanced from the partisan bickering of politics. ?]
+Many in our faction are calling for us to run a <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mist**</span> candidate of our own, but our popularity is still tarnished by President Alphonso's failure. 
 
-On the other hand, many in our party are calling for [+ spd_candidate_1932_disp +] to run again, but he is reluctant. [? if kpd_relation >= 50 : Another strange possibility is an united front with the <span style="color: #700000;">Communists</span>, either to support their candidate or our own candidate. ?][? if sapd_formed: The <span style="color: #9B0000;">**SAPD**</span>, our former leftists, are likely to share an endorsement with the <span style="color: #700000;">Communists</span>. ?]
+Because of this, others are suggesting to support a <span style="color: #6e377a;">**moderate**</span> candidate instead.
 
-Anyhow, let's see who will be the candidates on <span class="tooltip-text" title="good game">the campaign trail</span>.
+Some fringe members of our faction's <span style="color: #E3000F;">**Social Democratic**</span> wing, seeing the failure of <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mism**</span>, are suggesting a candidate more appealing to the Workers.
+
+Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and the <span class="tooltip-text" title="good game">the primaries</span>.
 
 @candidate_selection
 
