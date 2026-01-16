@@ -14,7 +14,7 @@ Following the government's inability to combat the ongoing recession, the <span 
 
 @new_govt
 choose-if: pro_republic >= 90
-unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span> hate us.
+unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span> dislike us.
 
 @new_election
 choose_if: pro_republic <= 100
