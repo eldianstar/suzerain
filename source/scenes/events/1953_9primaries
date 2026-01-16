@@ -25,7 +25,7 @@ Because of this, others are suggesting to support a <span style="color: #6e377a;
 
 Some fringe members of our faction's <span style="color: #E3000F;">**Social Democratic**</span> wing, seeing the failure of <span style="color: #03c2fc;">**Refor**</span><span style="color: #2b2673;">**mism**</span>, are suggesting a candidate more appealing to the Workers.
 
-Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and the <span style="color: #6c1d85;">**Conservatives**</span> will support in <span class="tooltip-text" title="good game">the primaries</span>.
+Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and the <span style="color: #7e0b80;">**Conservatives**</span> will support in <span class="tooltip-text" title="good game">the primaries</span>.
 ///////////////////////////////////////////////////////////////
 
 @candidate_selection
@@ -36,7 +36,7 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 @view_candidates_1
 
 
-- @rwusp: Who will the <span style="color: #6c1d85;">**Sollists**</span> run?
+- @rwusp: Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
 @rwusp
 on-arrival: 
@@ -45,13 +45,18 @@ Q.conservative_votes = (Q.rwusp_votes/4*3)+(Q.cwusp_votes/10);
 } else {!
 Q.conservative_votes = { Q.rwusp_votes }
 
-- @tory: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Gloria Tory as their candidate.
-- @graf: The <span style="color: #6c1d85;">**Sollists**</span> have chosen Lileas Graf as their candidate.
+- @tory: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Gloria Tory as their candidate.
+- @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
 @tory
 view-if: rwusp_candidate_1953 = "Tory"
 
-The <span style="color: #6c1d85;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
+The <span style="color: #7e0b80;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
+
+@graf
+view-if: rwusp_candidate_1953 = "Graf"
+
+The <span style="color: #7e0b80;">**Sollist wing**</span> will, as expected, run Lileas Graf. Her reputation as the bulwark of hardline <span style="color: #7e0b80;">**Sollism**</span> will make her a difficult opponent for us as well as the <span style="color: #6e377a;">**Moderates**</span>.
 
 
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
@@ -59,15 +64,7 @@ The <span style="color: #6c1d85;">**Sollist wing**</span> will run Speaker Glori
 @cwusp
 go-to: hitler if ((nsdap_votes >= 15 and hindenburg_run) or (nsdap_votes >= 10 and not hindenburg_run)) and hitler_citizen; goring if not hitler_citizen; frick if ((nsdap_votes < 15 and hindenburg_run) or (nsdap_votes < 10 and not hindenburg_run)) and hitler_citizen
 
-@hitler
-on-arrival: {!
-Q.nsdap_candidate_1932 = "Hitler";
-Q.nsdap_candidate_1932_disp = "Adolf Hitler";
-!}
-view-if: not harzburg_unity
-face-image: img/portraits/hitler2.jpg
 
-The <span style="color: #7A3C00;">**NSDAP**</span> will run Adolf Hitler, who is likely to only receive the backing of his own party. [? if hindenburg_run: However, there has been some reluctance on Hitler's part to run against President Hindenburg, with his character commanding great respect throughout all corners of Germany. Furthermore, the second most important leader in the <span style="color: #7A3C00;">**NSDAP**</span>, Gregor Strasser, opposes his candidacy as he believes he cannot defeat Hindenburg, but <span style="color: #7A3C00;">Nazi</span> propagandist Joseph Goebbels argues for it. We suspect that the <span style="color: #7A3C00;">Nazis</span> are putting on a show of indecisiveness, and always had Hitler as as candidate in mind. ?][? if not hindenburg_run: Hitler is somewhat reluctant to run in the election, believing he cannot win outright. However, the propaganda value of putting the charismatic Hitler forward ahead of the local elections has justified the risk. If he were to win, it would likely mean the swift collapse of the Republic—and possibly civil war. ?]
 
 - @communist: We await the decision the <span style="color: #700000;">Communists</span>.
 
