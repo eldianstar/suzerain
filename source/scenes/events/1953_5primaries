@@ -1,34 +1,18 @@
-title: 
+title: <span style="color: #6e377a;">**USP**</span> Presidential Primaries
 subtitle: Should we field our own candidate?
 new-page: true
 on-arrival: {!
 Q.presidential_election_campaigning_seen = 1;
-if (!Q.hitler_deported && Q.hitler_citizen) {
-    Q.nsdap_candidate_1932 = "Hitler";
-    Q.nsdap_candidate_1932_disp = "Adolf Hitler";
+if (nationalism <= 58) {
+    Q.rwusp_candidate_1953 = "Tory";
+    Q.rwusp_candidate_1953_disp = "Gloria Tory";
 } else {
-    Q.nsdap_candidate_1932 = "Göring";
-    Q.nsdap_candidate_1932_disp = "Hermann Göring";
+    Q.rwusp_candidate_1932 = "Graf";
+    Q.rwusp_candidate_1932_disp = "Lileas Graf";
 }
-Q.spd_candidate_1932 = "Braun";
-if (Q.hindenburg_run) {
-    Q.reactionary_candidate_1932 = "Hindenburg";
-    // angry that he is running in the first place
-    Q.hindenburg_angry_bruning += 20;
-}
-Q.communist_candidate_1932 = "Thälmann";
 
-Q.spd_candidate_1932_disp = "Otto Braun";
-if (Q.hindenburg_run) Q.reactionary_candidate_1932_disp = "Paul von Hindenburg";
-Q.communist_candidate_1932_disp = "Ernst Thälmann";
-
-if (Q.nsdap_candidate_1932) {
-    Q.dnvp_candidate_1932 = "Duesterberg";
-    Q.dnvp_candidate_1932_disp = "Theodor Duesterberg";
-}
-!}
 tags: event
-view-if: year = 1932 and month >= 2 and not hindenburg_term_extended
+view-if: year = 1953 and month = 7
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
