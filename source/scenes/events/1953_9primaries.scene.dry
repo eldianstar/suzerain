@@ -540,7 +540,7 @@ if (Q.secondary_reactionary_candidate_1932 == "Luther" || Q.secondary_reactionar
     Q.secondary_reactionary_candidate_1932_ideology = "Centrist";
 }
 
-!}
+}
 
 Hopefully, the <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> coalition is strong enough to rival [+ reactionary_candidate_1932 +][? if secondary_reactionary_candidate_1932:&nbsp;and [+ secondary_reactionary_candidate_1932 +]?].
 
