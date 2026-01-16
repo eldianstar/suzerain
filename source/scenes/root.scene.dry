@@ -911,7 +911,7 @@ for (let i = 0; i <= 100; i++) {
     Q[`flavour_${i}_trigger_time`] = 0;
 }
 
-// all the initial advisors are centrists.
+// clavin and manger are liberals, morgna is a moderate
 Q.clavin_advisor = 1;
 Q.morgna_advisor = 1; 
 Q.manger_advisor = 1; 
