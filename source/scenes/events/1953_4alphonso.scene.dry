@@ -12,6 +12,8 @@ Following the government's inability to combat the ongoing recession, the <span 
 - @new_govt
 
 @new_govt:
+choose-if:  
+unavailable-subtitle: The <span style="color: #6c1d85;">**Conservatives**</span> hate us.
 
 - @new_election
 
