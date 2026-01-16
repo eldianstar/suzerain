@@ -11,7 +11,7 @@ if (nationalism <= 58) {
 }
 
 tags: event
-view-if: year = 1953 and month = 9
+view-if: year == 1953 and month == 9
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
