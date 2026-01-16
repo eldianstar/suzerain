@@ -33,7 +33,7 @@ Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
 Q.year = 1953;
-Q.month = 3;
+Q.month = 5;
 Q.week = 0;
 Q.week_checked = 0;
 // how many actions have been taken this month?
