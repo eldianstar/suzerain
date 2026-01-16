@@ -3,6 +3,7 @@ new-page: true
 subtitle: Should we field our own candidate?
 tags: event
 view-if: year == 1953 and month == 9
+max-visits: 1
 
 on-arrival:
 if (nationalism <= 58 or pro_republic >=65) {
