@@ -32,6 +32,7 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 go-to: rwusp_cand
 
 @rwusp_cand
+on-arrival: 
 if ( nationalism <= 58 ) {
 go-to: tory
 } else {
