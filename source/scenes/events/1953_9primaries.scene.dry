@@ -32,12 +32,8 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 go-to: rwusp_cand
 
 @rwusp_cand
-on-arrival: 
-if ( Q.rwusp_candidate_1953 = "Tory" ) {
 go-to: tory
-} else {
 go-to: graf
-}
 
 Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
