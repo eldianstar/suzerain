@@ -32,10 +32,7 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 go-to: rwusp_cand
 
 @rwusp_cand
-new-page: true
-
 Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
-
 - @tory: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Gloria Tory as their candidate.
 - @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
@@ -44,22 +41,19 @@ view-if: rwusp_candidate_1953 = "Tory"
 face-image: img/portraits/tory.jpg
 
 The <span style="color: #7e0b80;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
+- @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
 @graf
 view-if: rwusp_candidate_1953 = "Graf"
 face-image: img/portraits/graf.jpg
 
 The <span style="color: #7e0b80;">**Sollist wing**</span> will, as expected, run Lileas Graf. Her reputation as the bulwark of hardline <span style="color: #7e0b80;">**Sollism**</span> will make her a difficult opponent for us as well as the <span style="color: #6e377a;">**Moderates**</span>.
-
-
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
 @cwusp
 face-image: img/portraits/rayne.jpg
 
 The <span style="color: #6e377a;">**Moderates**</span> have chosen Anton Rayne as their candidate. A relatively unknown MP that rose to fame after his criticism of President Alphonso, Rayne's charisma will be of great help to the <span style="color: #6e377a;">**Moderates**</span> as well as whoever choses to side with them.
-
-
 - @lwusp: So, what is our decision? Should we run our own candidate?
 
 @lwusp
