@@ -39,7 +39,7 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 
 @rwusp
 on-arrival: 
-if ( Q.nationalism <= 58 or Q.pro_republic >= 65 ) {
+if ( nationalism <= 58 or pro_republic >= 65 ) {
 Q.conservative_votes = (Q.rwusp_votes/4*3)+(Q.cwusp_votes/10);
 } else {
 Q.conservative_votes = { Q.rwusp_votes }
