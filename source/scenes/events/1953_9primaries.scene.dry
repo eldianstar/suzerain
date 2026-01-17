@@ -84,7 +84,7 @@ So, what's our choice?
 title: This is highly controversial within the party!
 subtitle: The future of the Party is at stake, and we are abstaining.
 on-arrival: {
-Q.abstain = 1;
+Q.abstain == 1;
 Q.left_dissent += 15;
 Q.liberal_dissent += 15;
 Q.moderate_dissent += 10;
