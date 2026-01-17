@@ -47,6 +47,11 @@ The <span style="color: #7e0b80;">**Sollist wing**</span> will run Speaker Glori
 
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
+@cwusp
+face-image: img/portraits/rayne.jpg
+go-to: lwusp
+
+The <span style="color: #6e377a;">**Moderates**</span> have chosen Anton Rayne as their candidate. A relatively unknown MP that rose to fame after his criticism of President Alphonso, Rayne's charisma will be of great help to the <span style="color: #6e377a;">**Moderates**</span> as well as whoever choses to side with them.
 
 - @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
@@ -61,6 +66,7 @@ The <span style="color: #7e0b80;">**Sollist wing**</span> will, as expected, run
 
 @cwusp
 face-image: img/portraits/rayne.jpg
+go-to: lwusp
 
 The <span style="color: #6e377a;">**Moderates**</span> have chosen Anton Rayne as their candidate. A relatively unknown MP that rose to fame after his criticism of President Alphonso, Rayne's charisma will be of great help to the <span style="color: #6e377a;">**Moderates**</span> as well as whoever choses to side with them.
 - @lwusp: So, what is our decision? Should we run our own candidate?
