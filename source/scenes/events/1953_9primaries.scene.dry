@@ -83,7 +83,7 @@ So, what's our choice?
 @abstain
 title: This is highly controversial within the party!
 subtitle: The future of the Party is at stake, and we are abstaining.
-on-arrival: {
+on-arrival:
 Q.spd_abstain_1932 = 1;
 Q.left_dissent += 10;
 Q.center_dissent += 10;
