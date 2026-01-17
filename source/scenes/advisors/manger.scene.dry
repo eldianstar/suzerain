@@ -13,20 +13,21 @@ Manger is a businessman and economist and a supporter of the free market, servin
 - @megaproject
 - @root: Return to main
 
-@agriculture
+@development
 title: Investment in underdeveloped areas
-subtitle: Manger is the Minister of Development.
+subtitle: Manger is the Minister of Development (these investments will cost us 1 budget).
 choose-if: advisor_action_timer <= 0 and lwusp_in_government and development_minister_party == "LWUSP"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not lwusp_in_government : The <span style="color: #2b2673;">**Reformists**</span> are not in government. ?][? if development_minister_party != "LWUSP": The <span style="color: #2b2673;">**Reformists**</span> do not have the Ministry of Development. ?]
-on-arrival: advisor_action_timer = 6; economic_growth += 2; rural_lwusp += 3;
+on-arrival: advisor_action_timer = 6; economic_growth += 3; rural_lwusp += 3; budget -= 1;
 
+We have invested in underdeveloped areas.
 
 @megaproject
 title: Railway Megaproject
-subtitle: Construction of a new railway megaproject to stimulate the economy.
-choose-if: advisor_action_timer <= 0
+subtitle: Construction of a new railway megaproject to stimulate the economy (this will cost us 1 budget).
+choose-if: advisor_action_timer <= 0 and lwusp_in_government
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers += 2; unemployed -= 2; economic_growth += 2
+on-arrival: advisor_action_timer = 6; workers += 2; unemployed -= 2; economic_growth += 3; budget -= 1;
 
 We have started building the new railway.
 
