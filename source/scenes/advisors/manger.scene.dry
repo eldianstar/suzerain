@@ -1,13 +1,13 @@
-title: Fritz Baade
+title: Gus Manger
 is-pinned-card: true
-tags: advisor, reformist
-card-image: img/portraits/BaadeFritz.jpg
-view-if: baade_advisor = 1
+tags: advisor, liberal
+card-image: img/portraits/manger.jpg
+view-if: manger_advisor = 1
 new-page: true 
 
-= Fritz Baade
+= Gus Manger
 
-Baade is one of the few agricultural experts in the <span style="color: #c00000;">**SPD**</span>, and an unorthodox economist. [? if land_reform > 0: He currently has considerable support among party factions due to the <span style="color: #c00000;">SPD</span> successfully enacting land reform. ?]
+Manger is a businessman and economist and a member of the 
 
 - @agriculture
 - @rural_campaign
