@@ -38,8 +38,6 @@ Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
 
 - @tory: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Gloria Tory as their candidate.
-- @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
-
 @tory
 go-to: cwusp
 view-if: rwusp_candidate_1953 = "Tory"
@@ -48,6 +46,9 @@ face-image: img/portraits/tory.jpg
 The <span style="color: #7e0b80;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
 
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
+
+
+- @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
 @graf
 go-to: cwusp
