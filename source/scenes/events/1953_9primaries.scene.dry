@@ -33,7 +33,7 @@ go-to: rwusp_cand
 
 @rwusp_cand
 on-arrival: 
-if ( nationalism <= 58 ) {
+if ( rwusp_candidate_1953 = "Tory" ) {
 go-to: tory
 } else {
 go-to: graf
