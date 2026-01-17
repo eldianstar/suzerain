@@ -26,9 +26,13 @@ Some fringe members of our faction's <span style="color: #E3000F;">**Social Demo
 
 Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and the <span style="color: #7e0b80;">**Conservatives**</span> will support in <span class="tooltip-text" title="good game">the primaries</span>.
 
-- @rwusp: Now, let's view the running candidates.
+- @view_candidates: Now, let's view the running candidates.
 
-@rwusp
+@view_candidates
+go-to: rwusp_cand
+
+@rwusp_cand
+new-page: true
 
 Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
