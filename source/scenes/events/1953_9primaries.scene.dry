@@ -84,7 +84,7 @@ So, what's our choice?
 title: This is highly controversial within the party!
 subtitle: The future of the Party is at stake, and we are abstaining.
 on-arrival:
-spd_abstain_1932 = 1;
+abstain = 1;
 left_dissent += 10;
 center_dissent += 10;
 reformist_dissent += 15;
