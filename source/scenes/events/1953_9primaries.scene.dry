@@ -32,7 +32,11 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 go-to: rwusp_cand
 
 @rwusp_cand
+if ( nationalism <= 58 ) {
 go-to: tory
+} else {
+go-to: graf
+}
 
 Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
@@ -41,17 +45,21 @@ Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 - @graf: The <span style="color: #7e0b80;">**Sollists**</span> have chosen Lileas Graf as their candidate.
 
 @tory
+go-to: cwusp
 view-if: rwusp_candidate_1953 = "Tory"
 face-image: img/portraits/tory.jpg
 
 The <span style="color: #7e0b80;">**Sollist wing**</span> will run Speaker Gloria Tory. While not being the most popular choice, she is seen as a more moderate and pragmatic option.
+
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
 @graf
+go-to: cwusp
 view-if: rwusp_candidate_1953 = "Graf"
 face-image: img/portraits/graf.jpg
 
 The <span style="color: #7e0b80;">**Sollist wing**</span> will, as expected, run Lileas Graf. Her reputation as the bulwark of hardline <span style="color: #7e0b80;">**Sollism**</span> will make her a difficult opponent for us as well as the <span style="color: #6e377a;">**Moderates**</span>.
+
 - @cwusp: Who will the <span style="color: #6e377a;">**Moderates**</span> run?
 
 @cwusp
