@@ -1,51 +1,54 @@
-title: Siegfried Aufhäuser
+title: Albin Clavin
 is-pinned-card: true
-tags: advisor, reformist
-card-image: img/portraits/AufhäuserSiegfried.jpg
-view-if: aufhauser_advisor = 1
+tags: advisor, liberal
+card-image: img/portraits/clavin.jpg
+view-if: clavin_advisor = 1
 new-page: true 
 
-= Siegfried Aufhäuser
+= Albin Clavin
 
-Aufhäuser is a leader of the AfA-Bund, the federation of <span style="color: #c00000;">socialist</span> white-collar trade unions.
+Clavin is the leader of the <span style="color: #03c2fc;">**liberal**</span> wing within our faction. He is also a strong supporter of the free market.
 
-- @white_collar
-- @union_unity
-- @crisis
-- @moderate_economic_plan
+- @reformism
+- @funds
+- @rayne
+- @organize
 - @root: Return to main
 
-@white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
+@reformism
+title: Advocate for reform
+subtitle: Increase the popular support for Reformism.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
+on-arrival: advisor_action_timer = 6; pro_republic += 5;
 
-We have increased our organizing among white-collar workers.
+We have increased popular support for the democratic reform of our political system.
 
-@union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+@funds
+title: Raise funds
+view-if: difficulty < 1
+subtitle: An emergency infusion of resources from unknown sources.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; resources += 2
+
+We have gained funds from unknown donors.
+
+@rayne
+title: Negotiate with the president
+view-if: president != "Clavin"
+subtitle: Increase our influence over the President.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
+on-arrival: advisor_action_timer = 6; rayne_influence += 1
 
-We have reduced tensions with the Labor faction.
+We have gained more influence over the current government.
 
-@crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
-choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 5
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
-on-arrival: advisor_action_timer = 6; 
-go-to: crisis_program.support_left 
+@organize
+title: Organize our faction
+subtitle: Decrease dissent and give clear instructions to members of our faction.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; dissent -= 0.1; left_strength -= 3; left_dissent -= 5; liberal_strength += 6; liberal_dissent -= 10; moderate_strength -= 3; moderate_dissent -= 5;
 
-@moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
-choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
-on-arrival: advisor_action_timer = 6
-go-to: crisis_program.support_moderate
-
+We have established a more uniform position within our ranks and slightly decreased dissent.
