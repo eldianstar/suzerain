@@ -32,8 +32,7 @@ Anyhow, let's see who the <span style="color: #6e377a;">**Moderates**</span> and
 go-to: rwusp_cand
 
 @rwusp_cand
-go-to: tory
-go-to: graf
+go-to: tory if ( rwusp_candidate_1953 = "Tory" ); graf if ( rwusp_candidate_1953 = "Graf" )
 
 Who will the <span style="color: #7e0b80;">**Sollists**</span> run?
 
