@@ -1,18 +1,18 @@
-title: Gustav Radbruch
+title: Nia Morgna
 is-pinned-card: true
-tags: advisor
-card-image: img/portraits/RadbruchGustav.jpg
-view-if: radbruch_advisor = 1
+tags: advisor, moderate
+card-image: img/portraits/morgna
+view-if: morgna_advisor = 1
 new-page: true 
 
-= Gustav Radbruch
+= Nia Morgna
 
-Gustav Radbruch is a renowned legal scholar and long-time <span style="color: #c00000;">**SPD**</span> justice minister. [? if judicial_reform >= 2: He currently has considerable support among party factions due to the <span style="color: #c00000;">SPD</span>'s success in judicial reforms. ?]
-
+Morgna is an attorney and the greatest legal expert in our faction. She seeks to reform the legal system and advocates against corruption.
 
 - @judiciary_major
 - @judiciary_minor
 - @constitutional_reform_
+- @organize_women
 - @root: Return to main
 
 
