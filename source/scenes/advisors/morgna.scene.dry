@@ -1,13 +1,13 @@
-title: Otto Braun
+title: Nia Morgna
 is-pinned-card: true
-tags: advisor, reformist
-card-image: img/portraits/BraunOtto.jpg
-view-if: braun_advisor = 1
+tags: advisor, moderate
+card-image: img/portraits/morgna
+view-if: morgna_advisor = 1
 new-page: true 
 
-= Otto Braun
+= Nia Morgna
 
-Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
+Morgna is an attorney and the greatest legal expert in our faction. She seeks to 
 
 - @coalition
 - @coalition_president
