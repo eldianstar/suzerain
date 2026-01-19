@@ -1,13 +1,13 @@
-title: Kurt Schumacher
+title: Edith Agnoc
 is-pinned-card: true
-tags: advisor, neorevisionist
-card-image: img/portraits/SchumacherKurt.jpg
-view-if: schumacher_advisor = 1
+tags: advisor, moderate
+card-image: img/portraits/agnoc.jpg
+view-if: agnoc_advisor = 1
 new-page: true 
 
-= Kurt Schumacher
+= Edith Agnoc
 
-A Great War veteran and a neorevisionist leader, Kurt Schumacher argues for a strong resistance against the <span style="color: #7A3C00;">Nazis</span>.
+A renowned economist and adoptive daughter of President Wisci, Agnoc is the chairwoman of the Central Bank.
 
 - @emergency_fundraising
 - @build_reichsbanner
