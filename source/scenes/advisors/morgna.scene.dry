@@ -41,3 +41,11 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; constitutional_reform_timer -= 12
 go-to: constitutional_reform
 
+@organize_women
+title: Advocate for feminism
+subtitle: Embrace Morgna's moderate version of feminism.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: womens_rights += 1; workers_lwusp += 2*(1-dissent); rural_lwusp += 2*(1-dissent); old_middle_lwusp += 4*(1-dissent); new_middle_lwusp += 2*(1-dissent); advisor_action_timer = 6
+
+Morgna advocates with feminism while taking relatively moderate stances in most other fields. This will make the emancipation of women more palatable to the more conservative sections of society.
