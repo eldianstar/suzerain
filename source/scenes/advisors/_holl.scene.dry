@@ -11,7 +11,7 @@ Symon Holl is a Sordish economist and a member of our <span style="color: #03c2f
 
 - @plan
 - @carry_out_policy
-- @depression
+- @finance_ministry_
 - @root: Return to main
 
 @plan
@@ -25,7 +25,7 @@ go-to: wtb_proposed
 @carry_out_policy
 title: Carry out the economic plan.
 subtitle: Start Holl's privatization plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: #c00000;">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?][? if economic_privatization >= 10 : We have already privatized all sectors of the economy! ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_minister_party != "LWUSP" or not lwusp_in_government : We occupy the Economic ministry. ?][? if economic_privatization >= 10 : We have already privatized all sectors of the economy. ?]
 choose-if: advisor_action_timer <= 0 and economic_minister_party == "LWUSP" and lwusp_in_government and economic_privatization < 10
 on-arrival: advisor_action_timer = 6; pro_republic += 3; budget += 2; economic_privatization += 1;
 go-to: economic_policy
