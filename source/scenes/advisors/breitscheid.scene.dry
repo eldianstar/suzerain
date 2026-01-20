@@ -29,16 +29,16 @@ title: Against <span style="color: #7e0b80;">**Sollism**</span>
 subtitle: Advocate for Republicanism and against <span style="color: #7e0b80;">**Sollism**</span>.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; nationalism -= 5; pro_republic += 3; socialism += 2; rwusp_relation -= 10;
+on-arrival: advisor_action_timer = 6; nationalism -= 5; pro_republic += 3; socialism += 2; bluds_lwusp += 10; rwusp_relation -= 10;
 
 We have expressed ourselves against the cancer that is <span style="color: #7e0b80;">**Sollism**</span>.
 
 
-@snap_election
-title: Snap Election
-subtitle: Call a snap election.
-unavailable-subtitle: [? if chancellor != "Breitscheid" : Breitscheid must be Chancellor. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and chancellor == "Breitscheid"
-on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+@rayne_influence
+title: Influence President Rayne
+subtitle: Because of his close relationship to President Rayne, Wisci can influence him towards our side
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if president != "Rayne" : Anton Rayne isn't the President. ?]
+choose-if: advisor_action_timer == 0; president = "Rayne";
+on-arrival: advisor_action_timer = 6; rayne_influence += 2;
 
-We have called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+We have partly won over President Rayne.
