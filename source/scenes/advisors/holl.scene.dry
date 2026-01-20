@@ -1,13 +1,13 @@
-title: Wladimir Woytinsky
+title: Symon Holl
 is-pinned-card: true
-tags: advisor, labor
-card-image: img/portraits/WoytinskyWladimir.jpg
-view-if: woytinsky_advisor = 1
+tags: advisor, liberal
+card-image: img/portraits/holl.jpg
+view-if: holl_advisor = 1
 new-page: true 
 
 = Wladimir Woytinsky
 
-Wladimir Woytinsky is a Russian <span style="color: #D50032;">Menshevik</span> in exile, and the chief economist of the <span style="color: #c00000;">socialist</span> trade union federation. His primary idea is to use massive government spending as a way of stimulating demand to extricate us from the depression.
+Symon Holl is a Sordish economist and a member of our <span style="color: #03c2fc;">**liberal**</span> wing. He supports massive privatization projects and the free market.
 
 - @plan
 - @carry_out_policy
@@ -15,7 +15,7 @@ Wladimir Woytinsky is a Russian <span style="color: #D50032;">Menshevik</span> i
 - @root: Return to main
 
 @plan
-title: Adopt the WTB-plan!
+title: Embrace Market Liberalism
 subtitle: Convincing the rest of the party to support the WTB-plan.
 choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_concept and black_thursday_seen and ((labor_strength >= center_strength) and (labor_strength >= left_strength)) and wtb_points >= 160
 on-arrival: advisor_action_timer = 6;
@@ -30,12 +30,10 @@ choose-if: advisor_action_timer <= 0 and wtb_adopted and wtb_implemented <= 1 an
 on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
 go-to: economic_policy
 
-
-@depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of the economic crisis.
-choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and black_thursday_seen == 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 5; wtb_points += 15
-
-[? if not wtb_concept: Woytinsky, Tarnow, and Baade, has been working together to draft a plan for getting us out of the depression. Woytinsky canvasses in favor of this policy through the <span style="color: #c00000;">**SPD**</span> and the unions. ?][? if wtb_concept: The WTB-plan, named for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Woytinsky canvasses in favor of this policy through the <span style="color: #c00000;">**SPD**</span> and the unions. ?]
+@finance_ministry_
+title: Fiscal Policy
+subtitle: As Economic Minister, Holl can enact tax policies.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if finance_minister_party != "SPD" : The <span style="color: #c00000;">SPD</span> does not control the finance ministry. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government == 1 and economic_minister_party == "SPD"
+on-arrival: advisor_action_timer = 6;
+go-to: fiscal_policy
