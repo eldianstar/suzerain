@@ -917,8 +917,8 @@ Q.morgna_advisor = 1;
 Q.manger_advisor = 1; 
 
 // left advisors
-Q.wisci.advisor = 0;
-Q.beniwoll.advisor = 0;
+Q.wisci_advisor = 0;
+Q.beniwoll_advisor = 0;
 Q.walda_advisor = 0;
 
 // moderate advisors
