@@ -529,16 +529,16 @@ Q.interior_minister = 'alphonsotwo';
 Q.interior_minister_party = 'LWUSP';
 Q.justice_minister = 'alphonsothree';
 Q.justice_minister_party = 'LWUSP';
-Q.labor_minister = 'alphonsofour';
-Q.labor_minister_party = 'LWUSP';
-Q.reichswehr_minister = 'alphonsofive';
-Q.reichswehr_minister_party = 'LWUSP';
+Q.social_minister = 'alphonsofour';
+Q.social_minister_party = 'LWUSP';
+Q.defense_minister = 'alphonsofive';
+Q.defense_minister_party = 'LWUSP';
 Q.economic_minister = 'alphonsosix';
 Q.economic_minister_party = 'LWUSP';
-Q.finance_minister = 'alphonsoseven';
-Q.finance_minister_party = 'LWUSP';
-Q.agriculture_minister = 'alphonsoeight';
-Q.agriculture_minister_party = 'LWUSP';
+Q.education_minister = 'alphonsoseven';
+Q.education_minister_party = 'LWUSP';
+Q.development_minister = 'alphonsoeight';
+Q.development_minister_party = 'LWUSP';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
