@@ -2,7 +2,7 @@ title: Paskal Beniwoll
 is-pinned-card: true
 tags: advisor, left
 card-image: img/portraits/beniwoll.jpg
-view-if: wissell_advisor = 1
+view-if: beniwoll_advisor = 1
 new-page: true 
 
 = Paskal Beniwoll
