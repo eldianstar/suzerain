@@ -1,7 +1,7 @@
 title: Nia Morgna
 is-pinned-card: true
 tags: advisor, moderate
-card-image: img/portraits/morgna
+card-image: img/portraits/morgna.jpg
 view-if: morgna_advisor = 1
 new-page: true 
 
