@@ -38,7 +38,7 @@ We have expressed ourselves against the cancer that is <span style="color: #7e0b
 title: Influence President Rayne
 subtitle: Because of his close relationship to President Rayne, Wisci can influence him towards our side
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if president != "Rayne" : Anton Rayne isn't the President. ?]
-choose-if: advisor_action_timer == 0 and president == "Rayne";
+choose-if: advisor_action_timer == 0 and president = "Rayne"
 on-arrival: advisor_action_timer = 6; rayne_influence += 2;
 
 We have partly won over President Rayne.
