@@ -16,24 +16,24 @@ Symon Holl is a Sordish economist and a member of our <span style="color: #03c2f
 
 @plan
 title: Embrace Market Liberalism
-subtitle: Convincing the rest of the party to support the WTB-plan.
-choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_concept and black_thursday_seen and ((labor_strength >= center_strength) and (labor_strength >= left_strength)) and wtb_points >= 160
-on-arrival: advisor_action_timer = 6;
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_points < 160 : The WTB Plan is still being ironed out. ?][? if (labor_strength < center_strength or labor_strength < left_strength): The labor faction is not strong enough. ?]
+subtitle: Convincing the rest of the party to support market liberalism.
+choose-if: advisor_action_timer <= 0 and ((liberal_strength >= moderate_strength) and (liberal_strength >= left_strength) and (lwusp_votes >= (cwusp_votes + rwusp_votes)) and (pro_republic >= 65))
+on-arrival: advisor_action_timer = 6; pro_republic += 3;
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if (liberal_strength < moderate_strength or liberal_strength < left_strength): The liberal wing is not strong enough. ?][? if (lwusp_votes < (cwusp_votes + rwusp_votes)): We are not strong enough to convince the Party. ?]
 go-to: wtb_proposed
 
 @carry_out_policy
 title: Carry out the economic plan.
-subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: #c00000;">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?]
-choose-if: advisor_action_timer <= 0 and wtb_adopted and wtb_implemented <= 1 and economic_minister_party == "SPD" or finance_minister_party == "SPD" and spd_in_government
-on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
+subtitle: Start Holl's privatization plan.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: #c00000;">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?][? if economic_privatization >= 10 : We have already privatized all sectors of the economy! ?]
+choose-if: advisor_action_timer <= 0 and economic_minister_party == "LWUSP" and lwusp_in_government and economic_privatization < 10
+on-arrival: advisor_action_timer = 6; pro_republic += 3; budget += 2; economic_privatization += 1;
 go-to: economic_policy
 
 @finance_ministry_
 title: Fiscal Policy
-subtitle: As Economic Minister, Holl can enact tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if finance_minister_party != "SPD" : The <span style="color: #c00000;">SPD</span> does not control the finance ministry. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government == 1 and economic_minister_party == "SPD"
+subtitle: As Economics Minister, Holl can enact tax policies.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if lwusp_in_government = 0 : We are not in government: ?] [? if economic_minister_party != "LWUSP" : We do not control the finance ministry. ?]
+choose-if: advisor_action_timer == 0 and lwusp_in_government == 1 and economic_minister_party == "LWUSP"
 on-arrival: advisor_action_timer = 6;
 go-to: fiscal_policy
