@@ -11,6 +11,7 @@ Beniwoll is a popular writer and activist for better living conditions of the po
 
 - @labor_rights_
 - @health_affairs_
+- @welfare
 - @workers_popularity
 - @root: Return to main
 
@@ -24,6 +25,15 @@ go-to: labor_rights
 
 @health_affairs_
 title: To do.
+
+@welfare
+title: Invest in aid organizations
+subtitle: -1 resources
+choose-if: resources > 0 and advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
+on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent); advisor_action_timer = 6; left_strenght += 3;
+
+We have increased funding to welfare organizations.
 
 @workers_popularity
 title: Rally with the working class.
