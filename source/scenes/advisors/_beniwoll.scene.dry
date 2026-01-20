@@ -1,0 +1,35 @@
+title: Paskal Beniwoll
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/beniwoll.jpg
+view-if: wissell_advisor = 1
+new-page: true 
+
+= Paskal Beniwoll
+
+Beniwoll is a popular writer and activist for better living conditions of the poor. He played a crucial role in social security reforms under President Alphonso, but has since become more critical of the free market.
+
+- @labor_rights_
+- @health_affairs_
+- @workers_popularity
+- @root: Return to main
+
+@labor_rights_
+title: Labor Rights
+subtitle: As Minister of Health and Social Affairs, Beniwoll can help set regulations for working conditions.
+choose-if: advisor_action_timer <= 0 and lwusp_in_government and social_minister_party = "LWUSP"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if social_minister_party != "LWUSP" : We do not control the Social Affairs Ministry. ?]
+on-arrival: advisor_action_timer = 6; labor_rights_timer -= 10; last_advisor_action = 1
+go-to: labor_rights
+
+@health_affairs_
+title: To do.
+
+@workers_popularity
+title: Rally with the working class.
+subtitle: Increase our popularity among the working and rural classes through literary means and union cooperation.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_strength += 5; workers_lwusp += 4; old_middle_lwusp -= 2; socialism += 2;
+
+We have gained a better reputation among the poorer segments of society.
