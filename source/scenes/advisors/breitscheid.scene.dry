@@ -1,45 +1,37 @@
-title: Rudolf Breitscheid
+title: Deivid Wisci
 is-pinned-card: true 
-tags: advisor, centrist
-card-image: img/portraits/BreitscheidRudolf.jpg
+tags: advisor, left
+card-image: img/portraits/wisci.jpg
 new-page: true
-view-if: breitscheid_advisor = 1
+view-if: wisci_advisor = 1
 
-= Rudolf Breitscheid
+= Deivid Wisci
 
-Breitscheid is a long-time <span style="color: #c00000;">**SPD**</span> leader, who was at one time part of the anti-war <span style="color: #D47B9B;">**USPD**</span>. He came from a working-class family, but has a doctorate degree and started his political career as a liberal.
+Deivid Wisci is the son of Artor Wisci, the first President of Sordland, as well as an experienced diplomat. He is very controversial within the <span style="color: #6e377a;">**USP**</span> due to his opposition to <span style="color: #6e377a;">**Sollism**</span> and long time support of human rights, <span style="color: #c00000;">Social Democracy</span> and republicanism. 
 
-- @breitscheid_international
+
 - @breitscheid_foreign
-- @party_discipline
-- @snap_election
+- @antisollism
+- @rayne
 - @root: Return to main
-
-@breitscheid_international
-title: International Party Relations
-subtitle: Breitscheid is one of our contacts with international <span style="color: #c00000;">socialist</span> parties.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
-go-to: international_relations
 
 @breitscheid_foreign
 title: Foreign Policy
-subtitle: As Foreign Minister, Breitscheid can set our foreign policy.
-unavailable-subtitle: [? if not spd_in_government: The <span style="color: #c00000;">SPD</span> is not in government. ?] [? if foreign_minister_party != "SPD" : The <span style="color: #c00000;">SPD</span> does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_party == "SPD"
-on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8; last_advisor_action = 1
+subtitle: As Foreign Minister, Wisci can set our foreign policy.
+unavailable-subtitle: [? if not lwusp_in_government: We are not in government. ?] [? if foreign_minister_party != "LWUSP" : We do not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0 and lwusp_in_government and foreign_minister_party == "LWUSP"
+on-arrival: advisor_action_timer = 6;
 go-to: foreign_policy
 
 
-@party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+@antisollism
+title: Against <span style="color: #7e0b80;">**Sollism**</span>
+subtitle: Advocate for Republicanism and against <span style="color: #7e0b80;">**Sollism**</span>.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left_dissent -= 5; labor_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+on-arrival: advisor_action_timer = 6; nationalism -= 5; pro_republic += 3; socialism += 2; rwusp_relation -= 10;
 
-We have enforced party discipline to reduce dissent across all factions.
+We have expressed ourselves against the cancer that is <span style="color: #7e0b80;">**Sollism**</span>.
 
 
 @snap_election
