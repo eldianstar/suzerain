@@ -25,9 +25,9 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 6*(1-dissent); workers_spd -= (1-dissent) if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers += 2 if ( left_strenght >= liberal_strenght and socialism >= 45)
+on-arrival: workers_spd += 6*(1-dissent); workers_spd -= (1-dissent) if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers += 2 if ( left_strenght >= liberal_strenght and socialism >= 45); workers -= 3 ( 
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?]
+We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][??]
 
 @new_middle
 subtitle: -1 resources
@@ -43,7 +43,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; 
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the old middle class.
 
 @rural
 subtitle: -1 resources
