@@ -17,7 +17,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
 - @rural: Rural workers and small farmers.
 - @unemployed: The unemployed.
-- @bluds: The Blud minority in Bergia
+- @bluds: The Bludish minority in Bergia, the traditional voter base of the 
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
@@ -25,15 +25,15 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 6*(1-dissent); workers_spd -= (1-dissent) if unemployed >= 20; workers_spd -= 1 if unemployed >= 30; workers += 2 if ( left_strenght >= liberal_strenght and socialism >= 45); workers -= 3 ( 
+on-arrival: workers_lwusp += 6*(1-dissent); workers_lwusp -= (1-dissent) if unemployed >= 20; workers_lwusp -= 1 if unemployed >= 30; workers += 2 if ( left_strenght >= liberal_strenght and socialism >= 45); workers -= 3 if ( left_strenght < liberal_strenght and socialism < 45 ) 
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][??]
+We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if left_strenght < liberal_strenght and socialism < 45 : We should adopt a more <span style="color: #c00000;">socialist</span> agenda to please the workers. ?]
 
 @new_middle
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent); resources -= 1;
+on-arrival: new_middle_lwusp += 6*(1-dissent); resources -= 1;
 
 We have increased our campaigning among the new middle class.
 
@@ -41,31 +41,31 @@ We have increased our campaigning among the new middle class.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; 
+on-arrival: old_middle_lwusp += 6*(1-dissent); resources -= 1; old_middle_lwusp -= 3 if ( liberal_strenght <= left_strenght )
 
-We have increased our campaigning among the old middle class.
+We have increased our campaigning among the old middle class. [? if liberal_strenght <= left_strenght : We should adopt a more <span style="color: #03c2fc;">**liberal**</span> agenda to please them. ?]
 
 @rural
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
+on-arrival: rural_lwusp += 6*(1-dissent); resources -= 1; rural_lwusp -= 3 if ( nationalism >= 45 ); rural_lwusp -= 1 if ( nationalism >= 60 )
 
-We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+We have increased our campaigning among farmers. [? if nationalism >= 45 : The widespread support of <span style="color: #7e0b80;">**Sollism**</span> among the rural populace makes our campaign more difficult. ?]
 
 @unemployed
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd -= 2 if unemployed >= 30; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
+on-arrival: unemployed_lwusp += 6*(1-dissent); resources -= 1; unemployed_lwusp -= 3 if welfare < 0; unemployed_lwusp -= 2 if unemployed >= 30; unemployed_lwusp += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?]
 
-@catholics
+@bluds
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 view-if: peoples_party == 1
-on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
+on-arrival: bluds_lwusp += 6*(1-dissent); resources -= 1; bluds_lwusp -= 3 if ( bludish_rights <= 2 ); bluds_lwusp -= 3 if ( bludish_rights = 0 ); bluds_lwusp += 3 if ( bludish_rights >= 4 )
 
-We have increased our campaigning among Catholics.
+We have increased our campaigning among Bluds. [? if bludish_rights <= 2 : Our past actions against the Bluds make our campaign significantly more difficult. ?][? if bludish_rights >= 4 : Our campaign is greatly helped by our pro-Bludish stance. ?]
