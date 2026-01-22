@@ -1432,3 +1432,4 @@ go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 Q.abstain = 0
 Q.economic_privatization = 5
 Q.bludish_rights = 2
+Q.enemies = 0
