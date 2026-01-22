@@ -13,10 +13,10 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @radicals: The parties of the far <span style="color: #000000;">right</span> and <span style="color: #c00000;">left</span>, the <span style="color: #000000;">NFP</span> and the <span style="color: #c00000;">CPS</span>.
-- @nfp_soll: The conservative and reactionary right of the <span style="color: #000000;">NFP</span> and <span style="color: #7e0b80;">**Sollists**</span>.
-- @nfp: The <span style="color: #000000;">NFP</span> alone.
-- @socialists: The <span style="color: #c00000;">socialist</span> parties, <span style="color: #c00000;">CPS</span> and the <span style="color: #ffd000;">WPB</span>.
+- @radicals: The parties of the far <span style="color: #000000;">**right**</span> and <span style="color: #c00000;">**left**</span>, the <span style="color: #000000;">**NFP**</span> and the <span style="color: #c00000;">**CPS**</span>.
+- @nfp_soll: The conservative and reactionary right of the <span style="color: #000000;">**NFP**</span> and <span style="color: #7e0b80;">**Sollists**</span>.
+- @nfp: The <span style="color: #000000;">**NFP**</span> alone.
+- @socialists: The <span style="color: #c00000;">**socialist**</span> parties, <span style="color: #c00000;">**CPS**</span> and the <span style="color: #ffd000;">**WPB**</span>.
 - @bourgeois: The <span style="color: #03c2fc;">**liberals**</span> of the <span style="color: #03c2fc;">**PFJP**</span>.
 - @easy_discard
 
@@ -28,17 +28,17 @@ Attacking the the extremes is popular in our faction, especially among the <span
 @nfp_soll
 on-arrival: enemies = "nfp_soll"; liberal_strength += 2; left_strength += 3; moderate_dissent += 10; cps_relation += 5; wpb_relation += 5; pfjp_relation += 5; cwusp_relation -= 5; rwusp_relation -= 10;
 
-Attacking the <span style="color: #7e0b80;">far</span>-<span style="color: #000000;">right</span> is popular among the entire party.
+Attacking the <span style="color: #7e0b80;">**far**</span>-<span style="color: #000000;">**right**</span> is popular among progressives-
 
 @nfp
 on-arrival: enemies = "nfp"; left_strength += 5; liberal_strength += 5; pfjp_relation += 5; wpb_relation += 5; cps_relation += 5;
 
-Attacking the <span style="color: #000000;">NFP</span> is very popular in our faction.
+Attacking the <span style="color: #000000;">**NFP**</span> is very popular in our faction.
 
 @socialists
 on-arrival: enemies = "socialists"; moderate_strength += 5; liberal_strength += 5; left_dissent += 10; cps_relation -= 10; wpb_relation -= 10; pfjp_relation += 5; cwusp_relation += 5; rwusp_relation += 5;
 
-Attacking the <span style="color: #c00000;">socialists</span> is popular among all faction but the leftists.
+Attacking the <span style="color: #c00000;">**socialists**</span> is popular among all faction but the leftists.
 
 @bourgeois
 on-arrival: enemies = "bourgeois"; left_strength += 8; moderate_strength += 8; liberal_dissent += 15; old_middle_lwusp -= 10;
