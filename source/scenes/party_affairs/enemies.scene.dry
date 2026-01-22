@@ -21,7 +21,7 @@ In our media and campaign materials, who should we consider as our main opponent
 - @easy_discard
 
 @radicals
-on-arrival: enemies = "radicals"; liberal_strength += 5; workers_lwusp -= 1; rural_lwusp; new_middle_lwusp += 1; old_middle_lwusp += 1; nfp_relation -= 10; cps_relation -= 10; wpb_relation -= 5;
+on-arrival: enemies = "radicals"; liberal_strength += 5; workers_lwusp -= 1; rural_lwusp -= 1; new_middle_lwusp += 1; old_middle_lwusp += 1; nfp_relation -= 10; cps_relation -= 10; wpb_relation -= 5;
 
 Attacking the the extremes is popular in our faction, especially among the <span style="color: #03c2fc;">**liberals**</span>.
 
