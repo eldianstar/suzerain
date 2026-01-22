@@ -27,6 +27,7 @@ Attacking the the extremes is popular in our faction, especially among the <span
 
 @nfp_soll
 on-arrival: enemies = "nfp_soll"; liberal_strength += 2; left_strength += 3; moderate_dissent += 10; cps_relation += 5; wpb_relation += 5; pfjp_relation += 5; cwusp_relation -= 5; rwusp_relation
+
 Attacking the <span style="color: #7e0b80;">far</span>-<span style="color: #000000;">right</span> is popular among the entire party.
 
 @nfp
