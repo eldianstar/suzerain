@@ -14,7 +14,7 @@ The <span style="color: #2b2673;">**Reformist**</span> faction torn between many
 
 [? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
 
-- @left: We should fight for the rights of the poor and oppressed and embrace <span style="color: #c00000;">Social Democracy</span>.
+- @left: We should fight for the rights of the poor and oppressed and embrace <span style="color: #c00000;">**Social Democracy**</span>.
 - @liberal: Alphonsian <span style="color: #03c2fc;">**Market Liberalism**</span> remains our best way to democratic reform.
 - @moderate: We should adopt a <span style="color: #6e377a;">**moderate**</span> position and work with the rest of the <span style="color: #6e377a;">**USP**</span> to guarantee stability.
 - @easy_discard
