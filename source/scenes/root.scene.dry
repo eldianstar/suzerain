@@ -549,6 +549,19 @@ Q.unemployment_insurance_seen = 0;
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 
+// SUZERAIN MODIFIERS
+
+Q.abstain = 0;
+Q.economic_privatization = 5;
+Q.bludish_rights = 2;
+Q.peoples_front = 0;
+Q.united_usp = 0;
+Q.wpb_opinion_improv = 0;
+Q.wpb_apologized = 0;
+Q.is_in_usp = 1;
+Q.usp_exists = 1;
+
+
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
@@ -1426,15 +1439,5 @@ audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-Q.abstain = 0;
-Q.economic_privatization = 5;
-Q.bludish_rights = 2;
-Q.peoples_front = 0;
-Q.united_usp = 0;
-Q.wpb_opinion_improv = 0;
-Q.wpb_apologized = 0;
-Q.is_in_usp = 1;
-Q.usp_exists = 1;
 
 = 1928
-
