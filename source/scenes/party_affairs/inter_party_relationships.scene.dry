@@ -14,8 +14,7 @@ The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Be
 - @liberals: Strengthen our bonds with the [? if pfjp_leader == "Ricter": market liberal ?][? if pfjp_leader == "Suheil": social democratic ?] <span style="color: #03c2fc;">**PFJP**</span>.
 - @socialists: Open dialogue with the socialist [? if peoples_front == 0 : <span style="color: #c00000;">**CPS**</span> and <span style="color: #ffd000;">**WPB**</span> ?][? if peoples_front == 1 : <span style="color: #c00000;">**People's Front**</span> ?].
 - @usp: Strengthen our bonds with the other factions of the <span style="color: #6e377a;">**USP**</span>.
-- @sollists: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-- @president: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
+- @sollists: Reconcile with the with the <span style="color: #7e0b80;">**Sollists**</span>.
 - @pfjp_socdem: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
 - @nfp: Open dialogue with [? if dnvp_leader != "Lambach": Treviranus and the <span style="color: #0087DC;">People's Conservatives</span>?][? if dnvp_leader == "Lambach": Lambach and the <span style="color: #6D5298;">Christian Socials</span>?] of the <span style="color: #3E88B3;">**DNVP**</span>.
 - @nsdap: Establish contact with Strasser and the <span style="color: #7A3C00;">Nazi Party</span>'s left wing.
