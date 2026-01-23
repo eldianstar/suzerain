@@ -1437,3 +1437,4 @@ Q.united_usp = 0
 Q.wpb_opinion_improv = 0
 Q.wpb_apologized = 0
 Q.is_in_usp = 1
+Q.usp_exists = 1
