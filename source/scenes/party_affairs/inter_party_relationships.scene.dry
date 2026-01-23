@@ -13,7 +13,7 @@ The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Be
 
 - @liberals: Strengthen our bonds with the [? if pfjp_leader == "Ricter": market liberal ?][? if pfjp_leader == "Suheil": social democratic ?] <span style="color: #03c2fc;">**PFJP**</span>, our longtime ally.
 - @socialists: Open dialogue with the socialist [? if peoples_front == 0 : <span style="color: #c00000;">**CPS**</span> and <span style="color: #ffd000;">**WPB**</span> ?][? if peoples_front == 1 : <span style="color: #c00000;">**People's Front**</span> ?].
-- @usp: [? if is_in_usp = 1 : Strengthen our bonds with the other factions of the <span style="color: #6e377a;">**USP**</span>. ?][? if is_in_usp = 0 : Reconcile with the <span style="color: #6e377a;">**USP**</span>. ?]
+- @usp: [? if is_in_usp == 1 : Strengthen our bonds with the other factions of the <span style="color: #6e377a;">**USP**</span>. ?][? if is_in_usp == 0 : Reconcile with the <span style="color: #6e377a;">**USP**</span>. ?]
 - @sollists: Reconcile with the with the <span style="color: #7e0b80;">**Sollists**</span>.
 - @nfp: Establish contact with the <span style="color: #000000;">**NFP**</span>. 
 - @lwusp_alone: The <span style="color: #2b2673;">**Reformists**</span> can stand alone for now.
