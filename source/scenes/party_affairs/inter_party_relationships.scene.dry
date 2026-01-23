@@ -11,11 +11,11 @@ card-image: img/weimar_coalition_2.jpg
 
 The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties. [? if cvp_formed: However the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span> has only really made cooperation with the <span style="color: #D3C24D;">liberals</span> possible. ?] We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the [? if pfjp_leader == "Ricter": market liberal ?][? if pfjp_leader == "Suheil": social democratic ?] <span style="color: #03c2fc;">**PFJP**</span>.
+- @liberals: Strengthen our bonds with the [? if pfjp_leader == "Ricter": market liberal ?][? if pfjp_leader == "Suheil": social democratic ?] <span style="color: #03c2fc;">**PFJP**</span>, our longtime ally.
 - @socialists: Open dialogue with the socialist [? if peoples_front == 0 : <span style="color: #c00000;">**CPS**</span> and <span style="color: #ffd000;">**WPB**</span> ?][? if peoples_front == 1 : <span style="color: #c00000;">**People's Front**</span> ?].
 - @usp: [? if is_in_usp = 1 : Strengthen our bonds with the other factions of the <span style="color: #6e377a;">**USP**</span>. ?][? if is_in_usp = 0 : Reconcile with the <span style="color: #6e377a;">**USP**</span>. ?]
 - @sollists: Reconcile with the with the <span style="color: #7e0b80;">**Sollists**</span>.
-- @nfp: Establish contact with the **NFP**. 
+- @nfp: Establish contact with the <span style="color: #000000;">**NFP**</span>. 
 - @lwusp_alone: The <span style="color: #2b2673;">**Reformists**</span> can stand alone for now.
 - @easy_discard
 
@@ -26,7 +26,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; pfjp_relation += 8
 
-We have improved our relation with the <span style="color: #03c2fc;">**PFJP**</span>, our longtime ally.
+We have improved our relation with the <span style="color: #03c2fc;">**PFJP**</span>.
 
 @socialists
 subtitle: -1 resources
@@ -49,7 +49,7 @@ The <span style="color: #c00000;">**Left**</span> demands an apology from us for
 on-arrival: moderate_dissent += 12; moderate_strength -= 2; left_dissent -= 6; left_strength += 5; wpb_apologized = 1; nfp_relation -= 20; rwusp_relation -= 15; wpb_relation += 15; bluds_lwusp += 30; rural_lwusp -= 10
 
 We have chosen to apologize for the <span style="color: #6e377a;">**USP**</span> oppression of the Bluds.
-This leads to tensions with the moderates within our party, and criticism from the <span style="color: #7e0b80;">**Sollists**</span> and **NFP**.
+This leads to tensions with the moderates within our party, and criticism from the <span style="color: #7e0b80;">**Sollists**</span> and <span style="color: #000000;">**NFP**</span>.
 
 @no_history
 on-arrival: wpb_relation -= 15; cps_relation -= 4; pfjp_relation -= 4; moderate_strength += 5; left_dissent += 10; liberal_dissent += 5; nfp_relation += 5; rwusp_relation += 7; bluds_lwusp -= 30
@@ -80,7 +80,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; nfp_relation += 1; left_dissent += 10; liberal_dissent += 10;
 
-The **NFP** hates us and we hate them. It is unclear what exactly there is to gain from such a move.
+The <span style="color: #000000;">**NFP**</span> hates us and we hate them. It is unclear what exactly there is to gain from such a move.
 
 @lwusp_alone
 
