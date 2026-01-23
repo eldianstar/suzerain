@@ -15,24 +15,28 @@ The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Be
 - @socialists: Open dialogue with the socialist [? if peoples_front == 0 : <span style="color: #c00000;">**CPS**</span> and <span style="color: #ffd000;">**WPB**</span> ?][? if peoples_front == 1 : <span style="color: #c00000;">**People's Front**</span> ?].
 - @usp: Strengthen our bonds with the other factions of the <span style="color: #6e377a;">**USP**</span>.
 - @sollists: Reconcile with the with the <span style="color: #7e0b80;">**Sollists**</span>.
-- @pfjp_socdem: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
-- @nfp: Open dialogue with [? if dnvp_leader != "Lambach": Treviranus and the <span style="color: #0087DC;">People's Conservatives</span>?][? if dnvp_leader == "Lambach": Lambach and the <span style="color: #6D5298;">Christian Socials</span>?] of the <span style="color: #3E88B3;">**DNVP**</span>.
-- @nsdap: Establish contact with Strasser and the <span style="color: #7A3C00;">Nazi Party</span>'s left wing.
-- @lwusp_alone: The <span style="color: #c00000;">SPD</span> can stand alone for now.
+- @nfp: Establish contact with the **NFP**. 
+- @lwusp_alone: The <span style="color: #2b2673;">**Reformists**</span> can stand alone for now.
 - @easy_discard
 
 
-@kpd
+@liberals
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectifed_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+on-arrival: resources -= 1; pfjp_relation += 10;
 
-@kpd_1
-on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2 if z_ideology == "Right"; dvp_relation -= 3; ddp_relation -= 2; lvp_relation -= 3
+We have improved our relation with the <span style="color: #03c2fc;">**PFJP**</span>.
 
-The <span style="color: #700000;">communists</span> are suspicious of our overtures, especially the <span style="color: #8B0000;">Stalinist</span> leadership, who persist in calling us "<span style="color: #c00000;">social</span> <span style="color: #7A3C00;">fascists</span>". However, connections are made at the grassroots and local levels.
+@socialists
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; cps_relation += 10; wpb_relation += 10; wpb_opinion_improv += 1;
+go-to: wpb_apologize if ( wpb_opinion_improv >= 2 )
+
+We have improved our relation with the <span style="color: #c00000;">**CPS**</span> and <span style="color: #ffd000;">**WPB**</span>.
+
 
 @kpd_rectification_of_history
 
