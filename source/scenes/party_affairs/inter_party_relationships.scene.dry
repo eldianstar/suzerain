@@ -58,7 +58,6 @@ We have chosen not to apologize for the oppression of the Bluds. After all, what
 
 @usp
 subtitle: -1 resources
-view-if: united_usp = 0 and usp_exists = 1
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; rwusp_relation += 4; cwusp_relation += 7; moderate_dissent -= 10
@@ -67,7 +66,6 @@ on-arrival: resources -= 1; rwusp_relation += 4; cwusp_relation += 7; moderate_d
 
 @sollists
 subtitle: -1 resources
-view-if: usp_exists = 1
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; rwusp_relation += 10; left_dissent += 7; moderate_strength += 5; moderate_dissent -= 10
