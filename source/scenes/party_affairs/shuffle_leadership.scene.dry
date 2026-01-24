@@ -287,7 +287,7 @@ go-to: advisor_menu
 Nia Morgna is now an advisor.
 
 @add_agnoc
-title: Edith Agnc
+title: Edith Agnoc
 subtitle: A renowned economist and adoptive daughter of President Wisci, Agnoc is the chairwoman of the Central Bank. {!<br><br>!}[? if difficulty < 0 : Actions - Mint money, Negotiate with businesses, Adressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/agnoc.jpg
