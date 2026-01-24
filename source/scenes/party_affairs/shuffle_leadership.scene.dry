@@ -221,7 +221,7 @@ Paskal Beniwoll is now an advisor.
 
 @add_wisci
 title: Deivid Wisci
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer. {!<br><br>!}[? if difficulty < 0 : Actions - Foreign Policy, Antisollism, Influence Rayne ?]
+subtitle: Deivid Wisci is the son of Artor Wisci, the first President of Sordland, as well as an experienced diplomat. He is very controversial within the USP due to his opposition to Sollism and long time support of human rights, social democracy and republicanism. {!<br><br>!}[? if difficulty < 0 : Actions - Foreign Policy, Antisollism, Influence Rayne ?]
 is-card: true
 card-image: img/portraits/wisci.jpg
 tags: left_advisor
