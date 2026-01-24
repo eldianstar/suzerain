@@ -197,7 +197,7 @@ view-if: n_advisors < 3
 
 @add_walda
 title: Ciara Walda
-subtitle: Walda is an academician and staunch supporter of feminism and education reforms. She's one of the greatest detractors of <span style="color: #7e0b80;">**Sollism**</span>. {!<br><br>!}[? if difficulty < 0 : Actions - Education Policy, Aid Organizations, Promote Feminism ?]
+subtitle: Walda is an academician and staunch supporter of feminism and education reforms. She's one of the greatest detractors of Sollism. {!<br><br>!}[? if difficulty < 0 : Actions - Education Policy, Aid Organizations, Promote Feminism ?]
 is-card: true
 card-image: img/portraits/walda.jpg
 tags: left_advisor
