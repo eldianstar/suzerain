@@ -24,7 +24,7 @@ Resources available: [+ resources +]
 [? if in_usp_coalition and lwusp_in_government: <span style="color: #6e377a;">**USP**</span> government ?]
 [? if bruning_time and lwusp_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
 
-[? if bruning_time and president == "Hindenburg": Hindenburg's approval: [+ hindenburg_angry_bruning : hindenburg_angry_bruning +] ?]
+[? if rubicon and president == "Rayne": Hawker's approval: [+ hawker_angry_rayne : hawker_angry_rayne +] ?]
 
 [? if lwusp_government_burden_seen: Government Goals: [? if goal_lwusp_cancel == 0: [+ goal_lwusp_total +]?][? if goal_lwusp_cancel >= 1: Failed?] / 2 completed, due in [+ lwusp_government_burden_timer +] months ?]
 
@@ -47,14 +47,13 @@ Chief of Staff: [? if chancellor_party == "CWUSP": <span style="color: #6e377a;"
 
 Reichstag composition:
 
-# 1928: 30, 1930: 25, 1932: 22
 
-[? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_r +]% ?]
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
-# 1928: 15, 1930: 15, 1932: 
-[? if started: [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]?][? if not started: <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></span> ?]: [+ z_r +]%
-# 1928: 10, 1930: 13
+[? if is_in_usp : <span class="tooltip-text" title="Reformist wing of the United Sordland Party" style="color: #2b2673;">**Reformists (USP)**</span> ?][? if is_in_usp == 0 : <span class="tooltip-text" title="Sordish Reformist Party" style="color: #2b2673;">**SRP**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ lwusp_r +]%
+
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span> ?]: [+ cwusp_r +]%
+
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span> ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ rwusp_r +]%
+
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
 [? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_r +]% ?]
