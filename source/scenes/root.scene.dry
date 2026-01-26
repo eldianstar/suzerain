@@ -560,7 +560,7 @@ Q.wpb_apologized = 0;
 Q.is_in_usp = 1;
 Q.vp_person = "Vacant"
 Q.vp_party = "Vacant"
-
+Q.in_usp_coalition = 1
 
 
 
