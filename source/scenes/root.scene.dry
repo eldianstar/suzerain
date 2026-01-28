@@ -535,6 +535,21 @@ Q.unemployment_insurance_seen = 0;
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 
+// SUZERAIN MODIFIERS
+
+Q.abstain = 0;
+Q.economic_privatization = 5;
+Q.bludish_rights = 2;
+Q.peoples_front = 0;
+Q.wpb_opinion_improv = 0;
+Q.wpb_apologized = 0;
+Q.is_in_usp = 1;
+Q.usp_exists = 1;
+Q.united_usp = 0;
+Q.vp_person = 'Vacant';
+Q.vp_party = 'Vacant';
+Q.hawker_angry_rayne = 0;
+
 
 
 
