@@ -546,8 +546,8 @@ Q.wpb_apologized = 0;
 Q.is_in_usp = 1;
 Q.usp_exists = 1;
 Q.united_usp = 0;
-Q.vp_person = 'Vacant';
-Q.vp_party = 'Vacant';
+Q.vp_person = "Vacant";
+Q.vp_party = "Vacant";
 Q.hawker_angry_rayne = 0;
 
 
