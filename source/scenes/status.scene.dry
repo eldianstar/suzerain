@@ -48,22 +48,22 @@ Reichstag composition:
 # 1928: 30, 1930: 25, 1932: 22
 
 [? if is_in_usp : <span class="tooltip-text" title="Reformist wing of the United Sordland Party" style="color: #2b2673;">**Reformists (USP)**</span> ?][? if is_in_usp == 0 : <span class="tooltip-text" title="Sordish Reformist Party" style="color: #2b2673;">**SRP**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ lwusp_r +]%
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: [+ cwusp_r +]% ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: [+ rwusp_r +]% ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: [+ rwusp_r +]% ?]
+<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [+ pfjp_r +]%
+[? if peoples_front == 0 : <span class="tooltip-text" title="Communist Party of Sordland" style="color: #c00000;">**CPS**</span>: [+ cps_r +]% ?][? if peoples_front : <span class="tooltip-text" title="United People's Front" style="color: #c00000;">**UPF**</span>: [+ cps_r +]% ?]
+[? if peoples_front == 0: <span class="tooltip-text" title="Worker's Party of Bludia" style="color: #ffd000;">**WPB**</span>: [+ wpb_r +]% ?]
+<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [+ nfp_r +]%
 
-[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span> ?]: [+ cwusp_r +]%
-
-[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span> ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ rwusp_r +]%
-
-[? if spd_in_government = 1 : Budget: [+ budget +] ?]
+[? if lwusp_in_government = 1 : Budget: [+ budget +] ?]
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
-
-Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +][? if rubicon:, Week [+ next_election_week_prussia +] ?] ?][? if prussia_leader == "Papen" or prussia_leader == "Schleicher": postponed indefinitely ?]
 
 = Economics
 
 Inflation: [+ inflation_2 +]%
 
-[? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
+Unemployment: [+ unemployed_2 +]%
 
 Economic growth: [+ economic_growth_2 +]%
 
