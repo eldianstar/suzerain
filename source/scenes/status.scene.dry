@@ -24,7 +24,6 @@ Resources available: [+ resources +]
 [? if in_usp_coalition and lwusp_in_government: <span style="color: #6e377a;">**USP**</span> government ?]
 [? if bruning_time and lwusp_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
 
-[? if rubicon and president == "Rayne": Hawker's approval: [+ hawker_angry_rayne : hawker_angry_rayne +] ?]
 
 [? if lwusp_government_burden_seen: Government Goals: [? if goal_lwusp_cancel == 0: [+ goal_lwusp_total +]?][? if goal_lwusp_cancel >= 1: Failed?] / 2 completed, due in [+ lwusp_government_burden_timer +] months ?]
 
