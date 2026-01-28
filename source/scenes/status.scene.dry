@@ -20,7 +20,7 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-[? if is_in_usp == 0 : <span style="color: #2b2673;">**SRP**</span>?][? if is_in_usp : <span style="color: #2b2673;">**Reformists (USP)**</span>?] position: [? if lwusp_toleration : toleration ?][? if lwusp_in_government : in government - ?][? if lwusp_toleration == 0 and lwusp_in_government == 0 and lwusp_caretaker == 0 : opposition ?][? if lwusp_caretaker : caretaker government ?]
+[? if is_in_usp == 0 : <span style="color: #2b2673;">**SRP**</span>?][? if is_in_usp : <span style="color: #2b2673;">**Reformists (USP)**</span>?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?] position: [? if lwusp_toleration : toleration ?][? if lwusp_in_government : in government - ?][? if lwusp_toleration == 0 and lwusp_in_government == 0 and lwusp_caretaker == 0 : opposition ?][? if lwusp_caretaker : caretaker government ?]
 [? if in_usp_coalition and lwusp_in_government: <span style="color: #6e377a;">**USP**</span> government ?]
 [? if bruning_time and lwusp_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
 
@@ -156,39 +156,24 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Industrial Backing
 
-[? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [? if industrial_dnef_backing == 3: high?][? if industrial_dnef_backing == 4: highest?] ?]
+<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [? if industrial_pfjp_backing <= 0: none?] [? if industrial_pfjp_backing == 1: low?][? if industrial_pfjp_backing == 2: medium?][? if industrial_pfjp_backing >= 4: high?]
 
-[? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>: [? if industrial_z_backing == 3: high?][? if industrial_z_backing == 4: highest?]  ?]
+[? if is_in_usp == 0 : <span style="color: #2b2673;">**SRP**</span>: ?][? if is_in_usp : <span style="color: #2b2673;">**Reformists (USP)**</span>: ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: ?] [? if industrial_lwusp_backing <= 0: none?][? if industrial_lwusp_backing == 1: low?][? if industrial_lwusp_backing == 2: medium?][? if industrial_lwusp_backing >= 4: high?]
 
-[? if not lvp_formed: [? if ddp_name == "DStP": <span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name == "DDP": <span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [? if industrial_ddp_backing == 0: none?][? if industrial_ddp_backing == 1: low?][? if industrial_ddp_backing == 2: medium?]  ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: ?] [? if industrial_cwusp_backing <= 0: none?][? if industrial_cwusp_backing == 1: low?][? if industrial_cwusp_backing == 2: medium?][? if industrial_cwusp_backing >= 4: high?]
 
-[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [? if industrial_lvp_backing == 2: medium?][? if industrial_lvp_backing == 3: high?][? if industrial_lvp_backing == 4: highest?] ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: ?] [? if industrial_rwusp_backing <= 0: none?][? if industrial_rwusp_backing == 1: low?][? if industrial_rwusp_backing == 2: medium?][? if industrial_rwusp_backing >= 4: high?]
 
-[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if industrial_dvp_backing == 1: low?][? if industrial_dvp_backing == 2: medium?][? if industrial_dvp_backing == 3: high?] ?]
-
-[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if industrial_dnvp_backing == 4: highest?][? if industrial_dnvp_backing == 3: high?][? if industrial_dnvp_backing == 2: medium?][? if industrial_dnvp_backing == 1: low?][? if industrial_dnvp_backing == 0: [? if dnvp_ideology == "Moderate": none?][? if dnvp_ideology == "Radical": Hugenberg funded?]?]?]
-
-[? if dnvp_ideology == "Moderate": <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Hugenberg funded ?]
-
-[? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: high ?]
-
-[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: high ?] 
-
-[? if dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: none ?]
-
-<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [? if industrial_nsdap_backing == 0: none?][? if industrial_nsdap_backing == 1: low?][? if industrial_nsdap_backing == 2: medium?]
-
-[? if nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: none ?]
+<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [? if industrial_nfp_backing <= 0: none?][? if industrial_nfp_backing == 1: low?][? if industrial_nfp_backing == 2: medium?][? if industrial_nfp_backing >= 4: high?]
 
 = Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
-{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+{!<span class="tooltip-text" title="The Left supports a more social democratic and welfare-oriented policy.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
-{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="The Liberal's goal is the privatization of Sordish economy and the establishment of the free market.">Liberal</span>!} strength: [+ liberal_strength : strength +], dissent: [+ liberal_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+{!<span class="tooltip-text" title="The Moderates promote a less progressive course of action and more collaboration with the Sollists.">Moderate</span>!} strength: [+ moderate_strength : strength +], dissent: [+ moderate_dissent : dissent +]
 
-{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
 
 @paramilitaries
