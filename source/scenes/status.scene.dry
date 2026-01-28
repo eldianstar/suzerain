@@ -128,27 +128,17 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-[? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_relation : relationships +] ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: [+ cwusp_relation : relationships +] ?]
 
-[? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party" style="color: #000000;">**[+ z_party_name +]**</span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>?]: [+ z_relation : relationships +]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: [+ rwusp_relation : relationships +] ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: [+ rwusp_relation : relationships +] ?]
 
-[? if not lvp_formed or not ddp_name: [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +] ?]
+<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [+ pfjp_relation : relationships +]
 
-[? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_relation : relationships +]?]
+[? if peoples_front == 0 : <span class="tooltip-text" title="Communist Party of Sordland" style="color: #c00000;">**CPS**</span>: [+ cps_relation : relationships +] ?][? if peoples_front : <span class="tooltip-text" title="United People's Front" style="color: #c00000;">**UPF**</span>: [+ cps_relation : relationships +] ?]
 
-[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +] ?]
+[? if peoples_front == 0: <span class="tooltip-text" title="Worker's Party of Bludia" style="color: #ffd000;">**WPB**</span>: [+ wpb_relation : relationships +] ?]
 
-<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
-
-[? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
-
-[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ fkp_relation : relationships +]?]
-
-[? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_relation : relationships +]?]
-
-[? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
-
-<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +]
+<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [+ nfp_relation : relationships +]
 
 = Party Leadership
 
