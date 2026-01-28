@@ -916,11 +916,11 @@ Q.schleicher_goal = "Control Papen from the sidelines";
 Q.meissner_goal = "Become acquainted with the new chancellor";
 Q.oskar_goal = "Support the new chancellor";
 
-Q.industrial_pfjp_backing = 5;
-Q.industrial_lwusp_backing = 3;
-Q.industrial_cwusp_backing = 2;
-Q.industrial_rwusp_backing = 1;
-Q.industrial_nfp_backing = 1;
+Q.industrial_pfjp_backing = 4;
+Q.industrial_lwusp_backing = 2;
+Q.industrial_cwusp_backing = 1;
+Q.industrial_rwusp_backing = 0;
+Q.industrial_nfp_backing = 0;
 
 
 // flavour text stuff
