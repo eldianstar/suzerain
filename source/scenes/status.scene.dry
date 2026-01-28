@@ -47,13 +47,13 @@ Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
 
-[? if is_in_usp : <span class="tooltip-text" title="Reformist wing of the United Sordland Party" style="color: #2b2673;">**Reformists (USP)**</span> ?][? if is_in_usp == 0 : <span class="tooltip-text" title="Sordish Reformist Party" style="color: #2b2673;">**SRP**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ lwusp_r +]%
-[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: [+ cwusp_r +]% ?]
-[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: [+ rwusp_r +]% ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: [+ rwusp_r +]% ?]
-<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [+ pfjp_r +]%
-[? if peoples_front == 0 : <span class="tooltip-text" title="Communist Party of Sordland" style="color: #c00000;">**CPS**</span>: [+ cps_r +]% ?][? if peoples_front : <span class="tooltip-text" title="United People's Front" style="color: #c00000;">**UPF**</span>: [+ cps_r +]% ?]
-[? if peoples_front == 0: <span class="tooltip-text" title="Worker's Party of Bludia" style="color: #ffd000;">**WPB**</span>: [+ wpb_r +]% ?]
-<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [+ nfp_r +]%
+[? if is_in_usp : <span class="tooltip-text" title="Reformist wing of the United Sordland Party" style="color: #2b2673;">**Reformists (USP)**</span> ?][? if is_in_usp == 0 : <span class="tooltip-text" title="Sordish Reformist Party" style="color: #2b2673;">**SRP**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ lwusp_gna +]%
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: [+ cwusp_gna +]% ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: [+ rwusp_gna +]% ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: [+ rwusp_gna +]% ?]
+<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [+ pfjp_gna +]%
+[? if peoples_front == 0 : <span class="tooltip-text" title="Communist Party of Sordland" style="color: #c00000;">**CPS**</span>: [+ cps_gna +]% ?][? if peoples_front : <span class="tooltip-text" title="United People's Front" style="color: #c00000;">**UPF**</span>: [+ cps_gna +]% ?]
+[? if peoples_front == 0: <span class="tooltip-text" title="Worker's Party of Bludia" style="color: #ffd000;">**WPB**</span>: [+ wpb_gna +]% ?]
+<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [+ nfp_gna +]%
 
 [? if lwusp_in_government = 1 : Budget: [+ budget +] ?]
 
