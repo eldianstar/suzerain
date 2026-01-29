@@ -140,7 +140,7 @@ Q.ys_strength = 135;
 Q.ys_militancy = 0.5;
 Q.ys_banned = 0;
 
-Q.total_force = ( bff_strength + ry_strength + ys_strength + army_strength + interior_police_strength );
+Q.total_force = ( bff_strength + ry_strength + ys_strength + army_strength + interior_police_strength ;
 Q.bff_force = ( bff_strength / total_force * 100 );
 Q.ys_force = ( ys_strength / total_force * 100 );
 Q.ry_force = ( ry_strength / total_force * 100 );
@@ -1096,7 +1096,7 @@ if (Q.percentComplete >= 100) {
     Q.achievement_holy_moly = 1;
 }
 
-!};
+!}
 set-bg: img/map_2.jpg
 new-page: true
 
