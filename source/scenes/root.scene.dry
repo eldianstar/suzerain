@@ -129,11 +129,6 @@ Q.rwusp_chancellor = "Graf";
 Q.rayne_influence = 10;
 Q.old_guard_angry = 0;
 
-// prussian activities lol
-Q.spd_prussia = 1;
-Q.right_prussia = 0;
-Q.prussia_leader = "Braun"
-
 // The array of forces - paramilitary groups
 Q.bff_strength = 20;
 Q.bff_militancy = 0.8;
@@ -144,6 +139,13 @@ Q.ry_banned = 0;
 Q.ys_strength = 135;
 Q.ys_militancy = 0.5;
 Q.ys_banned = 0;
+
+Q.total_force = ( bff_strength + ry_strength + ys_strength + army_strength + interior_police_strength ;
+Q.bff_force = ( bff_strength / total_force * 100 );
+Q.ys_force = ( ys_strength / total_force * 100 );
+Q.ry_force = ( ry_strength / total_force * 100 );
+Q.army_force = ( army_strength / total_force * 100 );
+Q.interior_police_force = ( interior_police_strength / total_force * 100 );
 
 Q.interior_police_strength = 150;
 Q.interior_police_militancy = 1;
