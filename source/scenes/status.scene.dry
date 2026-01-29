@@ -178,10 +178,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 @paramilitaries
 on-arrival: {!
-Q.rb_strength_2 = Q.rb_strength.toFixed(1);
-Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
-Q.sh_strength_2 = Q.sh_strength.toFixed(1);
-Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+Q.ys_strength_2 = Q.ys_strength.toFixed(1);
+Q.ry_strength_2 = Q.ry_strength.toFixed(1);
+Q.bff_strength_2 = Q.bff_strength.toFixed(1);
 !}
 
 = Paramilitaries
