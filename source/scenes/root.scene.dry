@@ -148,10 +148,17 @@ Q.popular_mobilization = 1;
 Q.interior_police_strength = 150;
 Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.45;
-
 Q.army_strength = 250;
 Q.army_militancy = 5;
 Q.army_loyalty = 0.2;
+Q.bff_power = ( bff_strength * bff_militancy );
+Q.ry_power = ( ry_strength * ry_militancy );
+Q.ys_power = ( ys_strength * ys_militancy );
+Q.interior_police_power = ( interior_police_strength * interior_police_militancy );
+Q.army_power = ( army_strength * army_militancy );
+
+
+
 
 // The state of the country
 
