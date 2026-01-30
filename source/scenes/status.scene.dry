@@ -197,31 +197,11 @@ Q.bff_strength_2 = Q.bff_strength.toFixed(1);
 
 <span style="color:#fc7000;">**BFF**</span> Militarization: [+ bff_militancy : militancy +]
 
-[? if year >= 1930 and not streetfighting_joever: <h1>Distribution of Power</h1> ?]
+<span class="tooltip-text" title="The Bludish Freedom Front is a nationalist movement advocating for Bludish independence." style="color:#808080;">**BFF**</span> Strength: [+ bff_strength_2 +] thousand
 
-[? if year >= 1930 and not streetfighting_joever: <h4>[? if not kpd_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
+<span style="color:#fc7000;">**BFF**</span> Militarization: [+ bff_militancy : militancy +]
 
-[? if year >= 1930 and not streetfighting_joever: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
-
-[? if year >= 1930 and not streetfighting_joever and prussia_leader != "Papen" and prussia_leader != "Schleicher" and prussia_leader != "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
-
-[? if year >= 1930 and not streetfighting_joever and kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
-
-[? if year >= 1930 and not streetfighting_joever: <h4><span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> strength: [+ far_right_force +]%</h4>?]
-
-[? if year >= 1930 and not streetfighting_joever: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
-
-[? if year >= 1930 and not streetfighting_joever: <span style="color: #3E88B3;">**Stahlhelm**</span>: [+ sh_force +]%?]
-
-[? if year >= 1930 and not streetfighting_joever and not kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
-
-[? if year >= 1930 and not streetfighting_joever and (prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser") or reichswehr_street: <h4><span style="color: #BFC8CC;">**State**</span> strength: [+ state_force +]%</h4>?]
-
-[? if year >= 1930 and not streetfighting_joever and prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
-
-[? if year >= 1930 and not streetfighting_joever and reichswehr_street: <b>Reichswehr Gendarmerie: [+ reichswehr_force +]%</b>?]
-
-[? if year >= 1930 and not streetfighting_joever: Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?]?][? if rfb_force >= far_right_force and far_right_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force and democracy_paramilitary: controlled by the <span style="color: #700000;">**RFB**</span>?][? if state_paramilitary:[? if state_paramilitary_highest: fully controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_high: dominated by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_med: controlled by the <span style="color: #BFC8CC;">**State**</span>?][? if state_paramilitary_low: in the slight control of the <span style="color: #BFC8CC;">**State**</span>?]?].?]
+Currently, the streets are controlled by the [? if ys_power > ry_power and ys_power > bff_power and ys_power > ( interior_police_power + army_power ) : <span style="color: #000000;">**Young Sords**</span> ?][? if ry_power > ys_power and ry_power > bff_power and ry_power > ( interior_police_power + army_power ) : <span style="color: #c00000;">**Red Youth**</span> ?][? if bff_power > ry_power and bff_power > ys_power and bff_power > ( interior_police_power + army_power ) : <span style="color:#fc7000;">**BFF**</span> ?][? if ( interior_police_power + army_power ) > ry_power and ( interior_police_power + army_power ) > ys_power and ( interior_police_power + army_power ) > bff_power : <span style="color:#808080;">**State**</span> ?].
 
 
 = Official military/paramilitaries
