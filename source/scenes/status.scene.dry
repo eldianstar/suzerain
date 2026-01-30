@@ -20,7 +20,7 @@ if (Q.economic_growth) {
 
 Resources available: [+ resources +]
 
-[? if is_in_usp == 0 : <span style="color: #2b2673;">**SRP**</span> ?][? if is_in_usp : <span style="color: #2b2673;">**Reformists (USP)**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?] position: [? if lwusp_toleration : toleration ?][? if lwusp_in_government : in government - ?][? if lwusp_toleration == 0 and lwusp_in_government == 0 and lwusp_caretaker == 0 : opposition ?][? if lwusp_caretaker : caretaker government ?]
+[? if is_in_usp == 0 : <span style="color: #2b2673;">**SRP**</span>?][? if is_in_usp : <span style="color: #2b2673;">**Reformists (USP)**</span>?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?] position: [? if lwusp_toleration : toleration ?][? if lwusp_in_government : in government - ?][? if lwusp_toleration == 0 and lwusp_in_government == 0 and lwusp_caretaker == 0 : opposition ?][? if lwusp_caretaker : caretaker government ?]
 [? if in_usp_coalition and lwusp_in_government: <span style="color: #6e377a;">**USP**</span> government ?]
 [? if bruning_time and lwusp_toleration: Bruning's reichstag backing: [+ bruning_coalition +]% ?]
 
