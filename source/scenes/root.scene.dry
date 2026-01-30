@@ -144,7 +144,7 @@ Q.ry_banned = 0;
 Q.ys_strength = 135;
 Q.ys_militancy = 0.5;
 Q.ys_banned = 0;
-
+Q.popular_mobilization = 1;
 Q.interior_police_strength = 150;
 Q.interior_police_militancy = 1;
 Q.interior_police_loyalty = 0.45;
