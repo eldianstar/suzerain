@@ -36,4 +36,4 @@ subtitle: As Economics Minister, Holl can enact tax policies.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if lwusp_in_government = 0 : We are not in government: ?] [? if economic_minister_party != "LWUSP" : We do not control the finance ministry. ?]
 choose-if: advisor_action_timer == 0 and lwusp_in_government == 1 and economic_minister_party == "LWUSP"
 on-arrival: advisor_action_timer = 6;
-go-to: fiscal_policy
+go-to: _fiscal_policy
