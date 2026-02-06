@@ -21,7 +21,7 @@ subtitle: As Foreign Minister, Wisci can set our foreign policy.
 unavailable-subtitle: [? if not lwusp_in_government: We are not in government. ?] [? if foreign_minister_party != "LWUSP" : We do not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0 and lwusp_in_government and foreign_minister_party == "LWUSP"
 on-arrival: advisor_action_timer = 6;
-go-to: foreign_policy
+go-to: _foreign_policy
 
 
 @antisollism
