@@ -247,41 +247,24 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 (if the election were to be held now):
 
-[? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_votes +]% ?]
+[? if is_in_usp : <span class="tooltip-text" title="Reformist wing of the United Sordland Party" style="color: #2b2673;">**Reformists (USP)**</span> ?][? if is_in_usp == 0 : <span class="tooltip-text" title="Sordish Reformist Party" style="color: #2b2673;">**SRP**</span> ?][? if united_usp and is_in_usp : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span> ?]: [+ lwusp_votes +]%
 
-<span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Centrist wing of the United Sordland Party" style="color: #6e377a;">**Centrists (USP)**</span>: [+ cwusp_votes +]% ?]
 
-[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
+[? if united_usp == 0 and usp_exists : <span class="tooltip-text" title="Sollist wing of the United Sordland Party" style="color: #7e0b80;">**Sollists (USP)**</span>: [+ rwusp_votes +]% ?][? if is_in_usp == 0 and united_usp and usp_exists : <span class="tooltip-text" title="United Sordland Party" style="color: #6e377a;">**USP**</span>: [+ rwusp_votes +]% ?]
 
-<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
+<span class="tooltip-text" title="People's Freedom and Justice Party" style="color: #03c2fc;">**PFJP**</span>: [+ pfjp_votes +]%
 
-<span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
+[? if peoples_front == 0 : <span class="tooltip-text" title="Communist Party of Sordland" style="color: #c00000;">**CPS**</span>: [+ cps_votes +]% ?][? if peoples_front : <span class="tooltip-text" title="United People's Front" style="color: #c00000;">**UPF**</span>: [+ cps_votes +]% ?]
 
-[? if not lvp_formed: [? if not ddp_name: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
+[? if peoples_front == 0: <span class="tooltip-text" title="Worker's Party of Bludia" style="color: #ffd000;">**WPB**</span>: [+ wpb_votes +]% ?]
 
-[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
+<span class="tooltip-text" title="National Front Party" style="color: #000000;">**NFP**</span>: [+ nfp_votes +]%
 
-[? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]% ?]
 
-[? if kvp_formed and not dnvp_dvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
-
-[? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_votes +]% ?]
-
-[? if not cvp_formed and not dnvp_defunct: <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%?]
-
-[? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
-
-[? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
-
-[? if not nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
-
-[? if nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
-
-[? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
-
-**Others**: [+ other_votes +]%
-
-Support for the Republic: [+ pro_republic_disp +]%
+Support for Reformism: [+ pro_republic_disp +]%
+Support for Sollism: [+ nationalism_disp +]%
+Support for Socialism: [+ socialism_disp +]
 
 **Detailed results for each demographic**
 
