@@ -11,8 +11,11 @@ card-image: img/newspaper.jpg
 
 The <span style="color: #c00000;">**SPD**</span> runs a veritable media empire, with many newspapers throughout every German city and region. We could use the media for various purposes...
 
-- @commercial
 - @campaign
+- @lachaven
+- @lachaven_2
+- @radical
+- @radical_2
 - @ideological
 - @radio
 - @radio_2
@@ -22,24 +25,53 @@ The <span style="color: #c00000;">**SPD**</span> runs a veritable media empire, 
 - @easy_discard
 - @cancel_advisor_action
 
-@commercial
-title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
-subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to <span style="color: #c00000;">socialist</span> views.
-on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1-dissent); left_dissent += 10; labor_dissent += 10; pro_republic += 1*(1-dissent); nationalism -= 1*(1 - dissent);
-
-Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
-
 @campaign
-title: The purpose of our media is to elect more <span style="color: #c00000;">Social Democrats</span>.
+title: The purpose of our media is to elect more <span style="color: #2b2673;">Reformists</span>.
 subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
+on-arrival: campaign_media += 1; workers_lwusp += 2*(1 - dissent); unemployed_lwusp += 1*(1 - dissent); new_middle_lwusp += 2*(1 - dissent); old_middle_lwusp += 1*(1 - dissent); bluds_lwusp += 1*(1 - dissent); workers_lwusp += 4*(1 - dissent) if radical_relation >= 4; unemployed_lwusp += 4*(1 - dissent) if radical_relation >= 4; new_middle_lwusp += 4*(1 - dissent) if lachaven_relation >= 4; old_middle_lwusp += 4*(1 - dissent) if lachaven_relation >= 4; bluds_lwusp += 4*(1 - dissent) if radical_relation >= 4
 
-Our campaign media is mostly reaching the workers who are already saturated with <span style="color: #c00000;">Socialist</span> propaganda, but it must be doing *something*, or at least that is what we hope.
+[? if lachaven_relation < 4 and radical_relation < 4 : Our campaign's effectiveness is greatly hampered by the lack of a clear voter base. ?][? if lachaven_relation >= 4 : Our campaign is mostly reaching our already saturated voter base, consisting of the middle classes. Still, it must be doing *something*. ?][? if radical_relation >= 4 : Our campaign is mostly reaching our already saturated voter base, consisting of the workers and the unemployed. Still, it must be doing *something*. ?]
+
+@lachaven
+title: Strengthen our ties with the Lachaven Times.
+subtitle: This will strengthen our liberal faction and define our voter base more clearly.
+view-if: lachaven_relation < 5
+on-arrival: lachaven_relation += 1; liberal_strength += 6; pro_republic += 3; nationalism -= 2; new_middle_lwusp += 3*(1 - dissent); old_middle_lwusp += 3*(1 - dissent)
+
+We have made an important step in defining our voter base. The middle classes are more likely to support us.
+
+@lachaven_2
+title: Make the Lachaven Times our official newspaper.
+subtitle: This will finally give us a way to fully express our views to our voter base.
+view-if: lachaven_relation = 5
+choose-if: liberal_strength >= 50 and resources >= 1
+unavailable-subtitle: [? if liberal_strength < 50 : The liberals don't hold enough influence. ?][? if resources < 1 : Not enough resources. ?]
+on-arrival: lachaven_relation += 1; liberal_strength += 10; left_dissent += 5; pro_republic += 5; new_middle_lwusp += 5*(1 - dissent); old_middle_lwusp += 5*(1 - dissent); new_middle_pfjp -= 3*(1 - dissent); old_middle_pfjp -= 3*(1 - dissent)
+
+The Lachaven Times will be our official newspaper from now on.
+
+@radical
+title: Strengthen our ties with the Radical.
+subtitle: This will strengthen our liberal faction and define our voter base more clearly.
+view-if: lachaven_relation < 5
+on-arrival: radical_relation += 1; left_strength += 6; socialism += 3; nationalism -= 2; workers_lwusp += 3*(1 - dissent); unemployed_lwusp += 3*(1 - dissent)
+
+We have made an important step in defining our voter base. The workers and unemployed are more likely to support us.
+
+@radical_2
+title: Make the Radical our official newspaper.
+subtitle: This will finally give us a way to fully express our views to our voter base.
+view-if: radical_relation = 5
+choose-if: left_strength >= 50 and resources >= 1
+unavailable-subtitle: [? if left_strength < 50 : The left doesn't hold enough influence. ?][? if resources < 1 : Not enough resources. ?]
+on-arrival: radical_relation += 1; left_strength += 10; liberal_dissent += 5; socialism += 5; workers_lwusp += 5*(1 - dissent); unemployed_lwusp += 5*(1 - dissent); workers_cps -= 3*(1 - dissent); unemployed_cps -= 3*(1 - dissent)
+
+The Radical will be our official newspaper from now on.
 
 @ideological
 title: We will have vibrant ideological debate within our newspapers.
 subtitle: There will be space for all factions to air their views.
-on-arrival: left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
+on-arrival: left_dissent -= 6; liberal_dissent -= 6; moderate_dissent -= 6
 
 This has been our media course historically, and it has successfully paved over the many tensions in our party.
 
@@ -49,9 +81,9 @@ subtitle: -2 resources
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
 view-if: radio = 0
-on-arrival: radio += 1; resources -= 2; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent);  nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent) if pacifism > 1; pro_republic += 2*(1-dissent)
+on-arrival: radio += 1; resources -= 2; new_middle_lwusp += 4*(1 - dissent); old_middle_lwusp += 3*(1 - dissent); workers_lwusp += 2*(1 - dissent); socialism += 3*(1 - dissent); pro_republic += 3*(1 - dissent);  nationalism -= 2*(1 - dissent)
 
-Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of <span style="color: #c00000;">socialism</span> along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
+Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of <span style="color: ;">reformism</span> along with music and other popular content.
 
 @radio_2
 title: We must keep on building up our radio network.
@@ -59,15 +91,15 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 view-if: radio > 0 and radio <= 3
-on-arrival: radio += 1; resources -= 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 3*(1 - dissent); socialism += 3*(1 - dissent); nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)
+on-arrival: radio += 1; resources -= 1; new_middle_lwusp += 5*(1 - dissent); old_middle_lwusp += 3*(1 - dissent); workers_lwusp += 3*(1 - dissent); socialism += 3*(1 - dissent); nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)
 
 Our new radio network has a mix of popular and political programming, and is proving a success.
 
 @radio_3
 title: We must keep on building up our radio network.
 subtitle: It is now financially self-sufficient, and does not require any more resources.
-view-if: radio > 3 and radio <= 5 and year <= 1931
-on-arrival: radio += 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 4*(1 - dissent); workers_spd += 4*(1 - dissent); rural_spd += 3*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 3*(1 - dissent); nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)
+view-if: radio > 3 and radio <= 5
+on-arrival: radio += 1; new_middle_lwusp += 5*(1 - dissent); old_middle_lwusp += 4*(1 - dissent); workers_lwusp += 4*(1 - dissent); rural_lwusp += 3*(1 - dissent); unemployed_lwusp += 2*(1-dissent); socialism += 3*(1 - dissent); nationalism -= 2*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)
 
 Our radio network has become a successful tool for spreading our message.
 
@@ -76,7 +108,7 @@ title: We should keep on supporting our radio network.
 subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-view-if: radio > 3 and (radio >= 6 or year >= 1932) and radio <= 9
-on-arrival: radio += 1; resources -= 1; new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); workers_spd += 3*(1 - dissent); rural_spd += 2*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)
+view-if: radio > 3 and radio <= 9
+on-arrival: radio += 1; resources -= 1; new_middle_lwusp += 3*(1 - dissent); old_middle_lwusp += 2*(1 - dissent); workers_lwusp += 3*(1 - dissent); rural_lwusp += 2*(1 - dissent); unemployed_lwusp += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 1*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)
 
 We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
