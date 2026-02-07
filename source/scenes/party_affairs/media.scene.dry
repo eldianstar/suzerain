@@ -52,7 +52,7 @@ The Lachaven Times will be our official newspaper from now on.
 
 @radical
 title: Strengthen our ties with the Radical.
-subtitle: This will strengthen our liberal faction and define our voter base more clearly.
+subtitle: This will strengthen our leftist faction and define our voter base more clearly.
 view-if: lachaven_relation < 5
 on-arrival: radical_relation += 1; left_strength += 6; socialism += 3; nationalism -= 2; workers_lwusp += 3*(1 - dissent); unemployed_lwusp += 3*(1 - dissent)
 
