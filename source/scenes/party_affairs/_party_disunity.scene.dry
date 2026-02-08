@@ -1,0 +1,82 @@
+title: Party Disunity
+new-page: true
+is-card: true
+view-if: party_disunity_timer = 0 and (dissent >= 0.3 or (liberal_dissent > 30 and not liberal_resign) or (left_dissent > 30 and not left_split) or (moderate_dissent > 30 and not moderate_resign)
+on-arrival: month_actions += 1; party_disunity_timer = 4
+card-image: img/Reichstagsfraktion_der_SPD.jpg
+frequency: 200
+tags: party_affairs
+
+
+= Party Disunity
+
+The party is being torn apart by internal dissent. Upset at the leadership and general direction, factions have started sabotaging their rivals, hampering our efforts to win votes and carry out our policies.
+
+[? if liberal_dissent > 30 : The liberals disagree with our present course of action. ?]
+[? if moderate_dissent > 30 : The moderates are displeased with the direction of our party. ?]
+[? if left_dissent > 30: The left is in disagreement with the current party line ?]
+
+Something must be done to reinforce party unity.
+
+- @enforce_unity
+- @concessions_left
+- @concessions_liberal
+- @concessions_moderates
+- @do_nothing
+- @easy_discard
+
+@enforce_unity
+title: Enforce party discipline.
+on-arrival: center_dissent -= 8; liberal_dissent -= 8; left_dissent -= 8; workers_lwusp -= (dissent * 5); new_middle_lwusp -= (dissent * 5); unemployed_lwusp -= (dissent * 5)
+
+Enforcing party discipline reduces dissent, but it could lead to an exit of dissenting members.
+
+# enforcing party discipline applies to all parties.
+
+# each party has a concessions action and an expulsions action.
+
+
+@concessions_left
+title: Give concessions to the left.
+view-if: left_dissent > 30
+on-arrival: left_dissent -= 15; moderate_dissent += 10; liberal_dissent += 5
+
+We have promised that we will listen to the left wing of the party. Of course, this leads to increased dissent from the moderates and liberals.
+
+@concessions_liberals
+title: Give concessions to labor.
+view-if: liberal_dissent > 30
+on-arrival: liberal_dissent -= 15; moderate_dissent += 7; left_dissent += 7
+
+The liberals will be granted more influence in party decision making. This upsets both the left and the moderates, that already have enough of liberal influence.
+
+@concessions_moderates
+title: Give concessions to the neorevisionists.
+view-if: moderate_dissent > 30
+on-arrival: moderate_dissent -= 15; left_dissent += 10
+
+From now on, the moderates will have more say in our decisions. This will upset the left.
+
+
+@do_nothing
+title: Let the factions argue with themselves.
+on-arrival: liberal_dissent += 1; left_dissent += 1; moderate_dissent += 1
+
+Let the factions bicker; perhaps dissent is healthy for the party.
+
+
+@expel_reformists
+title: Expel the dissident reformists.
+view-if: reformist_dissent > 30
+
+@expel_left
+title: Expel the dissident leftists.
+view-if: left_dissent > 30
+
+@expel_center
+title: Expel the centrists.
+view-if: center_dissent > 30
+
+@expel_labor
+title: Expel the labor supporters.
+view-if: labor_dissent > 30
