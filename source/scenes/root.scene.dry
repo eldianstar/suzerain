@@ -504,6 +504,8 @@ Q.radical_relation = 0;
 Q.lachaven_relation = 2;
 Q.popular_mobilization = 1;
 Q.reformist_constitution = 0;
+Q.lwusp_party_name = "Reformists (USP)"
+Q.rwusp_party_name = "Sollists (USP)"
 
 // CPS: #c00000
 // WPB: #ffd000
