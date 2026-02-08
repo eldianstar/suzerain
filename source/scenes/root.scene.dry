@@ -506,6 +506,7 @@ Q.popular_mobilization = 1;
 Q.reformist_constitution = 0;
 Q.lwusp_party_name = "Reformists (USP)"
 Q.rwusp_party_name = "Sollists (USP)"
+Q.cps_party_name = "CPS"
 
 // CPS: #c00000
 // WPB: #ffd000
