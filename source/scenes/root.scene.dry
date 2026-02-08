@@ -72,10 +72,9 @@ Q.moderate_strength = 40;
 Q.moderate_dissent = 5;
 
 // secret events...
-Q.unions_independent = 0;
-Q.centrists_resign = 0;
-Q.left_split = 0;
-Q.reformists_resigned = 0;
+Q.left_resign = 0;
+Q.liberal_resign = 0;
+Q.moderate_resign = 0;
 
 
 // crisis_urgency indicates how seriously the SPD is taking the economic crisis - scale from 0 to 10.
@@ -343,53 +342,6 @@ Q.rwusp_votes = 12;
 Q.nfp_votes = 11;
 
 
-// sapd isn't formed yet, but it may be formed
-Q.sapd_r = 0;
-Q.old_sapd_r = 0;
-Q.sapd_r_prussia = 0;
-Q.old_sapd_r_prussia = 0;
-Q.sapd_votes = 0;
-
-Q.dnf_r = 0;
-Q.old_dnf_r = 0;
-Q.dnf_r_prussia = 0;
-Q.old_dnf_r_prussia = 0;
-Q.dnf_votes = 0;
-
-Q.kvp_r = 0;
-Q.old_kvp_r = 0;
-Q.kvp_r_prussia = 0;
-Q.old_kvp_r_prussia = 0;
-Q.kvp_votes = 0;
-
-Q.lvp_r = 0;
-Q.old_lvp_r = 0;
-Q.lvp_r_prussia = 0;
-Q.old_lvp_r_prussia = 0;
-
-Q.lvp_left = 0;
-Q.lvp_right = 0;
-Q.lvp_leader = "Luther";
-Q.lvp_ideology = "Moderate";
-Q.lvp_normalized = 0;
-Q.lvp_votes = 0;
-
-Q.dnef_left = 0;
-Q.dnef_right = 0;
-Q.dnef_leader = "Schleicher";
-Q.dnef_ideology = "Moderate";
-Q.dnef_normalized = 0;
-Q.dnef_votes = 0;
-Q.dnef_r = 0;
-Q.true_dnef_r = 0;
-
-Q.nvf_votes = 0;
-Q.nvf_r = 0;
-Q.old_nvf_r = 0;
-Q.old_nvf_r_prussia = 0;
-
-Q.cvp_right = 0;
-Q.cvp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
 Q.adjustmentFactors_sapd = 1.0;
@@ -551,6 +503,7 @@ Q.hawker_angry_rayne = 0;
 Q.radical_relation = 0;
 Q.lachaven_relation = 2;
 Q.popular_mobilization = 1;
+Q.reformist_constitution = 0;
 
 // CPS: #c00000
 // WPB: #ffd000
