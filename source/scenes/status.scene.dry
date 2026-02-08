@@ -264,11 +264,11 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 Support for Reformism: [+ pro_republic_disp +]%
 Support for Sollism: [+ nationalism_disp +]%
-Support for Socialism: [+ socialism_disp +]
+Support for Socialism: [+ socialism_disp +]¨%
 
 **Detailed results for each demographic**
 
-Workers: [? if dnef_formed: DNEF: [+ workers_dnef_display +]%, ?]SPD: [+ workers_spd_display +]%, [+ z_party_name +]: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ workers_ddp_display +]%, [? if dvp_exist: DVP: [+ workers_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ workers_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ workers_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ workers_dnf_display +]%  ?][? if kvp_formed: KVP: [+ workers_kvp_display +]%  ?]NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]%
+Workers: [+ lwusp_party_name +]: [+ workers_lwusp_display +]%, [? if united_usp = 0 and usp_exists = 1 : Moderates (USP): [+ workers_cwusp_display +]%, ?][? if usp_exists = 1 and ( united_usp = 0 or is_in_usp = 0 ) : [+ rwusp_party_name +]: [+ workers_rwusp_display +]%, ?] PFJP: [+ workers_pfjp_display +]%, [+ cps_party_name +]: [+ workers_cps_display +]%, [? if peoples_front = 0 : WPB: [+ workers_wpb_display +]% ?]
 
 New Middle Class: [? if dnef_formed: DNEF: [+ new_middle_dnef_display +]%, ?]SPD: [+ new_middle_spd_display +]%, [+ z_party_name +]: [+ new_middle_z_display +]%, KPD: [+ new_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ new_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ new_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ new_middle_dnf_display +]%  ?][? if kvp_formed: KVP: [+ new_middle_kvp_display +]%  ?]NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]%
 
