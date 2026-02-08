@@ -62,7 +62,7 @@ on-arrival: womens_rights += 1; pfjp_relation += 3; new_middle_lwusp += 2*(1-dis
 The message appeals to many women in the growing feminist movement. [? if womens_rights > 1 : Our commitment to women's rights have made this message more effective. ?]
 
 
-@minorities:
+@minorities
 on-arrival: wpb_relation += 5; bluds_lwusp += 5*(1-dissent); rural_lwusp -= 2; nfp_relation -= 5; rwusp_relation -= 5
 
 The message appeals mostly to Bludish people. Our campaign choice is regarded as being mostly ineffective.
