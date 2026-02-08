@@ -43,7 +43,7 @@ on-arrival: left_dissent -= 15; moderate_dissent += 10; liberal_dissent += 5
 
 We have promised that we will listen to the left wing of the party. Of course, this leads to increased dissent from the moderates and liberals.
 
-@concessions_liberals
+@concessions_liberal
 title: Give concessions to labor.
 view-if: liberal_dissent > 30
 on-arrival: liberal_dissent -= 15; moderate_dissent += 7; left_dissent += 7
