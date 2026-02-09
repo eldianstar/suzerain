@@ -504,9 +504,15 @@ Q.radical_relation = 0;
 Q.lachaven_relation = 2;
 Q.popular_mobilization = 1;
 Q.reformist_constitution = 0;
-Q.lwusp_party_name = "Reformists (USP)"
-Q.rwusp_party_name = "Sollists (USP)"
-Q.cps_party_name = "CPS"
+Q.lwusp_party_name = "Reformists (USP)";
+Q.rwusp_party_name = "Sollists (USP)";
+Q.cps_party_name = "CPS";
+
+Q.agnolia_relation = 5;
+Q.lespia_relation = 4;
+Q.wehlen_relation = 3;
+Q.valgsland_relation = 4;
+Q.rumburg_relation = 0;
 
 // CPS: #c00000
 // WPB: #ffd000
@@ -517,9 +523,12 @@ Q.cps_party_name = "CPS"
 // RWUSP: #7e0b80
 // NFP: #000000
 // Ind: #808080
-
-
-
+// Sordland: <span style="color: #6e377a;">Sord</span><span style="color: #ffd000;">land</span>
+// Agnolia: <span style="color: #03c2fc;">Ag</span><span style="color: #ffd000;">no</span><span style="color: #c00000;">lia</span>
+// Rumburg: <span style="color: #203f80;">Rum</span><span style="color: #ffd000;">bu</span><span style="color: #000000;">rg</span>
+// Lespia: <span style="color: #c00000;">Les</span><span style="color: #ffd000;">pia</span>
+// Wehlen: <span style="color: #203f80;">Weh</span><span style="color: #c00000;">len</span>
+// Valgsland: <span style="color: #03c2fc;">Val</span><span style="color: #c00000;">gsl</span><span style="color: #ffd000;">and</span>
 
 
 
