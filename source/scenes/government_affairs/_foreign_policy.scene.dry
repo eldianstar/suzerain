@@ -58,50 +58,50 @@ on-arrival: rumburg_relation += 1; nfp_relation -= 3; rwusp_relation -= 3; rural
 The Kingdom of <span style="color: #203f80;">Rum</span><span style="color: #ffd000;">bu</span><span style="color: #000000;">rg</span> is our northern neighbor and longtime enemy. We might be able to restore relations, but it is generally seen as foolish to expect anything of the sort.
 
 @merkopan_union
-title: Take steps to form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>".
-subtitle: Is a "United States of Europe" possible?
-unavailable-subtitle: [? if west_relation < 7 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
+title: Take steps to form a "<span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">Union</span>".
+subtitle: Is a "United States of Merkopa" possible?
+unavailable-subtitle: [? if lespia_relation < 6 : Our relations with Lespia are not good enough. ?] [? if agnolia_relation < 6 : Our relations with Agnolia are not good enough. ?] [? if rumburg_relation < 6 : Our relations with Rumburg are not good enough. ?]
 view-if: reparations <= -2 and eu_progress < 3 and not eu and france_left_seen
-choose-if: west_relation >= 7 and east_relation >= 4
-on-arrival: eu_negotiation = 1; eu_progress += 1; west_relation += 1; foreign_goal_spd_peoples += 1
+choose-if: lespia_relation >= 6; agnolia_relation >= 6; rumburg_relation >= 6
+on-arrival: eu_negotiation = 1; eu_progress += 1
 
-Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span>" has long been part of the <span style="color: #c00000;">**Social Democratic**</span> foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Europe</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">European</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>", however.
+Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Merkopa</span>" has long been part of the liberal democratic dream. Finally, we are taking steps towards it. Given our positive relations with the other democratic countries of <span style="color: #001489;">Merkopa</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">Union</span>", however.
 
 
 @merkopan_union_2
-title: We can sign a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
+title: We can sign a treaty to form a <span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">Union</span>!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 3 and not eu and france_left_seen
-on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10; lvp_relation += 5; foreign_goal_spd_peoples += 1; economic_growth += 1 if economic_growth < 3; kpd_coalition_dissent += 1; kpd_relation -= 10
+on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_lwusp += 5*(1-dissent); new_middle_lwusp += 5*(1-dissent); old_middle_lwusp += 5*(1-dissent); rural_lwusp += 4*(1-dissent); bluds_lwusp += 4*(1-dissent); unemployed_lwusp += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; pfjp_relation += 5; economic_growth += 1 if economic_growth < 3; nfp_relation -= 5
 max-visits: 1
 achievement: eu
 
-Along with <span style="color: #002654;">France</span>, <span style="color: #C8102E;">Great Britain</span>, and many other states of Western and Eastern Europe, we have signed a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>! It is hoped that <span style="color: #001489;">Europe</span> has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
+Along with <span style="color: #03c2fc;">Ag</span><span style="color: #ffd000;">no</span><span style="color: #c00000;">lia</span>, <span style="color: #c00000;">Les</span><span style="color: #ffd000;">pia</span> and <span style="color: #203f80;">Rum</span><span style="color: #ffd000;">bu</span><span style="color: #000000;">rg</span>, we have signed a treaty to form a <span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">Union</span>!
 
-A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
+A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for Sordish products and new sources of investment.
 
-<span style="color: #7A3C00;">Fascist</span> Italy remains a problem, and the <span style="color: #750e0e;">Soviet Union</span> also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+<span style="color: #c00000;">Communist</span> <span style="color: #03c2fc;">Val</span><span style="color: #c00000;">gsl</span><span style="color: #ffd000;">and</span> remains a problem, and most countries outside of Eastern <span style="color: #001489;">Merkopa</span> also lie outside the system. But for now, there is new hope for peace, democracy and prosperity throughout the continent.
 
 @intermerkopum
-title: Take steps to form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>".
-subtitle: Is a "United States of Europe" possible?
-unavailable-subtitle: [? if west_relation < 7 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
+title: Take steps to form <span style="color: #c00000;">Intermerkopum</span>, an independent left-leaning Merkopan bloc.
+subtitle: Is a Intermerkopum possible?
+unavailable-subtitle: [? if valgsland_relation < 6 : Our relations with Valgsland are not good enough. ?] [? if rumburg_relation < 6 : Our relations with Rumburg are not good enough. ?] [? if rumburg_relation < 6 : Our relations with Wehlen are not good enough. ?]
 view-if: reparations <= -2 and eu_progress < 3 and not eu and france_left_seen
-choose-if: west_relation >= 7 and east_relation >= 4
-on-arrival: eu_negotiation = 1; eu_progress += 1; west_relation += 1; foreign_goal_spd_peoples += 1
+choose-if: valgsland_relation >= 6 and wehlen_relation >= 6 and rumburg_relation >= 6
+on-arrival: eu_negotiation = 1; eu_progress += 1
 
-Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span>" has long been part of the <span style="color: #c00000;">**Social Democratic**</span> foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Europe</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">European</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>", however.
+Forming an independent bloc has long been part of our foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Merkopa</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">Merkopan</span> collaboration. It will take time to hammer out the exact shape of this future <span style="color: #c00000;">Intermerkopum</span>, however.
 
 
 @intermerkopum_2
-title: We can sign a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
+title: We can sign a treaty to form <span style="color: #c00000;">Intermerkopum</span>!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 3 and not eu and france_left_seen
 on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10; lvp_relation += 5; foreign_goal_spd_peoples += 1; economic_growth += 1 if economic_growth < 3; kpd_coalition_dissent += 1; kpd_relation -= 10
 max-visits: 1
 achievement: eu
 
-Along with <span style="color: #002654;">France</span>, <span style="color: #C8102E;">Great Britain</span>, and many other states of Western and Eastern Europe, we have signed a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>! It is hoped that <span style="color: #001489;">Europe</span> has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
+Along with <span style="color: #03c2fc;">Val</span><span style="color: #c00000;">gsl</span><span style="color: #ffd000;">and</span>, <span style="color: #203f80;">Weh</span><span style="color: #c00000;">len</span>, <span style="color: #203f80;">Rum</span><span style="color: #ffd000;">bu</span><span style="color: #000000;">rg</span>, and many other states of Eastern Merkopa, we have signed a treaty to form an independent bloc, ! It is hoped that <span style="color: #001489;">Europe</span> has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
 
-A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
+A major component of the pact is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for Sordish products and new sources of investment.
 
-<span style="color: #7A3C00;">Fascist</span> Italy remains a problem, and the <span style="color: #750e0e;">Soviet Union</span> also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+<span style="color: #03c2fc;">Capitalist</span> <span style="color: #c00000;">Les</span><span style="color: #ffd000;">pia</span> remains a problem, and our little neighbor of <span style="color: #03c2fc;">Ag</span><span style="color: #ffd000;">no</span><span style="color: #c00000;">lia</span> also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
 
