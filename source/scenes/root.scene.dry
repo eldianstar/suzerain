@@ -232,11 +232,11 @@ Q.workers_lwusp = 15;
 Q.workers_cps = 15;
 Q.workers_wpb = 0;
 Q.workers_pfjp = 33;
-Q.workers_cwusp = 30;
-Q.workers_rwusp = 10;
+Q.workers_cwusp = 25;
+Q.workers_rwusp = 8;
 Q.workers_nfp = 5;
 
-Q.new_middle_lwusp = 30;
+Q.new_middle_lwusp = 25;
 Q.new_middle_cps = 1;
 Q.new_middle_wpb = 0;
 Q.new_middle_pfjp = 60;
@@ -244,12 +244,12 @@ Q.new_middle_cwusp = 20;
 Q.new_middle_rwusp = 5;
 Q.new_middle_nfp = 5;
 
-Q.old_middle_lwusp = 25;
+Q.old_middle_lwusp = 23;
 Q.old_middle_cps = 0;
 Q.old_middle_wpb = 0;
 Q.old_middle_pfjp = 50;
-Q.old_middle_cwusp = 20;
-Q.old_middle_rwusp = 15;
+Q.old_middle_cwusp = 16;
+Q.old_middle_rwusp = 13;
 Q.old_middle_nfp = 10;
 
 
@@ -257,16 +257,16 @@ Q.rural_lwusp = 5;
 Q.rural_cps = 0;
 Q.rural_wpb = 0;
 Q.rural_pfjp = 5;
-Q.rural_cwusp = 25;
-Q.rural_rwusp = 50;
+Q.rural_cwusp = 22;
+Q.rural_rwusp = 43;
 Q.rural_nfp = 35;
 
 Q.unemployed_lwusp = 20;
 Q.unemployed_cps = 25;
 Q.unemployed_wpb = 0;
 Q.unemployed_pfjp = 10;
-Q.unemployed_cwusp = 5;
-Q.unemployed_rwusp = 5;
+Q.unemployed_cwusp = 4;
+Q.unemployed_rwusp = 3;
 Q.unemployed_nfp = 10;
 
 Q.bluds_lwusp = 1;
