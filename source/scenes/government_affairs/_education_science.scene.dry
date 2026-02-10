@@ -1,14 +1,21 @@
-title: Education & Science
+title: Education
 new-page: true
 is-card: true
-view-if: spd_in_government and (prussia_leader == "Braun" or prussia_leader == "Rosenfeld") and chancellor_party = "SPD" and education_science_timer = 0 and (black_thursday_seen = 0 or return_to_normalcy = 1)
+view-if: lwusp_in_government and education_minister_party = 'LWUSP' and education_science_timer = 0
 on-arrival: education_science_timer += 9; month_actions += 1
-card-image: img/portraits/EinsteinAlbert.jpg
+card-image: img/portraits/walda.jpg
 go-to: ed_menu
 tags: govt_affairs, cabinet
 
 # options:
-# - fund research (basic science research at the KWI, medical research, applied and industrial research to benefit Germany's economy)
+# - privatize
+# - rural education
+# - gender equality
+# - desollinization
+# - children for future act
+# - scholarship
+# - creationism
+
 # - change the educational curriculum (only once per 3 years) - will have a "major" and "minor" option:
 # - democratic education - focus on critical thinking and democratic values rather than authoritarian teaching. (+ democratization, pro_republic)
 # - scientific education - focus on the sciences, mathematics, and technical skills (+ NMC, science)
@@ -18,80 +25,68 @@ tags: govt_affairs, cabinet
 # - increase educational opportunities for working-class families.
 # - Secularize education (+ DVP, instant Zentrum vonc)
 
-# source for some of the education stuff: Martin, G. W. “Educational Reform in Germany 1918-1933.” Masters, Durham University, 1972. https://etheses.dur.ac.uk/9738/.
 
-# Forman, Paul. “The Financial Support and Political Alignment of Physicists in Weimar Germany.” Minerva 12, no. 1 (1974): 39–66.
+= Education 
 
-# science increases economic growth...
-
-= Education and Science
-
-Education in Germany is an area of mixed responsibility between the state governments and the central government. The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Constitution claims that schools are the domain of the central government, but in practice much of it is left to the states, as the Reichstag has historically been unable to pass an education law. Currently, with our control of Prussia and the Chancellorship, we can try to set policy for a large part of the country.
+Education in Sordland is in a sorry state. In a grey area between the central government and the local municipalities, it more often than not teaches backwards concepts such as creationism and still shows remains of Soll's propaganda machine. Now that we are in control of the Ministry of Education, we are able to change all of this.
 
 [? if major_curriculum: Current educational curriculum - [+ major_curriculum +], [+ minor_curriculum +] ?]
 
 @ed_menu
 view-if: not last_advisor_action
 
-- @increase_science
-- @structure
-- @curriculum
+- @privatize: Privatize education.
+- @desollinization: Enact the De-Sollinization Decree.
+- @rural_education_institutes: Rural Education Institutes.
+- @gender_equality: Gender equality in education.
+- @scholarship: Fund scholarships for poorer families.
+- @children_for_future_act: Draft the Children for Future Act.
+- @structure: Change the structure and funding of education.
+- @creationism: Deal with creationism in schools.
+- @curriculum: Change the educational curriculum.
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
 
+@privatize
+subtitle: This would bring us more funds. +1 budget.
+view-if: privatized_education <= 2
+on-arrival: cps_relation -= 5; pfjp_relation += 3; cwusp_relation -= 2; rwusp_relation -= 4; workers_lwusp -= 3; unemployed_lwusp -= 3; old_middle_lwusp += 1*(1-dissent); capital_strike_progress -= 0.5; budget += 1; privatized_education += 1; liberal_strength += 3; liberal_dissent -= 3
 
-@increase_science
-title: Increase funding for scientific research.
-choose-if: economic_minister_party = "SPD"
-unavailable-subtitle: This requires the Economic Ministry.
+While disliked by <span style="color: #7e0b80;">Sollists</span> and <span style="color: #c00000;">socialists</span> as well as the poorer segments of our voter base, privatizing education makes it possible to invest more money in it in the future.
 
-<span style="color: #9b0000;">Socialism</span> has always stood for science and rationality. Despite the setbacks of the Great War, hyperinflation, and the politicized and <span style="color: #808080;">reactionary</span> attitudes of many academics, science in the German Republic is still the envy of the world. With a great expansion of funding, we hope to keep it that way, and expand on our achievements. 
+@desollinization
+subtitle: This will **irreversibly** tank our relation with the Conservatives.
+view-if: desollinization = 0
+on-arrival: cps_relation += 5; pfjp_relation += 5; wpb_relation += 5; cwusp_relation -= 5; rwusp_relation -= 15; nfp_relation -= 5; nationalism -= 6; pro_republic += 2; socialism += 1; rural_cwusp -= 5; rural_rwusp += 5; old_middle_cwusp -= 3; new_middle_cwusp -= 3; old_middle_rwusp += 3; new_middle_rwusp += 3; coalition_dissent += 2 if in_usp_coalition; desollinization += 1
 
-- @kwg
-- @applied
-- @medical
-- @cut_funding
-- @ed_menu: Do not increase research funding.
-- @cancel_advisor_action
+We have enacted the De-Sollinization Decree, removing <span style="color: #7e0b80;">Sollist</span> propaganda from schools and democratizing education. The Conservatives hate this move and will from now on always try to obstruct us in every possible way.
 
-@kwg
-title: Fund the Kaiser Wilhelm Society for basic scientific research.
-subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; kwg_research += 1; economic_growth += 0.3 if economic_growth <= 8; new_middle_spd += 5*(1-dissent); ddp_relation += 5*(1-dissent); lvp_relation += 3*(1-dissent); unemployed -= 0.2 if unemployed >= 4; west_relation += 1; science_funding += 1; ddp_left += 1; ddp_cohesion += 0.5; lvp_left += 0.5; education_goal_spd_peoples += 1
+@rural_education_institutes
+subtitle: Develop education in rural areas. [? if privatized_education = 0 : -1 budget. ?][? if privatized_education > 0 : -2 budget. ?]
+view-if: rural_education < 3
+on-arrival: budget -= 1; budget -= 1 if privatized_education > 0; unemployed -= 0.5; economic_growth += 2; rural_lwusp += 3*(1-dissent); bluds_lwusp += 1*(1-dissent); rural_nfp -= 1; rural_education += 1
 
-The Kaiser Wilhelm Society is one of the most respected scientific research institutions in the world, with physicist Albert Einstein as its most famous employee. Our research program is to provide the Society with additional resources to hire and train scientists and conduct fundamental research, based on the scientists' own interests.
+We have focused our efforts in expanding the school system in rural areas.
 
-@applied
-title: Fund applied research in economically useful technologies.
-subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; applied_research += 1; economic_growth += 0.5 if economic_growth <= 8 and applied_research <= 1; economic_growth += 3 if applied_research > 1; new_middle_spd += 5*(1-dissent); workers_spd += 3*(1-dissent); ddp_relation += 5*(1-dissent); lvp_relation += 3*(1-dissent); unemployed -= 0.5 if unemployed >= 4; capital_strike_progress -= 1 if capital_strike_progress > 1; science_funding += 1; education_goal_spd_peoples += 1
+@gender_equality
+subtitle: Pass a decree enforcing gender equality in the schools.
+view-if: gender_equality_education = 0
+on-arrival: womens_rights += 1; gender_equality_education += 1; pfjp_relation += 5; cps_relation += 3; rwusp_relation -= 3; nfp_relation -= 5; workers_lwusp += 2*(1-dissent); unemployed_lwusp += 2*(1-dissent); new_middle_lwusp += 3*(1-dissent); pro_republic += 1
 
-Our research program focuses on collaborating with industry to develop useful technologies, creating new research institutions for applied science. This collaboration is focused on economic growth and development.
+Schools are now gender equal! This is a historical step on the way towards full emancipation.
 
+@scholarship
+subtitle: This is popular among the workers and unemployed. -1 budget.
+on-arrival: public_hs += 1; workers_lwusp += 5*(1-dissent); unemployed += 4*(1-dissent); unemployed -= 0.2; economic_growth += 0.5; budget -= 1
 
-@medical
-title: Fund biomedical research at the hospitals and medical schools.
-subtitle: -1 budget
-choose-if: budget >= 1
-on-arrival: budget -= 1; science += 1; medical_research += 1; economic_growth += 0.4 if economic_growth <= 8; new_middle_spd += 5*(1-dissent); workers_spd += 3*(1-dissent); ddp_relation += 5*(1-dissent); lvp_relation += 3*(1-dissent); unemployed -= 0.2 if unemployed >= 4; science_funding += 1; education_goal_spd_peoples += 1
+We have funded more scholarship programs for children from poorer families.
 
-Our research program focuses on medical research to improve the treatment of diseases and public health. [? if change_sex: Some of our medical advancements include new methods for sex change surgery and hormone therapy for <span style="color: deepskyblue;">tran</span><span style="color: linen;">sse</span><span style="color: lightpink;">xuals</span> individuals. ?]
+@children_for_future
 
-@cut_funding
-title: Cut science funding.
-subtitle: +1 budget
-choose-if: science_funding >= 1
-unavailable-subtitle: We have not funded science.
-on-arrival: budget += 1; science -= 1; science_funding -= 1; applied_research -= 0.33; kwg_research -= 0.33; medical_research -= 0.33; economic_growth -= 0.5; new_middle_spd -= 5; workers_spd -= 2; ddp_relation -= 4; lvp_relation -= 2; unemployed += 0.3; ddp_right += 1; lvp_right += 0.5; goal_spd_cancel_peoples += 1
-
-We have cut funding for science. This has a negative effect on our economic growth, and unemployed scientists are less likely to support the <span style="color: #c00000;">**SPD**</span>.
-
+// TO DO
 
 @structure
-title: Change the structure and funding of education.
 
 Education in Germany has traditionally been organized on religious and class lines. Schools are often either Protestant or Catholic (or rarely <span style="color: #005EB8;">Jewish</span>), and religious classes are required in most mixed-denomination schools. In addition, the working class has at most eight years of public education in primary and middle schools, while the middle and upper classes have access to private schools and Gymnasiums that prepare students for universities. Thus, the universities tend to be dominated by <span style="color: #3E88B3;">conservatives</span> and <span style="color: #808080;">reactionaries</span>, which has negative consequences for bureaucratic recruitment.
 
@@ -147,9 +142,12 @@ view-if: school_boards = 0
 
 We have created local elected school boards, and delegated some of the decision-making for local schools to them.
 
+@creationism
+
+// TO DO
+
 
 @curriculum
-title: Change the educational curriculum.
 choose-if: curriculum_timer = 0
 unavailable-subtitle: [? if curriculum_timer > 0 : It is too early to change the curriculum again. ?][? if prussia_leader != "Braun" and prussia_leader != "Rosenfeld" and spd_prussia: We don't have enough control of the Prussian state government. ?][? if not spd_prussia: We are not in control of the Prussian state government. ?]
 
