@@ -9,4 +9,4 @@ To-do after:
 implement parliament bills, make presidential authority working
 
 Distant future:
-achievements, difficulties, foreign policy and better events, independents
+achievements, difficulties, foreign policy and better events, rubicon, independents
