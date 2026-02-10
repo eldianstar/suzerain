@@ -509,6 +509,12 @@ Q.reformist_constitution = 0;
 Q.lwusp_party_name = "Reformists (USP)";
 Q.rwusp_party_name = "Sollists (USP)";
 Q.cps_party_name = "CPS";
+Q.desollinization = 0;
+Q.rural_education = 0;
+Q.gender_equality_education = 0;
+
+
+// Foreign Relations
 
 Q.agnolia_relation = 5;
 Q.lespia_relation = 4;
