@@ -21,7 +21,6 @@ choose-if: advisor_action_timer = 0 and education_minister_party = "LWUSP" and l
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not lwusp_in_government: We are not in government. ?] [? if education_minister_party != "LWUSP" : We do not control the Ministry of Education. ?]
 go-to: _education_science
 
-
 @welfare
 title: Invest in aid organizations
 subtitle: -1 resources
