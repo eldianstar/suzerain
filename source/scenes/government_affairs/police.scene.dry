@@ -3,23 +3,37 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: police_timer += 6; month_actions += 1
-view-if: spd_in_government = 1 and interior_minister_party = "SPD" and police_timer <= 0
-card-image: img/portraits/SeveringCarl.jpg
+view-if: spd_in_government = 1 and interior_minister_party = "LWUSP" and police_timer <= 0
+card-image: img/portraits/greiser.jpg
 
 = Internal Security
 
-The Interior Ministry controls internal security throughout the German Republic. While most police work is delegated to the states, the national security agency can perform special investigations.
+The Interior Ministry controls internal security throughout the Republic of <span style="color: #6e377a;">Sord</span><span style="color: #ffd000;">land</span>. While some police work is delegated to the , the national security agency can perform special investigations.
 
-As with the state police units and the Reichswehr, the internal police tends to be <span style="color: #808080;">reactionary</span>, and has serious issues with loyalty to the elected government of the Republic.
+As with the state police units and the Army, the internal police tends to be <span style="color: #808080;">reactionary</span>, and has serious issues with loyalty to the elected government of the Republic.
 
+
+// amnesty 
+// private prisons
+// gendarmerie
+
+- @privatize: Allow private prisons.
 - @loyalty: Improve the loyalty of the Interior Ministry forces.
 - @investigate_corruption: Investigate corruption by big businesses.
 - @investigate_far_right: Investigate illegal activity among the <span style="color: #7A3C00;">far</span> <span style="color: #3E88B3;">right</span>.
 - @domestic_enemies: Investigate or ban our domestic enemies.
-- @deport_hitler
+- @gendarmerie: Transfer the Gendarmerie to the Interior.
+- @amnesty: Amnesty for Soll-era prisoners.
 - @root: Take no action for now.
 - @easy_discard
 - @cancel_advisor_action
+
+@privatize
+subtitle: +1 budget.
+view-if: privatized_prisons < 2
+on-arrival: budget += 1; privatized_prisons += 1; cwusp_relation -= 3; rwusp_relation -= 5; workers_lwusp -= 1*(1-dissent)
+
+Now that we have privatized prisons, we'll be able to invest more elsewhere.
 
 @loyalty
 on-arrival: interior_police_loyalty += 0.1
