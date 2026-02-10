@@ -42,7 +42,7 @@ view-if: not last_advisor_action
 
 @privatize
 subtitle: This would bring us more funds. +1 budget.
-view-if: privatized_education <= 2
+view-if: privatized_education < 2
 on-arrival: cps_relation -= 5; pfjp_relation += 3; cwusp_relation -= 2; rwusp_relation -= 4; workers_lwusp -= 3; unemployed_lwusp -= 3; old_middle_lwusp += 1*(1-dissent); capital_strike_progress -= 0.5; budget += 1; privatized_education += 1; liberal_strength += 3; liberal_dissent -= 3
 
 While disliked by <span style="color: #7e0b80;">Sollists</span> and <span style="color: #c00000;">socialists</span> as well as the poorer segments of our voter base, privatizing education makes it possible to invest more money in it in the future.
