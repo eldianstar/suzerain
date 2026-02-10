@@ -7,14 +7,6 @@ card-image: img/portraits/walda.jpg
 go-to: ed_menu
 tags: govt_affairs, cabinet
 
-# options:
-# - privatize
-# - rural education
-# - gender equality
-# - desollinization
-# - children for future act
-# - scholarship
-# - creationism
 
 # - change the educational curriculum (only once per 3 years) - will have a "major" and "minor" option:
 # - democratic education - focus on critical thinking and democratic values rather than authoritarian teaching. (+ democratization, pro_republic)
@@ -40,7 +32,7 @@ view-if: not last_advisor_action
 - @rural_education_institutes: Rural Education Institutes.
 - @gender_equality: Gender equality in education.
 - @scholarship: Fund scholarships for poorer families.
-- @children_for_future_act: Draft the Children for Future Act.
+- @children_for_future: Draft the Children for Future Act.
 - @structure: Change the structure and funding of education.
 - @creationism: Deal with creationism in schools.
 - @curriculum: Change the educational curriculum.
