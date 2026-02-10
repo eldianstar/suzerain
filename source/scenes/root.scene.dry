@@ -229,11 +229,11 @@ Q.parties_graph = ['lwusp', 'cps', 'wpb', 'pfjp', 'cwusp', 'rwusp', 'nfp'];
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_lwusp = 15;
-Q.workers_cps = 20;
+Q.workers_cps = 15;
 Q.workers_wpb = 0;
-Q.workers_pfjp = 30;
+Q.workers_pfjp = 33;
 Q.workers_cwusp = 30;
-Q.workers_rwusp = 5;
+Q.workers_rwusp = 10;
 Q.workers_nfp = 5;
 
 Q.new_middle_lwusp = 30;
@@ -261,13 +261,13 @@ Q.rural_cwusp = 25;
 Q.rural_rwusp = 50;
 Q.rural_nfp = 35;
 
-Q.unemployed_lwusp = 21;
-Q.unemployed_cps = 50;
-Q.unemployed_wpb = 1;
-Q.unemployed_pfjp = 0;
-Q.unemployed_cwusp = 0;
-Q.unemployed_rwusp = 4;
-Q.unemployed_nfp = 13;
+Q.unemployed_lwusp = 20;
+Q.unemployed_cps = 35;
+Q.unemployed_wpb = 0;
+Q.unemployed_pfjp = 5;
+Q.unemployed_cwusp = 5;
+Q.unemployed_rwusp = 5;
+Q.unemployed_nfp = 15;
 
 Q.bluds_lwusp = 1;
 Q.bluds_cps = 1;
