@@ -16,7 +16,7 @@ As with the state police units and the Army, the internal police tends to be <sp
 - @privatize_prisons: Allow private prisons.
 - @loyalty: Improve the loyalty of the Interior Ministry forces.
 - @hire_interior: Recruit additional police.
-- @domestic_enemies: Investigate or ban our domestic enemies.
+- @_domestic_enemies: Investigate or ban our domestic enemies.
 - @gendarmerie: Transfer the Gendarmerie to the Interior.
 - @amnesty: Amnesty for Soll-era prisoners.
 - @root: Take no action for now.
