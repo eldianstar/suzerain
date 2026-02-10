@@ -18,17 +18,15 @@ Walda is an academician and staunch supporter of feminism and education reforms.
 title: Education Policy
 subtitle: As Minister of Education, Walda can change the school system.
 choose-if: advisor_action_timer = 0 and education_minister_party = "LWUSP" and lwusp_in_government
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not lwusp_in_government: We are not in government. ?] [? if education_minister_party != "LWUSP" : We do not control the Ministry of Education. ?]
-on-arrival: advisor_action_timer = 6; emergency_used += 1; resources += 2; workers_spd -= 2 if emergency_used > 1; labor_dissent += 5 if emergency_used > 1; unemployed_spd -= 2 if emergency_used > 1; workers_spd -= 2 if emergency_used > 2; unemployed_spd -= 2 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2; labor_dissent += 5 if emergency_used > 2
-
-To do.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not lwusp_in_government: We are not in government. ?] [? if education_minister_party != "LWUSP" : We do not control the Ministry of Education. ?]
+go-to: _education_science
 
 @welfare
 title: Invest in aid organizations
 subtitle: -1 resources
 choose-if: resources > 0 and advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
-on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6; left_strenght += 3;
+on-arrival: resources -= 1; workers_aid += 1; unemployed_lwusp += 5*(1 - dissent); workers_lwusp += 3*(1-dissent); workers_lwusp += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6; left_strenght += 3;
 
 We have increased funding to welfare organizations.
 
