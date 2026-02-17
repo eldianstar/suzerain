@@ -1,0 +1,100 @@
+title: Shuffle Cabinet
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: shuffle_cabinet_timer = 6;
+view-if: lwusp_in_government == 1 and shuffle_cabinet_timer == 0 and chancellor_party == "LWUSP" and not in_srp_majority and not in_emergency_government
+card-image: img/rayne_cabinet.jpg
+
+Do we wish to shuffle our cabinet? This might upset our current coalition.
+
+Current cabinet:
+
+Health and Social Affairs: 
+[? if social_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if social_minister_party == "CWUSP": <span style="color: #c00000;">[+ social_minister_party +]</span> ?]
+[? if social_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if social_minister_party == "PFJP": <span style="color: #FFCC00;">[+ social_minister_party +]</span> ?]
+[? if social_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if social_minister_party == "WPB": <span style="color: #A2D8E0;">[+ social_minister_party +]</span> ?]
+[? if social_minister_party == "NFP": <span style="color: #C0A054;">[+ social_minister_party +]</span> ?]
+[? if social_minister_party == "I": [+ social_minister_party +] ?]
+
+Interior: 
+[? if interior_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if interior_minister_party == "CWUSP": <span style="color: #c00000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if interior_minister_party == "PFJP": <span style="color: #FFCC00;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if interior_minister_party == "WPB": <span style="color: #A2D8E0;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "NFP": <span style="color: #C0A054;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "I": [+ interior_minister_party +] ?]
+
+Education, Technology and Research:
+[? if education_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?] 
+[? if education_minister_party == "CWUSP": <span style="color: #c00000;">[+ education_minister_party +]</span> ?]
+[? if education_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if education_minister_party == "PFJP": <span style="color: #FFCC00;">[+ education_minister_party +]</span> ?]
+[? if education_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if education_minister_party == "WPB": <span style="color: #A2D8E0;">[+ education_minister_party +]</span> ?]
+[? if education_minister_party == "NFP": <span style="color: #C0A054;">[+ education_minister_party +]</span> ?]
+[? if education_minister_party == "I": [+ education_minister_party +] ?]
+
+Economics and Energy: 
+[? if economic_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if economic_minister_party == "CWUSP": <span style="color: #c00000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if economic_minister_party == "PFJP": <span style="color: #FFCC00;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if economic_minister_party == "WPB": <span style="color: #A2D8E0;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "NFP": <span style="color: #C0A054;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "I": [+ economic_minister_party +] ?]
+
+Justice and Law: 
+[? if justice_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if justice_minister_party == "CWUSP": <span style="color: #c00000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if justice_minister_party == "PFJP": <span style="color: #FFCC00;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if justice_minister_party == "WPB": <span style="color: #A2D8E0;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "NFP": <span style="color: #C0A054;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "I": [+ justice_minister_party +] ?]
+
+Foreign Affairs and Trade: 
+[? if labor_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if foreign_minister_party == "CWUSP": <span style="color: #c00000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if foreign_minister_party == "PFJP": <span style="color: #FFCC00;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if foreign_minister_party == "WPB": <span style="color: #A2D8E0;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "NFP": <span style="color: #C0A054;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "I": [+ foreign_minister_party +] ?]
+
+Defense and Security: 
+[? if defense_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if defense_minister_party == "CWUSP": <span style="color: #c00000;">[+ defense_minister_party +]</span> ?]
+[? if defense_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if defense_minister_party == "PFJP": <span style="color: #FFCC00;">[+ defense_minister_party +]</span> ?]
+[? if defense_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if defense_minister_party == "WPB": <span style="color: #A2D8E0;">[+ defense_minister_party +]</span> ?]
+[? if defense_minister_party == "NFP": <span style="color: #C0A054;">[+ defense_minister_party +]</span> ?]
+[? if defense_minister_party == "I": [+ defense_minister_party +] ?]
+
+Agriculture and Rural Development: 
+[? if development_minister_party == "LWUSP": <span style="color: #BFC8CC;">[+ lwusp_party_name +]</span> ?]
+[? if development_minister_party == "CWUSP": <span style="color: #c00000;">[+ development_minister_party +]</span> ?]
+[? if development_minister_party == "RWUSP": <span style="color: #700000;">[+ rwusp_party_name +]</span> ?]
+[? if development_minister_party == "PFJP": <span style="color: #FFCC00;">[+ development_minister_party +]</span> ?]
+[? if development_minister_party == "CPS": <span style="color: #000000;">[+ cps_party_name +]</span> ?]
+[? if development_minister_party == "WPB": <span style="color: #A2D8E0;">[+ development_minister_party +]</span> ?]
+[? if development_minister_party == "NFP": <span style="color: #C0A054;">[+ development_minister_party +]</span> ?]
+[? if development_minister_party == "I": [+ development_minister_party +] ?]
+
+- @shuffle: Yes, do it.
+- @root: No, there is no need.
+- @easy_discard
+- @cancel_advisor_action
+
+@shuffle
+on-arrival: coalition_dissent += 1; month_actions += 1
+go-to: election_1928.ministries
