@@ -32,7 +32,7 @@ As it turns out, the <span style="color: #000000;">ultranationalist</span> <span
 
 @unban_ys
 view-if: ys_banned = 1
-on-arrival: ys_banned = 0; ys_strength += 100; ys_militancy += 0.05; ys_coup_progress += 2 if ys_coup_progress >= 6; cps_relation -= 3, wpb_relation -= 3; pfjp_relation -= 3; workers_nfp += 2; new_middle_nfp += 2; old_middle_nfp += 2; unemployed_nfp += 1; rural_nfp += 1; nationalism += 2; pro_republic -= 1
+on-arrival: ys_banned = 0; ys_strength += 100; ys_militancy += 0.05; ys_coup_progress += 2 if ys_coup_progress >= 6; cps_relation -= 3; wpb_relation -= 3; pfjp_relation -= 3; workers_nfp += 2; new_middle_nfp += 2; old_middle_nfp += 2; unemployed_nfp += 1; rural_nfp += 1; nationalism += 2; pro_republic -= 1
 
 The <span style="color: #000000;">**Young Sords**</span> are no longer banned. They immediately go on a recruiting spree.
 
