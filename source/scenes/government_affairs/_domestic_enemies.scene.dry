@@ -24,67 +24,63 @@ As we have control over the Interior Ministry, we can direct police and intellig
 
 @ban_ys
 view-if: ys_banned == 0
-on-arrival: ys_strength *= 0.85; ys_strength *= 0.7 if interior_police_loyalty >= 0.7; sa_banned_pro = 1 if interior_police_loyalty >= 0.7; sa_banned_pro = 0 if interior_police_loyalty < 0.7; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; interior_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6; sa_coup_progress = coup_progress; coup_progress -= 2 if coup_progress >= 6; interior_goal_prussia -= 1
+on-arrival: ys_strength *= 0.85; ys_strength *= 0.7 if interior_police_loyalty >= 0.7; ys_banned_pro = 1 if interior_police_loyalty >= 0.7; ys_banned_pro = 0 if interior_police_loyalty < 0.7; ys_banned = 1; rwusp_relation -= 3; cwusp_relation -= 3; nfp_relation -= 5; interior_police_loyalty -= 0.05; ys_militancy -= 0.05; ys_ban_timer = 6; ys_coup_progress -= 2 if ys_coup_progress >= 6; nationalism -= 1
 
-As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if sa_banned_pro : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?]
+As it turns out, the <span style="color: #000000;">ultranationalist</span> <span style="color: #7A3C00;">**Young Sords**</span> have many allies in the police and bureaucracy. Our relationship with the police weakens, and the <span style="color: #000000;">**Young Sords**</span> can still organize illegally, right under the police's noses. [? if ys_banned_pro : Nevertheless, the <span style="color: #000000;">**Young Sords**</span> are substantially weakened by our ban. ?]
 
-[? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
+[? if ys_coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #000000;">**NFP**</span>. We have disrupted some of these plans, but the threat is still present. ?]
 
 @unban_ys
-view-if: sa_banned = 1 and in_popular_front_prussia == 0 and in_left_front_prussia == 0
-on-arrival: sa_banned = 0; sa_strength += 100; sa_militancy += 0.05; coup_progress += 2 if sa_coup_progress >= 6
+view-if: ys_banned = 1
+on-arrival: ys_banned = 0; ys_strength += 100; ys_militancy += 0.05; ys_coup_progress += 2 if ys_coup_progress >= 6; cps_relation -= 3, wpb_relation -= 3; pfjp_relation -= 3; workers_nfp += 2; new_middle_nfp += 2; old_middle_nfp += 2; unemployed_nfp += 1; rural_nfp += 1; nationalism += 2; pro_republic -= 1
 
-The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immediately go on a recruiting spree.
+The <span style="color: #000000;">**Young Sords**</span> are no longer banned. They immediately go on a recruiting spree.
 
 @persecute_ys
-title: Further persecute the <span style="color: #7A3C00;">**SA**</span>.
-view-if: sa_banned = 1
+title: Further persecute the <span style="color: #000000;">**Young Sords**</span>.
+view-if: ys_banned = 1
 choose-if: judicial_reform >= 3 and interior_police_loyalty >= 0.7
 unavailable-subtitle: [? if judicial_reform < 3 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: sa_strength *= 0.7; sa_militancy -= 0.05; coup_progress -= 2 if coup_progress >= 4
+on-arrival: ys_strength *= 0.7; ys_militancy -= 0.05; ys_coup_progress -= 2 if ys_coup_progress >= 4
 
-We have arrested more of the <span style="color: #7A3C00;">**SA**</span>'s leaders and confiscated their weapons.
+We have arrested more of the <span style="color: #000000;">**Young Sords**</span>'s leaders and confiscated their weapons.
 
-[? if coup_progress >= 4: There are reports of a planned coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have cracked down on some of these plans, but the threat still lingers. ?]
+[? if coup_progress >= 4: There are reports of a planned coup by the <span style="color: #000000;">**NFP**</span>. We have cracked down on some of these plans, but the threat still lingers. ?]
 
 @ban_bff
-on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if interior_police_loyalty >= 0.7; sh_banned = 1; dvp_relation -= 5; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; coalition_dissent += 1 if in_social_catholic_coalition_prussia and cvp_formed; sh_ban_timer = 6; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6; hindenburg_angry += 8; interior_goal_prussia -= 1
-view-if: sh_banned == 0
+view-if: in_left_coalition = 0 and bff_banned = 0
+on-arrival: wpb_relation -= 15; bff_strength -= 50; bff_banned = 1; cps_relation -= 3; rwusp_relation += 5; nfp_relation += 5; cwusp_relation += 5; interior_police_loyalty += 0.1; coalition_dissent -= 0.5 if coalition_dissent > 0 and in_usp_coalition; bluds_lwusp -= 5; rural_lwusp += 3*(1-dissent)
 
-[? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political right and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political right and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the right wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight.
+The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The Left and the Bluds dislike this move.
 
 @unban_bff
-view-if: sh_banned = 1 and in_popular_front_prussia == 0 and in_left_front_prussia == 0
-on-arrival: sh_banned = 0; sh_strength += 100; coup_progress += 2 if sh_coup_progress >= 6; hindenburg_angry -= 5
+view-if: bff_banned = 1
+on-arrival: bff_banned = 0; wpb_relation += 5; bff_strength += 50; interior_police_loyalty -= 0.05; army_loyalty -= 0.05; rwusp_relation -= 5; bluds_lwusp += 2; rural_lwusp -= 3; rural_cwusp -= 1; rural_nfp += 4; coalition_dissent += 1 if in_usp_coalition
 
-The <span style="color: #3E88B3;">**Stahlhelm**</span> is no longer banned.
+The separatist <span style="color: #3E88B3;">**BFF**</span> is no longer banned.
 
 @persecute_bff
-title: Further persecute the <span style="color: #3E88B3;">**Stahlhelm**</span>.
-view-if: sh_banned = 1
-choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
-unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
-on-arrival: sh_strength *= 0.7; sh_militancy -= 0.05; dvp_relation -= 5; lvp_relation -= 3; prussian_police_loyalty -= 0.1; interior_police_loyalty -= 0.05; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; dvp_right += 1; coup_progress -= 1 if coup_progress >= 4; hindenburg_angry += 5
+title: Further persecute the <span style="color: #3E88B3;">**Bludish Freedom Front**</span>.
+view-if: bff_banned = 1 and in_left_coalition = 0
+on-arrival: bff_strength *= 0.7; bff_militancy -= 0.05; wpb_relation -= 10; cwusp_relation += 2; rwusp_relation += 2; nfp_relation += 2; army_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 0.5 if coalition_dissent > 0 and in_usp_coalition; bluds_lwusp -= 2
 
-We have arrested more of the <span style="color: #3E88B3;">**Stahlhelm**</span>'s leaders and confiscated their weapons.
-
-[? if coup_progress >= 4: There are reports of a planned coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have cracked down on some of these plans, but the threat still lingers. ?]
+We have arrested more of the <span style="color: #3E88B3;">**BFF**</span>'s leaders and confiscated their weapons.
 
 @ban_ry
-view-if: communist_coalition < 3 and rfb_banned = 0 and in_popular_front_prussia == 0 and in_left_front_prussia == 0
-on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; lvp_relation += 5; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; kpd_coalition_dissent += 2; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_banned = 0; n_rfb_banned += 1; hindenburg_angry -= 8
+view-if: ry_banned and in_left_coalition = 0
+on-arrival: cps_relation -= 15; ry_strength -= 50; ry_banned = 1; rwusp_relation += 5; nfp_relation += 5; cwusp_relation += 5; army_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 0.5 if coalition_dissent > 0 and in_usp_coalition; workers_lwusp -= 1; unemployed_lwusp -= 1; socialism -= 1
 
-The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the left. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
+The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #c00000;">**CPS**</span> takes this as one more reason why the <span style="color: #6e377a;">**USP**</span> cannot be trusted. The right approves.
 
 @unban_ry
-view-if: rfb_banned = 1
-on-arrival: rfb_banned = 0; kpd_relation += 5; rfb_strength += 50; prussian_police_loyalty -= 0.05; interior_police_loyalty -= 0.05; hindenburg_angry += 8; rfb_goal_prussia -= 1
+view-if: ry_banned = 1
+on-arrival: ry_banned = 0; cps_relation += 5; ry_strength += 50; army_loyalty -= 0.05; interior_police_loyalty -= 0.05; workers_cps += 1; unemployed_cps += 1; socialism += 1
 
-The <span style="color: #700000;">Communist</span> <span style="color: #8B0000;">**RFB**</span> is no longer banned.
+The <span style="color: #c00000;">**Red Youth**</span> is no longer banned.
 
 @persecute_ry
-title: Further persecute the <span style="color: #8B0000;">**RFB**</span>.
-view-if: rfb_banned = 1 and in_popular_front_prussia == 0 and in_left_front_prussia == 0
-on-arrival: rfb_strength *= 0.7; rfb_militancy -= 0.05; kpd_relation -= 10; kpd_coalition_dissent += 1; z_relation += 2; dvp_relation += 2; lvp_relation += 2; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_persecuted = 0; n_rfb_persecuted += 1; hindenburg_angry -= 5
+title: Further persecute the <span style="color: #c00000;">**Red Youth**</span>.
+view-if: ry_banned = 1 and in_left_coalition = 0
+on-arrival: ry_strength *= 0.7; ry_militancy -= 0.05; cps_relation -= 10; cwusp_relation += 2; rwusp_relation += 2; nfp_relation += 2; army_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if in_usp_coalition; workers_lwusp -= 1; old_middle_nfp -= 1; new_middle_nfp -= 1; rural_nfp -= 2; old_middle_rwusp += 1; new_middle_rwusp += 1; rural_rwusp += 2
 
-We have arrested more of the <span style="color: #8B0000;">**RFB**</span>'s leaders and confiscated their weapons.
+We have arrested more of the <span style="color: #c00000;">**Red Youth**</span>'s leaders and confiscated their weapons.
