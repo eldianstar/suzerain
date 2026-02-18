@@ -110,4 +110,4 @@ We have expanded the Navy.
 @expand_airforce
 on-arrival: expanded_airforce += 1; army_strength += 40
 
-We have expanded the Air Force
+We have expanded the Air Force.
