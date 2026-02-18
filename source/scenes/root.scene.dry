@@ -515,6 +515,21 @@ Q.desollinization = 0;
 Q.rural_education = 0;
 Q.gender_equality_education = 0;
 
+// Military stuff
+
+Q.gendarmerie_transferred = 0;
+Q.military_funding = 0;
+Q.military_modernization = 0;
+Q.modernized_army = 0;
+Q.modernized_navy = 0;
+Q.modernized_airforce = 0;
+Q.military_expansion = 0;
+Q.expanded_army = 0;
+Q.expanded_navy = 0;
+Q.expanded_airforce = 0;
+Q.at_war = 0;
+Q.rumburg_defeated = 0;
+
 
 // Foreign Relations
 
