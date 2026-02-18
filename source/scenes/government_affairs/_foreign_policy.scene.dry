@@ -61,7 +61,7 @@ The Kingdom of <span style="color: #203f80;">Rum</span><span style="color: #ffd0
 title: Take steps to form a "<span style="color: #001489;">Merkopan</span> <span style="color: #FFDD00;">Union</span>".
 subtitle: Is a "United States of Merkopa" possible?
 unavailable-subtitle: [? if lespia_relation < 6 : Our relations with Lespia are not good enough. ?] [? if agnolia_relation < 6 : Our relations with Agnolia are not good enough. ?] [? if rumburg_relation < 6 : Our relations with Rumburg are not good enough. ?]
-view-if: and eu_progress < 3 and not eu and rumburg_defeated
+view-if: eu_progress < 3 and not eu and rumburg_defeated
 choose-if: lespia_relation >= 6 and agnolia_relation >= 6 and rumburg_relation >= 6
 on-arrival: eu_negotiation = 1; eu_progress += 1
 
