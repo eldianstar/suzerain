@@ -43,8 +43,8 @@ on-arrival: interior_police_strength += 10
 We have recruited additional police.
 
 @gendarmerie
-view-if: lwusp_in_government and defense_minister_party = 'LWUSP'
-on-arrival: interior_police_strength += 20; interior_police_loyalty += 0.1; army_strength -= 30; army_loyalty -= 0.1; coup_progress += 2; ys_strength -= 30; ry_strength -= 30; bff_strength -= 5
+view-if: lwusp_in_government and defense_minister_party = 'LWUSP' and gendarmerie_transferred
+on-arrival: interior_police_strength += 20; interior_police_loyalty += 0.1; army_strength -= 30; army_loyalty -= 0.1; coup_progress += 2; ys_strength -= 30; ry_strength -= 30; bff_strength -= 5; gendarmerie_transferred = 1
 
 We have transferred the Gendarmerie, previously under the <span style="color: #808080;">Army</span>, to the Interior. The Armed Forces are displeased.
 
