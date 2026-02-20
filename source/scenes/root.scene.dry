@@ -525,6 +525,11 @@ Q.cps_party_name = "CPS";
 Q.desollinization = 0;
 Q.rural_education = 0;
 Q.gender_equality_education = 0;
+Q.usp_candidate = "None";
+Q.usp_candidate_party = 'LWUSP';
+Q.usp_candidate_ideology = "None";
+Q.lwusp_candidate = "None";
+Q.lwusp_candidate_ideology = "None";
 
 // Military stuff
 
