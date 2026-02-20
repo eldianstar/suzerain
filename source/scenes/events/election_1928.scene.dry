@@ -450,7 +450,7 @@ if ( usp_exists and is_in_usp ) {
    } else if ((wpb_gna > (lwusp_gna + cwusp_gna + rwusp_gna)) and (wpb_gna > pfjp_gna) and (wpb_gna > nfp_gna) and (wpb_gna > cps_gna)) {
       Q.president = Q.wpb_leader; Q.president_party = 'WPB'; Q.president_ideology = Q.wpb_ideology;
    } 
-} else if (usp_exists && !is_in_usp && !united_usp) {
+} else if (usp_exists && is_in_usp = 0 && united_usp = 0) {
    if (((cwusp_gna + rwusp_gna) > lwusp_gna) and ((cwusp_gna + rwusp_gna) > cps_gna) and ((cwusp_gna + rwusp_gna) > wpb_gna) and ((cwusp_gna + rwusp_gna) > pfjp_gna) and ((cwusp_gna + rwusp_gna) > nfp_gna)) {
       Q.president = Q.usp_candidate; Q.president_party = Q.usp_candidate_party; Q.president_ideology = Q.usp_candidate_ideology;
    } else if ((cps_gna > wpb_gna) and (cps_gna > pfjp_gna) and (cps_gna > lwusp_gna) and (cps_gna > (cwusp_gna + rwusp_gna)) and (cps_gna > nfp_gna)) {
@@ -464,7 +464,7 @@ if ( usp_exists and is_in_usp ) {
    } else if ((nfp_gna > wpb_gna) and (nfp_gna > pfjp_gna) and (nfp_gna > lwusp_gna) and (nfp_gna > (cwusp_gna + rwusp_gna)) and (cps_gna < nfp_gna)) {
       Q.president = Q.nfp_leader; Q.president_party = 'NFP'; Q.president_ideology = Q.nfp_ideology;
    }
-} else if (usp_exists && !is_in_usp && united_usp) {
+} else if (usp_exists && is_in_usp = 0 && united_usp) {
    if (((cwusp_gna + rwusp_gna) > lwusp_gna) and ((cwusp_gna + rwusp_gna) > cps_gna) and ((cwusp_gna + rwusp_gna) > wpb_gna) and ((cwusp_gna + rwusp_gna) > pfjp_gna) and ((cwusp_gna + rwusp_gna) > nfp_gna)) {
       Q.president = Q.rwusp_leader; Q.president_party = 'RWUSP'; Q.president_ideology = Q.rwusp_ideology;
    } else if ((cps_gna > wpb_gna) and (cps_gna > pfjp_gna) and (cps_gna > lwusp_gna) and (cps_gna > (cwusp_gna + rwusp_gna)) and (cps_gna > nfp_gna)) {
