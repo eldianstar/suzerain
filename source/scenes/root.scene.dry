@@ -304,7 +304,7 @@ Q.pfjp_gna = 44;
 Q.cwusp_gna = 9;
 Q.rwusp_gna = 23;
 Q.nfp_gna = 0;
-Q.reichstag_size = 2.50;
+Q.gna_size = 2.50;
 
 
 // diff from prev
@@ -422,12 +422,6 @@ Q.cwusp_in_government = 1;
 Q.rwusp_in_government = 1;
 Q.nfp_in_government = 0;
 
-Q.in_usp_coalition = 1;
-Q.in_centrist_coalition = 0;
-Q.in_peoples_front_coalition = 0;
-Q.in_left_liberal_coalition = 0;
-Q.in_left_usp_coalition = 0;
-Q.in_srp_majority = 0;
 
 
 Q.reichsexekution = 0;
@@ -530,6 +524,22 @@ Q.usp_candidate_party = 'LWUSP';
 Q.usp_candidate_ideology = "None";
 Q.lwusp_candidate = "None";
 Q.lwusp_candidate_ideology = "None";
+
+// coalitions
+
+Q.usp_coalition = 0; /
+Q.srp_coalition = 0; /
+Q.srp_usp_coalition = 0; 
+Q.usp_pfjp_coalition = 0; /
+Q.srp_pfjp_coalition = 0; /
+Q.usp_left_coalition = 0; /
+Q.srp_left_coalition = 0; /
+Q.srp_pfjp_left_coalition = 0;
+Q.pfjp_coalition = 0; /
+Q.nfp_coalition = 0; /
+Q.left_coalition = 0; /
+Q.right_coalition = 0; 
+Q.left_pfjp_coalition = 0;
 
 // Military stuff
 
