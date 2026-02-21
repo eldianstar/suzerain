@@ -482,23 +482,38 @@ if ( usp_exists and is_in_usp ) {
 
 
 
-///////////////////////////////////// UNTIL HERE ////////////////////////////////////////////
+
 
 
 
 
 // coalitions
-if (Q.lvp_formed) {
-    Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - Q.bvp_r).toFixed(1));
-} else {
-    Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - Q.bvp_r).toFixed(1));
+
+if (is_in_usp && usp_exists && !united_usp) {
+    Q.usp_coalition = parseFloat((Q.lwusp_gna + Q.cwusp_gna + Q.rwusp_gna).toFixed(1));
+} else if (usp_exists && !united_usp) {
+    Q.srp_usp_coalition = parseFloat((Q.lwusp_gna + Q.cwusp_gna + Q.rwusp_gna).toFixed(1));
+} else if (usp_exists) {
+    Q.srp_usp_coalition = parseFloat((Q.lwusp_gna + Q.rwusp_gna).toFixed(1));
 }
 
-if (Q.lvp_formed) {
-    Q.social_liberal_coalition = parseFloat((Q.spd_r + Q.lvp_r).toFixed(1));
+if (is_in_usp && !united_usp) {
+    Q.usp_pfjp_coalition = parseFloat((Q.lwusp_gna + Q.cwusp_gna + Q.rwusp_gna + Q.pfjp_gna).toFixed(1));
 } else {
-    Q.social_liberal_coalition = parseFloat((Q.spd_r + Q.ddp_r).toFixed(1));
+    Q.srp_pfjp_coalition = parseFloat((Q.lwusp_gna + Q.pfjp_gna).toFixed(1));
 }
+
+if (is_in_usp && !united_usp && peoples_front) {
+    Q.usp_left_coalition = parseFloat((Q.lwusp_gna + cwusp_gna + rwusp_gna + Q.cps_gna).toFixed(1));
+} else if (is_in_usp && !united_usp) {
+    Q.usp_left_coalition = parseFloat((Q.lwusp_gna + Q.cwusp_gna + Q.rwusp_gna + Q.wpb_gna + Q.cps_gna).toFixed(1));
+} else if (peoples_front && (!is_in_usp or united_usp) {
+    Q.srp_left_coalition = parseFloat((Q.lwusp_gna + Q.cps_gna).toFixed(1));
+} else if (!peoples_front) {
+    Q.srp_left_coalition = parseFloat((Q.lwusp_gna + Q.cps_gna + Q.wpb_gna).toFixed(1));
+}
+
+//////////////////////////////////////////// UNTIL HERE //////////////////////////////////////////////////////
 
 Q.social_catholic_coalition = parseFloat((Q.spd_r + Q.z_r - Q.bvp_r).toFixed(1));
 
