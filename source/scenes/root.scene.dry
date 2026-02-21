@@ -1196,7 +1196,7 @@ Here, you can test your skills.
 @joever_mode
 title: <div style="text-align: center;"><img src="img/joever.png" alt="Joever"></div>
 subtitle: The <span style="color: #c00000;">**SPD**</span> will start with 0% support.
-on-arrival: {!
+on-arrival: {
 Q.workers_spd = 0;
 Q.new_middle_spd = 0;
 Q.old_middle_spd = 0;
@@ -1270,13 +1270,13 @@ for (var party of Q.parties) {
     }
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
 }
-!}
+}
 go-to: 1928_mod_mode_lite
 
 @hitler_mode
 title: Democracy Under Siege
 subtitle: The <span style="color: #7A3C00;">**NSDAP**</span> will start with 40% support, and cannot peak.
-on-arrival: {!
+on-arrival: {
 Q.hitler_mode = 1;
 
 Q.workers_nsdap = 30;
@@ -1352,13 +1352,13 @@ for (var party of Q.parties) {
     }
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
 }
-!}
+}
 go-to: 1928_mod_mode_lite
 
 @unemployed_mode
 title: <div style="text-align: center;"><img src="img/job.png" alt="Jobless Mode"></div>
 subtitle: Unemployment will start at 100%.
-on-arrival: {!
+on-arrival: {
 Q.jobless_mode = 1;
 
 Q.unemployed = 100;
@@ -1429,7 +1429,7 @@ for (var party of Q.parties) {
     }
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
 }
-!}
+}
 go-to: 1928_mod_mode_lite
 
 @wacky_weimar
