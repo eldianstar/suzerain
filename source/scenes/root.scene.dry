@@ -1098,7 +1098,7 @@ if (Q.percentComplete >= 100) {
     Q.achievement_holy_moly = 1;
 }
 
-!}
+
 set-bg: img/map_2.jpg
 new-page: true
 
