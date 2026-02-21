@@ -1129,7 +1129,7 @@ go-to: 1928_main
 
 @1928_historical
 subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
-on-arrival: {!
+on-arrival: {
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
@@ -1146,12 +1146,12 @@ Q.dvp_relation = 31;
 Q.ddp_relation = 55;
 Q.budget = 2;
 this.state.disableSaves = true;
-!}
+}
 go-to: 1928_main
 
 @1928_mod_mode
 subtitle: Intended way of experiencing this mod.
-on-arrival: {!
+on-arrival: {
 Q.difficulty = -1;
 Q.dynamic_mode = 1;
 Q.resources = 3;
@@ -1163,12 +1163,12 @@ Q.kpd_relation = 21;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
 Q.budget = 2;
-!}
+}
 go-to: 1928_main
 
 @1928_mod_mode_lite
 subtitle: Intended way of experiencing this mod.
-on-arrival: {!
+on-arrival: {
 Q.difficulty = -1;
 Q.resources = 3;
 Q.dues = 3;
@@ -1179,7 +1179,7 @@ Q.kpd_relation = 21;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
 Q.budget = 2;
-!}
+}
 go-to: 1928_main
 
 @1928_challenge
