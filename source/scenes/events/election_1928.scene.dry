@@ -552,14 +552,14 @@ if (!is_in_usp and !united_usp) {
 }
 
 if (peoples_front) {
-   Q.left_coalition = parseFloat((Q.pfjp_gna + Q.cps_gna).toFixed(1));
+   Q.left_pfjp_coalition = parseFloat((Q.pfjp_gna + Q.cps_gna).toFixed(1));
 } else {
-   Q.left_coalition = parseFloat((Q.pfjp_gna + Q.cps_gna + Q.wpb_gna).toFixed(1));
+   Q.left_pfjp_coalition = parseFloat((Q.pfjp_gna + Q.cps_gna + Q.wpb_gna).toFixed(1));
 }
 
 Q.leverage = Q.lwusp_gna;
-if (Q.right_coalition > 50 or Q.left_coalition > 50) Q.leverage -= 5;
-if (Q.right_coalition > 50 and Q.left_coalition > 50) Q.leverage += 5;
+if (Q.right_coalition > 50 or Q.left_pfjp_coalition > 50) Q.leverage -= 5;
+if (Q.right_coalition > 50 and Q.left_pfjp_coalition > 50) Q.leverage += 5;
 
 
 // Reset government and ministers... Based on Brüning's 1930 govt
@@ -735,73 +735,70 @@ go-to: achievement_check_e
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #2b2673;"><b>[+ lwusp_party_name +]</b></span></td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em; padding: 10px">!}[+ workers_lwusp_display +]%[? if n_elections != 1 and demo_change_workers_lwusp_display != 0 : ([+ demo_change_workers_lwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ new_middle_lwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_lwusp_display != 0 : ([+ demo_change_new_middle_lwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ old_middle_lwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_lwusp_display != 0 : ([+ demo_change_old_middle_lwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ rural_lwusp_display +]%[? if n_elections != 1 and demo_change_rural_lwusp_display != 0 : ([+ demo_change_rural_lwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ unemployed_lwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_lwusp_display != 0 : ([+ demo_change_unemployed_lwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ bluds_lwusp_display +]%[? if n_elections != 1 and demo_change_bluds_lwusp_display != 0 : ([+ demo_change_bluds_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em; padding: 10px">!}[+ workers_lwusp_display +]%[? if n_elections != 1 and demo_change_workers_lwusp_display != 0 : ([+ demo_change_workers_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em;">!}[+ new_middle_lwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_lwusp_display != 0 : ([+ demo_change_new_middle_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em;">!}[+ old_middle_lwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_lwusp_display != 0 : ([+ demo_change_old_middle_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em;">!}[+ rural_lwusp_display +]%[? if n_elections != 1 and demo_change_rural_lwusp_display != 0 : ([+ demo_change_rural_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em;">!}[+ unemployed_lwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_lwusp_display != 0 : ([+ demo_change_unemployed_lwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(43, 38, 115, 0.1); font-size: 0.85em;">!}[+ bluds_lwusp_display +]%[? if n_elections != 1 and demo_change_bluds_lwusp_display != 0 : ([+ demo_change_bluds_lwusp_display +])?]{!</td>!}
         {!</tr>!}
         [? if !united_usp: {!<tr>!}
             {!<td><span style="color: #6e377a;">!}**Moderates (USP)**{!</span></td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_cwusp_display +]%[? if n_elections != 1 and demo_change_workers_cwusp_display != 0 : ([+ demo_change_workers_cwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_cwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_cwusp_display != 0 : ([+ demo_change_new_middle_cwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_cwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_cwusp_display != 0 : ([+ demo_change_old_middle_cwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_cwusp_display +]%[? if n_elections != 1 and demo_change_rural_cwusp_display != 0 : ([+ demo_change_rural_cwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_cwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_cwusp_display != 0 : ([+ demo_change_unemployed_cwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ bluds_cwusp_display +]%[? if n_elections != 1 and demo_change_bluds_cwusp_display != 0 : ([+ demo_change_bluds_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_cwusp_display +]%[? if n_elections != 1 and demo_change_workers_cwusp_display != 0 : ([+ demo_change_workers_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); font-size: 0.85em;">!}[+ new_middle_cwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_cwusp_display != 0 : ([+ demo_change_new_middle_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); font-size: 0.85em;">!}[+ old_middle_cwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_cwusp_display != 0 : ([+ demo_change_old_middle_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); font-size: 0.85em;">!}[+ rural_cwusp_display +]%[? if n_elections != 1 and demo_change_rural_cwusp_display != 0 : ([+ demo_change_rural_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); font-size: 0.85em;">!}[+ unemployed_cwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_cwusp_display != 0 : ([+ demo_change_unemployed_cwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(110, 55, 122, 0.2); font-size: 0.85em;">!}[+ bluds_cwusp_display +]%[? if n_elections != 1 and demo_change_bluds_cwusp_display != 0 : ([+ demo_change_bluds_cwusp_display +])?]{!</td>!}
         {!</tr>!}?]
         [? if usp_exists and (!is_in_usp or !united_usp) : {!<tr>!}
             {!<td>!}<span style="color: #7e0b80;">**[+ rwusp_party_name +]**</span>{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_rwusp_display +]%[? if n_elections != 1 and demo_change_workers_rwusp_display != 0 : ([+ demo_change_workers_rwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_rwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_rwusp_display != 0 : ([+ demo_change_new_middle_rwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_rwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_rwusp_display != 0 : ([+ demo_change_old_middle_rwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_rwusp_display +]%[? if n_elections != 1 and demo_change_rural_rwusp_display != 0 : ([+ demo_change_rural_rwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_rwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_rwusp_display != 0 : ([+ demo_change_unemployed_rwusp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ bluds_rwusp_display +]%[? if n_elections != 1 and demo_change_bluds_rwusp_display != 0 : ([+ demo_change_bluds_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_rwusp_display +]%[? if n_elections != 1 and demo_change_workers_rwusp_display != 0 : ([+ demo_change_workers_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em;">!}[+ new_middle_rwusp_display +]%[? if n_elections != 1 and demo_change_new_middle_rwusp_display != 0 : ([+ demo_change_new_middle_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em;">!}[+ old_middle_rwusp_display +]%[? if n_elections != 1 and demo_change_old_middle_rwusp_display != 0 : ([+ demo_change_old_middle_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em;">!}[+ rural_rwusp_display +]%[? if n_elections != 1 and demo_change_rural_rwusp_display != 0 : ([+ demo_change_rural_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em;">!}[+ unemployed_rwusp_display +]%[? if n_elections != 1 and demo_change_unemployed_rwusp_display != 0 : ([+ demo_change_unemployed_rwusp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(126, 11, 128, 0.2); font-size: 0.85em;">!}[+ bluds_rwusp_display +]%[? if n_elections != 1 and demo_change_bluds_rwusp_display != 0 : ([+ demo_change_bluds_rwusp_display +])?]{!</td>!}
         {!</tr>!} ?]
         {!<tr>!}
             {!<td><span style="color: #03c2fc;"><b>**PFJP**</b></span></td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_pfjp_display +]%[? if n_elections != 1 and demo_change_workers_pfjp_display != 0 : ([+ demo_change_workers_pfjp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_pfjp_display +]%[? if n_elections != 1 and demo_change_new_middle_pfjp_display != 0 : ([+ demo_change_new_middle_pfjp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_pfjp_display +]%[? if n_elections != 1 and demo_change_old_middle_pfjp_display != 0 : ([+ demo_change_old_middle_pfjp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_pfjp_display +]%[? if n_elections != 1 and demo_change_rural_pfjp_display != 0 : ([+ demo_change_rural_pfjp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_pfjp_display +]%[? if n_elections != 1 and demo_change_unemployed_pfjp_display != 0 : ([+ demo_change_unemployed_pfjp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ bluds_pfjp_display +]%[? if n_elections != 1 and demo_change_catholics_pfjp_display != 0 : ([+ demo_change_bluds_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_pfjp_display +]%[? if n_elections != 1 and demo_change_workers_pfjp_display != 0 : ([+ demo_change_workers_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em;">!}[+ new_middle_pfjp_display +]%[? if n_elections != 1 and demo_change_new_middle_pfjp_display != 0 : ([+ demo_change_new_middle_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em;">!}[+ old_middle_pfjp_display +]%[? if n_elections != 1 and demo_change_old_middle_pfjp_display != 0 : ([+ demo_change_old_middle_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em;">!}[+ rural_pfjp_display +]%[? if n_elections != 1 and demo_change_rural_pfjp_display != 0 : ([+ demo_change_rural_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em;">!}[+ unemployed_pfjp_display +]%[? if n_elections != 1 and demo_change_unemployed_pfjp_display != 0 : ([+ demo_change_unemployed_pfjp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(3, 194, 252, 0.2); font-size: 0.85em;">!}[+ bluds_pfjp_display +]%[? if n_elections != 1 and demo_change_catholics_pfjp_display != 0 : ([+ demo_change_bluds_pfjp_display +])?]{!</td>!}
         {!</tr>!}
         {!<tr>!}
             {!<td>!}<span style="color: #c00000;">**[+ cps_party_name +]**</span>{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_cps_display +]%[? if n_elections != 1 and demo_change_workers_cps_display != 0 : ([+ demo_change_workers_cps_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ new_middle_cps_display +]%[? if n_elections != 1 and demo_change_new_middle_cps_display != 0 : ([+ demo_change_new_middle_cps_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ old_middle_cps_display +]%[? if n_elections != 1 and demo_change_old_middle_cps_display != 0 : ([+ demo_change_old_middle_cps_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ rural_cps_display +]%[? if n_elections != 1 and demo_change_rural_cps_display != 0 : ([+ demo_change_rural_cps_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ unemployed_cps_display +]%[? if n_elections != 1 and demo_change_unemployed_cps_display != 0 : ([+ demo_change_unemployed_cps_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ bluds_cps_display +]%[? if n_elections != 1 and demo_change_bluds_cps_display != 0 : ([+ demo_change_bluds_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_cps_display +]%[? if n_elections != 1 and demo_change_workers_cps_display != 0 : ([+ demo_change_workers_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_cps_display +]%[? if n_elections != 1 and demo_change_new_middle_cps_display != 0 : ([+ demo_change_new_middle_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_cps_display +]%[? if n_elections != 1 and demo_change_old_middle_cps_display != 0 : ([+ demo_change_old_middle_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_cps_display +]%[? if n_elections != 1 and demo_change_rural_cps_display != 0 : ([+ demo_change_rural_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_cps_display +]%[? if n_elections != 1 and demo_change_unemployed_cps_display != 0 : ([+ demo_change_unemployed_cps_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.2); font-size: 0.85em;">!}[+ bluds_cps_display +]%[? if n_elections != 1 and demo_change_bluds_cps_display != 0 : ([+ demo_change_bluds_cps_display +])?]{!</td>!}
         {!</tr>!}
         [? if !peoples_front: {!<tr>!}
             {!<td>!}<span style="color: ##ffd000;">**WPB**</span>{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_wpb_display +]%[? if n_elections != 1 and demo_change_workers_wpb_display != 0 : ([+ demo_change_workers_wpb_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_wpb_display +]%[? if n_elections != 1 and demo_change_new_middle_wpb_display != 0 : ([+ demo_change_new_middle_wpb_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_wpb_display +]%[? if n_elections != 1 and demo_change_old_middle_wpb_display != 0 : ([+ demo_change_old_middle_wpb_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ rural_wpb_display +]%[? if n_elections != 1 and demo_change_rural_wpb_display != 0 : ([+ demo_change_rural_wpb_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_wpb_display +]%[? if n_elections != 1 and demo_change_unemployed_wpb_display != 0 : ([+ demo_change_unemployed_wpb_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ bluds_wpb_display +]%[? if n_elections != 1 and demo_change_bluds_wpb_display != 0 : ([+ demo_change_bluds_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_wpb_display +]%[? if n_elections != 1 and demo_change_workers_wpb_display != 0 : ([+ demo_change_workers_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_wpb_display +]%[? if n_elections != 1 and demo_change_new_middle_wpb_display != 0 : ([+ demo_change_new_middle_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_wpb_display +]%[? if n_elections != 1 and demo_change_old_middle_wpb_display != 0 : ([+ demo_change_old_middle_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em;">!}[+ rural_wpb_display +]%[? if n_elections != 1 and demo_change_rural_wpb_display != 0 : ([+ demo_change_rural_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_wpb_display +]%[? if n_elections != 1 and demo_change_unemployed_wpb_display != 0 : ([+ demo_change_unemployed_wpb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(255, 208, 0, 0.2); font-size: 0.85em;">!}[+ bluds_wpb_display +]%[? if n_elections != 1 and demo_change_bluds_wpb_display != 0 : ([+ demo_change_bluds_wpb_display +])?]{!</td>!}
         {!</tr>!} ?]
         {!<tr>!}
             {!<td><span style="color: #000000;"><b>**NFP**</b></span></td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nfp_display +]%[? if n_elections != 1 and demo_change_workers_nfp_display != 0 : ([+ demo_change_workers_nfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ new_middle_nfp_display +]%[? if n_elections != 1 and demo_change_new_middle_nfp_display != 0 : ([+ demo_change_new_middle_nfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ old_middle_nfp_display +]%[? if n_elections != 1 and demo_change_old_middle_nfp_display != 0 : ([+ demo_change_old_middle_nfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ rural_nfp_display +]%[? if n_elections != 1 and demo_change_rural_nfp_display != 0 : ([+ demo_change_rural_nfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ unemployed_nfp_display +]%[? if n_elections != 1 and demo_change_unemployed_nfp_display != 0 : ([+ demo_change_unemployed_nfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ bluds_nfp_display +]%[? if n_elections != 1 and demo_change_bluds_nfp_display != 0 : ([+ demo_change_bluds_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nfp_display +]%[? if n_elections != 1 and demo_change_workers_nfp_display != 0 : ([+ demo_change_workers_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_nfp_display +]%[? if n_elections != 1 and demo_change_new_middle_nfp_display != 0 : ([+ demo_change_new_middle_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_nfp_display +]%[? if n_elections != 1 and demo_change_old_middle_nfp_display != 0 : ([+ demo_change_old_middle_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_nfp_display +]%[? if n_elections != 1 and demo_change_rural_nfp_display != 0 : ([+ demo_change_rural_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_nfp_display +]%[? if n_elections != 1 and demo_change_unemployed_nfp_display != 0 : ([+ demo_change_unemployed_nfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ bluds_nfp_display +]%[? if n_elections != 1 and demo_change_bluds_nfp_display != 0 : ([+ demo_change_bluds_nfp_display +])?]{!</td>!}
         {!</tr>!}
     {!</table>!}
     {!</div>!}
 {!</div>!}
-
-
-////// UNTIL HERE ///////////////////////////
 
 
 {!<svg id="election_history" style="width: 500px; height: 400px; display: none;"> </svg>!}
@@ -809,35 +806,37 @@ go-to: achievement_check_e
 
 **Potential coalitions:**
 
-[? if kpd_relation >= 40 and left_coalition >= 45: United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition +]% ?]
+[? if srp_coalition >= 50 and president_party = 'LWUSP' : <span style="color: #2b2673;">**[+ lwusp_party_name +]**</span> majority: [+ srp_coalition +]% ?]
 
-[? if kpd_relation > 35 and z_relation > 35 and not cvp_formed: Popular Front Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>[? if (liberal_parliament == 0 and bourgeois_parliament_ddp == 0) and not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ popular_front_coalition +]% ?]
+[? if is_in_usp and usp_coalition >= 50 and (president_party = 'LWUSP' or president_party = 'CWUSP' or president_party = 'RWUSP') : <span style="color: #6e377a;">**USP**</span> majority: [+ usp_coalition +]% ?]
 
-[? if not cvp_formed: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed:<span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?][? if sapd_formed and kpd_relation >= 30:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ weimar_coalition +]% ?]
+[? if !is_in_usp and usp_coalition >= 50 and (president_party = 'CWUSP' or president_party = 'RWUSP') : <span style="color: #6e377a;">**USP**</span> majority: [+ usp_coalition +]% ?]
 
-[? if cvp_formed: <span style="color: #c00000;">Social</span>-[? if not lvp_formed: <span style="color: #D3C24D;">Liberal</span>?][? if lvp_formed: <span style="color: #FFCC00;">Liberal</span>?] Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition +]% ?]
+[? if left_coalition >= 50 and peoples_front and president_party = 'CPS' : <span style="color: #c00000;">**[+ cps_party_name +]**</span> majority: [+ left_coalition +]% ?]
 
-[? if cvp_formed: <span style="color: #c00000;">Social</span>-<span style="color: #000000;">Christian</span> Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>): [+ social_catholic_coalition +]% ?]
+[? if left_coalition >= 50 and !peoples_front : Popular Front Coalition (<span style="color: #c00000;">**CPS**</span> + <span style="color: #ffd000;">**WPB**</span>): [+ left_coalition +]% ?]
 
-[? if dvp_exist and not cvp_formed: Grand Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]): [+ grand_coalition +]% ?]
+[? if pfjp_coalition >= 50 : <span style="color: #03c2fc;">**PFJP**</span> majority: [+ pfjp_coalition +]% ?]
 
-[? if bourgeois_coalition >= 25 and not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others**): [+ bourgeois_coalition +]% ?]
+[? if nfp_coalition >= 50 : <span style="color: #000000;">**NFP**</span> majority: [+ nfp_coalition +]% ?]
 
-[? if bourgeois_coalition >= 25 and kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition +]% ?]
+[? if usp_pfjp_coalition >= 50 and is_in_usp : Grand Coalition (<span style="color: #03c2fc;">**PFJP**</span> + <span style="color: #6e377a;">**USP**</span>): [+ usp_pfjp_coalition +]% ?]
 
-[? if dnvp_ideology == "Moderate" and not lvp_formed and not cvp_formed: Center-Right Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ center_right_coalition +]% ?]
+[? if srp_pfjp_coalition >= 50 : Centre-left Coalition (<span style="color: #03c2fc;">**PFJP**</span> + <span style="color: #2b2673;">**SRP**</span>): [+ srp_pfjp_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" or lvp_formed and not cvp_formed: Right-wing Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ right_coalition +]% ?]
+[? if usp_left_coalition >= 50 and is_in_usp and (cps_relation + rwusp_relation) >= 70 : <span style="color: #c00000;">Mar</span><span style="color: #6e377a;">oon</span> Coalition (<span style="color: #c00000;">**[+ cps_party_name +]**</span> + <span style="color: #6e377a;">**USP**</span> [? if !peoples_front : + <span style="color: #ffd000;">**WPB**</span> ?]): [+ usp_left_coalition +]% ?]
 
-[? if (cvp_formed and far_right_coalition >= 25) or (hitler_right_coalition >= 50 and rubicon): Black-Brown Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
+[? if srp_left_coalition >= 50 and cps_relation >= 35 : Social-Reformist Coalition (<span style="color: #c00000;">**[+ cps_party_name +]**</span> + <span style="color: #2b2673;">**SRP**</span> [? if !peoples_front : + <span style="color: #ffd000;">**WPB**</span> ?]): [+ srp_left_coalition +]% ?]
 
-[? if dnef_formed: Schleicher Right Coalition (<span style="color: #BFC8CC;">**DNEF**</span>[? if not z_dnef:&nbsp;+ <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>?][? if not lvp_formed and not dstp_dnef:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if not lvp_formed and dvp_exist and not dvp_dnef:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed and not lvp_dnef:&nbsp;+ <span style="color: #FFCC00;">**LVP**</span>?][? if not other_dnef:&nbsp;+ **Others**?][? if kvp_formed and not kvp_dnef:&nbsp;+ <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate" and not dnvp_dnef:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?][? if dsu_exist:&nbsp;+ <span style="color: #6A1E1E;">**DSU**</span>?]): [+ schleicher_right_coalition +]% ?]
+[? if srp_usp_coalition >= 50 and rwusp_relation >= 35 : Centrist Coalition (<span style="color: #6e377a;">**USP**</span> + <span style="color: #2b2673;">**SRP**</span>): [+ srp_usp_coalition +]% ?]
 
-[? if dnef_formed: Schleicher Left Coalition (<span style="color: #BFC8CC;">**DNEF**</span> + <span style="color: #c00000;">**SPD**</span>[? if not z_dnef:&nbsp;+ <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>?][? if not lvp_formed and not dstp_dnef:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed and not lvp_dnef:&nbsp;+ <span style="color: #FFCC00;">**LVP**</span>?]): [+ schleicher_left_coalition +]% ?]
+[? if srp_pfjp_left_coalition >= 50 and pfjp_relation >= 35 and cps_relation >= 40 : Progressive Front (<span style="color: #c00000;">**[+ cps_party_name +]**</span> + [? if !peoples_front : <span style="color: #ffd000;">**WPB**</span> +  ?]<span style="color: #03c2fc;">**PFJP**</span> + <span style="color: #2b2673;">**SRP**</span>): [+ srp_pfjp_left_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ([?  if hugenberg_dvp: <span style="color: #C0A054;">**DVP**</span> + ?]<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Moderate" and far_right_coalition >= 30: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ([?  if hugenberg_dvp: <span style="color: #C0A054;">**DVP**</span> + ?]<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
+
+/////////////////////// UNTIL HERE //////////////////////
+
+
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in <span style="color: #7A3C00;">**NSDAP**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
@@ -855,7 +854,7 @@ go-to: achievement_check_e
 
 [? if left_coalition >= 50: The fact that the <span style="color: #9B0000;">Marxist</span> parties now hold a majority in the Reichstag by themselves has energized the grassroots of both our parties to push for closer cooperation. ?]
 
-[? if election_boycott: We have boycotted this election, delegitimizing the results in the eyes of workers and <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> alike. The impact is measured by how many stayed home instead of voting for the <span style="color: #BFC8CC;">**DNEF**</span>. [? if boycott_effect < 1.05: In the end, we achieved only limited success—our boycott has proven relatively unimpactful. So much for nothing. ?][? if boycott_effect >= 1.05 and boycott_effect < 1.1: In the end, we achieved notable success. ?][? if boycott_effect >= 1.1: In the end, we achieved smashing success. ?] ?]
+[? if election_boycott: We have boycotted this election, delegitimizing the results in the eyes of workers and republicans alike. The impact is measured by how many stayed home instead of voting for the right. [? if boycott_effect < 1.05: In the end, we achieved only limited success—our boycott has proven relatively unimpactful. So much for nothing. ?][? if boycott_effect >= 1.05 and boycott_effect < 1.1: In the end, we achieved notable success. ?][? if boycott_effect >= 1.1: In the end, we achieved smashing success. ?] ?]
 
 There are some potential coalition arrangements.
 
