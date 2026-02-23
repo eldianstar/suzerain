@@ -84,3 +84,5 @@ view-if: ry_banned = 1 and in_left_coalition = 0
 on-arrival: ry_strength *= 0.7; ry_militancy -= 0.05; cps_relation -= 10; cwusp_relation += 2; rwusp_relation += 2; nfp_relation += 2; army_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if in_usp_coalition; workers_lwusp -= 1; old_middle_nfp -= 1; new_middle_nfp -= 1; rural_nfp -= 2; old_middle_rwusp += 1; new_middle_rwusp += 1; rural_rwusp += 2
 
 We have arrested more of the <span style="color: #c00000;">**Red Youth**</span>'s leaders and confiscated their weapons.
+
+@root
