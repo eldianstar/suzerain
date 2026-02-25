@@ -523,7 +523,7 @@ if (!peoples_front && !is_in_usp) {
 
 // majority single party coalitions
 
-if (!is_in_usp) { 
+if (!is_in_usp or united_usp) { 
     Q.srp_coalition = parseFloat((Q.lwusp_gna).toFixed(1));
 }
 
@@ -832,41 +832,94 @@ go-to: achievement_check_e
 
 [? if srp_pfjp_left_coalition >= 50 and pfjp_relation >= 35 and cps_relation >= 40 : Progressive Front (<span style="color: #c00000;">**[+ cps_party_name +]**</span> + [? if !peoples_front : <span style="color: #ffd000;">**WPB**</span> +  ?]<span style="color: #03c2fc;">**PFJP**</span> + <span style="color: #2b2673;">**SRP**</span>): [+ srp_pfjp_left_coalition +]% ?]
 
-
-
-// UNTIL HERE
-
-
-
 [? if nazi_urgency <= 1 and nfp_gna >= 25 : The rapid rise in <span style="color: #000000;">**NFP**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in Sordland. ?]
 
-[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Radical": Together, the anti-democratic <span style="color: #700000;">**KPD**</span>, <span style="color: #3E88B3;">**DNVP**</span>, and <span style="color: #7A3C00;">**NSDAP**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
-
-[? if anti_democratic_coalition >= 50 and dnvp_ideology == "Moderate": Together, the anti-democratic <span style="color: #700000;">**KPD**</span>, <span style="color: #003755;">**DNF**</span>, and <span style="color: #7A3C00;">**NSDAP**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
-
-[? if hitler_right_coalition >= 50 and rubicon and hitler_right_coalition_time == time: The <span style="color: #000000;">Center Party</span> and its <span style="color: #A2D8E0;">Bavarian</span> counterpart, together with the <span style="color: #7A3C00;">**NSDAP**</span>, constitute a majority in the Reichstag. This has sparked rumors of a potential parliamentary-backed Black-Brown coalition that could unseat [+ chancellor +]—rumors that are unlikely to materialize, as the ideological gulf between the <span style="color: #7A3C00;">Nazis</span> and the constitutionalist <span style="color: #000000;">Center Party</span> remains vast. ?]
-
-[? if change_nsdap_votes < -2 and rubicon and nsdap_decline_time == time: The <span style="color: #7A3C00;">Nazis</span> have finally declined. Many who once backed the movement as a protest vote never actually wanted them in power, while others have simply stayed home. Disillusioned conservatives and religious voters have drifted back to the conservative and middle parties to their left. Perhaps the <span style="color: #7A3C00;">Nazis</span> have peaked—they cannot win new voters without alienating their existing base. ?]
-
-[? if spd_votes < 20 and schleicher_spd_r >= 3: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a fifth of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?][? if spd_votes < 25 and spd_votes > 20 and schleicher_spd_r >= 5: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a quarter of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?]
-
-[? if spd_votes >= 35 and left_strength >= reformist_strength + labor_strength: Our strong performance has, unfortunately, driven our former bourgeois coalition partners to distance themselves from us. They blame their electoral defeats on their association with us and refuse to spend their dwindling influence supporting a government with the leverage to transform Germany into <span style="color: #c00000;">socialism</span>. ?]
-
-[? if left_coalition >= 50: The fact that the <span style="color: #9B0000;">Marxist</span> parties now hold a majority in the Reichstag by themselves has energized the grassroots of both our parties to push for closer cooperation. ?]
-
-[? if election_boycott: We have boycotted this election, delegitimizing the results in the eyes of workers and republicans alike. The impact is measured by how many stayed home instead of voting for the right. [? if boycott_effect < 1.05: In the end, we achieved only limited success—our boycott has proven relatively unimpactful. So much for nothing. ?][? if boycott_effect >= 1.05 and boycott_effect < 1.1: In the end, we achieved notable success. ?][? if boycott_effect >= 1.1: In the end, we achieved smashing success. ?] ?]
 
 There are some potential coalition arrangements.
 
-@achievement_check_e
-on-arrival: stabile_demokratie = 1 if center_right_coalition >= 50 and weimar_coalition >= 50 and dnvp_ideology == "Moderate"
-go-to: stabile_demokratie if stabile_demokratie; coalition_menu if not stabile_demokratie
-
-@stabile_demokratie
-achievement: stabile_demokratie
-go-to: coalition_menu
 
 @coalition_menu
+
+- @srp_majority_c
+- @usp_coalition_w_c
+- @usp_pfjp_coalition_c
+- @srp_pfjp_coalition_c
+- @usp_left_coalition_c
+- @srp_left_coalition_c
+- @srp_usp_coalition_c
+- @srp_pfjp_left_coalition_c
+- @usp_coalition_wout_c
+- @nfp_majority_c
+- @pfjp_majority_c
+- @left_coalition_c
+- @right_coalition_c
+- @left_pfjp_coalition_c
+- @no_majority
+
+@srp_majority_c
+title: Form a <span style="color: #2b2673;">**[+ lwusp_party_name +]**</span> majority government.
+view-if: srp_coalition >= 50 and president_party = 'LWUSP'
+on-arrival: lwusp_in_government = 1; vp_party = 'LWUSP'; chancellor_party = 'LWUSP'; foreign_minister_party = 'LWUSP'; interior_minister_party = 'LWUSP'; justice_minister_party = 'LWUSP'; social_minister_party = 'LWUSP'; defense_minister_party = 'LWUSP'; economic_minister_party = 'LWUSP'; education_minister_party = 'LWUSP'; development_minister_party = 'LWUSP'; pro_republic += 5; pfjp_relation -= 4; nfp_relation -= 2; cwusp_relation -= 3; rwusp_relation -= 4; cps_relation -= 3; nationalism -= 1
+
+Finally, the [? if is_in_usp : Reformists of the <span style="color: #2b2673;">**[+ lwusp_party_name +]**</span> can govern alone! ?][? if is_in_usp = 0 : <span style="color: #2b2673;">**[+ lwusp_party_name +]**</span> ?]. Our investments in the electoral campaign have paid off. [+ president +] has become President of Sordland.
+
+@usp_majority_w_c
+title: Form a <span style="color: #6e377a;">**USP**</span> majority government.
+view-if: is_in_usp and usp_coalition >= 50 and president == usp_candidate
+on-arrival: lwusp_in_government = 1; cwusp_in_government = 1; rwusp_in_government = 1; pfjp_relation -= 1; moderate_dissent -= 2; moderate_strength += 2
+go-to: ministries
+
+The Party of Soll forms yet another government. Hopefully we might be able to change things from the inside. [+ president +] has become President of Sordland.
+
+@usp_pfjp_coalition_c
+title: Form a "Grand Coalition" of the <span style="color: #6e377a;">**USP**</span> and the <span style="color: #03c2fc;">**PFJP**</span>.
+view-if: is_in_usp and usp_pfjp_coalition >= 50 and pfjp_relation >= 35 and rwusp_relation >= 35 and president_party = 'LWUSP' or president_party = 'RWUSP' or president_party = 'CWUSP' or president_party = 'PFJP'
+on-arrival: lwusp_in_government = 1; pfjp_in_government = 1; cwusp_in_government = 1; rwusp_in_government = 1; new_middle_pfjp -= 1; rural_rwusp -= 2; workers_lwusp -= 1; workers_cps += 3; rural_nfp += 5
+go-to: ministries
+
+We have formed a Grand Coalition of the two main political parties. Such an agreement is unlikely to last long, and might simply have the effect of giving votes to more extremist parties.
+
+@srp_pfjp_coalition_c
+title: Form a centre-left coalition with the <span style="color: #03c2fc;">**PFJP**</span>.
+view-if: srp_pfjp_coalition >= 50 and pfjp_relation >= 35 and president_party = 'LWUSP' or president_party = 'PFJP'
+on-arrival: lwusp_in_government = 1; pfjp_in_government = 1; liberal_strength += 2; left_dissent += 2; pfjp_relation += 1; pro_republic += 1; nationalism -= 1
+go-to: ministries
+
+We have formed a centre-left coalition with the liberals.
+
+@usp_left_coalition_c
+title: Is a <span style="color: #c00000;">Mar</span><span style="color: #6e377a;">oon</span> Coalition possible?
+view-if: usp_left_coalition >= 50 and cps_relation >= 35 and rwusp_relation >= 35 and (president_party = 'CPS' or president_party = 'WPB' or president_party = 'LWUSP' or president_party = 'CWUSP' or president_party = 'RWUSP')
+go-to: usp_left_success if cps_relation >= 45 and rwusp_relation >= 45; usp_left_deals 
+
+Is it possible to have <span style="color: #6e377a;">**Sollists**</span> and <span style="color: #c00000;">**Socialists**</span> to work together?
+
+@usp_left_deals
+
+- @usp_left_resources
+- @coalition_menu: Nevermind. Let's see our other options...
+
+@usp_left_resources
+title: Use our resources to smooth things over.
+subtitle: -3 resources.
+choose-if: resources >= 3
+unavailable-subtitle: Not enough resources
+go-to: usp_left_success
+
+@usp_left_success
+on-arrival: lwusp_in_government = 1; cwusp_in_government = 1; rwusp_in_government = 1; cps_in_government = 1; wpb_in_government if (!peoples_front)
+go-to: ministries
+
+We have succeeded! A coalition will be formed between the socialists and Sollists! Who knows, it might actually work...
+
+
+
+
+@no_majority
+title: There is no clear governing majority.
+view-if: (((weimar_coalition < 50 or weimar_coalition_failed == 1 or ddp_relation < 30 or z_relation < 30 or lvp_relation < 30) and (grand_coalition < 50 or grand_coalition_failed == 1) or (grand_coalition >= 50 and ((dvp_ideology == "Right" and black_thursday_seen == 1) or not dvp_exist)) and far_right_coalition < 50 and ((right_coalition < 50) or (right_coalition >= 50 and dnvp_ideology == "Radical") and center_right_coalition < 50 or (center_right_coalition >= 50 and ((dnvp_ideology == "Radical") or (year = 1929 and month >= 7))))) or rubicon or cvp_formed) and dnef_r < 50 and president == "Hindenburg"
+on-arrival: no_majority_elections += 1
+go-to: no_majority_bruning if (chancellor = "Brüning" or chancellor = "Wirth" or chancellor = "Adenauer"); no_majority_goerdeler_2 if chancellor == "Goerdeler" and not rubicon_mini_trigger and not rubicon; no_majority_papen if chancellor = "Papen" and papen_post == 0; no_majority_papen_2 if chancellor == "Papen" and papen_post >= 1; no_majority_schleicher if chancellor = "Schleicher" and not schleicher_post; no_majority_schleicher_2 if chancellor = "Schleicher" and schleicher_post; no_majority_trev if chancellor == "Treviranus"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
 - @spd_majority
 - @weimar_coalition
@@ -891,6 +944,8 @@ go-to: coalition_menu
 - @right_coalition
 - @center_right_coalition
 - @bourgeois_coalition
+
+
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
